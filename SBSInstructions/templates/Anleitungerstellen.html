@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Anleitung erstellen</title>
+</head>
+
+<body>
+    <h1>Anleitung erstellen</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Anleitung erstellen">
+    </form>
+    {% if form.errors %}
+        <p>Error: Bitte überprüfen Sie Ihre Eingaben</p>
+    {% endif %}
+</body>
+</html>
