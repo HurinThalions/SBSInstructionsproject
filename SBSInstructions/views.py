@@ -83,7 +83,7 @@ class AnleitungdurchgehenDetailView(DetailView):
             schritt_dict = {
                 'schrittbennenung': Anleitungsschritt.schrittbenennung,
                 'beschreibung': Anleitungsschritt.beschreibung,
-                # 'schrittbild': self.get_base64_image(Anleitungsschritt.schrittbild)  # Bild in Base64-codierter Form speichern
+                'schrittbild': self.get_base64_image(Anleitungsschritt.schrittbild)  # Bild in Base64-codierter Form speichern
             }
 
             # Komponenteninformationen für den aktuellen Schritt in ein Wörterbuch hinzufügen
@@ -91,7 +91,7 @@ class AnleitungdurchgehenDetailView(DetailView):
             for komponente in schritt.komponente_set.all():
                 komponenten_dict[komponente.pk] = {
                     'kompbeschreibung': komponente.kompbeschreibung,
-                    # 'kompbild': self.get_base64_image(komponente.kompbild)  # Bild in Base64-codierter Form speichern
+                    'kompbild': self.get_base64_image(komponente.kompbild)  # Bild in Base64-codierter Form speichern
                 }
 
             schritt_dict['komponenten'] = komponenten_dict
