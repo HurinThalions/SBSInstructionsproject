@@ -83,7 +83,7 @@ class AnleitungdurchgehenDetailView(DetailView):
             schritt_dict = {
                 'schrittbennenung': Anleitungsschritt.schrittbenennung,
                 'beschreibung': Anleitungsschritt.beschreibung,
-                'schrittbild': self.get_base64_image(Anleitungsschritt.schrittbild)  # Bild in Base64-codierter Form speichern
+                'schrittbild': self.get_base64_image_schritt(Anleitungsschritt.schrittbild)  # Bild in Base64-codierter Form speichern
             }
 
             # Komponenteninformationen für den aktuellen Schritt in ein Wörterbuch hinzufügen
@@ -91,7 +91,7 @@ class AnleitungdurchgehenDetailView(DetailView):
             for komponente in schritt.komponente_set.all():
                 komponenten_dict[komponente.pk] = {
                     'kompbeschreibung': komponente.kompbeschreibung,
-                    'kompbild': self.get_base64_image(komponente.kompbild)  # Bild in Base64-codierter Form speichern
+                    'kompbild': self.get_base64_image_komponente(komponente.kompbild)  # Bild in Base64-codierter Form speichern
                 }
 
             schritt_dict['komponenten'] = komponenten_dict
@@ -102,17 +102,40 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel
-        context['schritt_dict'] = schritt_dict
+        context['schritt_dict'] = json.dumps(schritt_dict)
 
         return context
 
+    # Holt Schrittbild
+    def get_base64_image_schritt(self, image):
+        """
+        Konvertiert ein Bild in Base64-codierter Form.
+        """
 
-    # def get_base64_image(self, image):
+        with open('media/images/Schrittbilder/pexels-phil-desforges-15185102.jpg', 'rb') as f:
+            image_data = f.read()
+            image_base64 = base64.b64encode(image_data).decode('utf-8')
+        return image_base64
+
+    # Holt Komponentenbild
+    def get_base64_image_komponente(self, image):
+        """
+        Konvertiert ein Bild in Base64-codierter Form.
+        """
+
+        with open('media/images/Komponentenbilder/pexels-phil-desforges-15185102.jpg', 'rb') as f:
+            image_data = f.read()
+            image_base64 = base64.b64encode(image_data).decode('utf-8')
+        return image_base64
+
+
+    # def get_base64_image_thumbnail(self, image):
     #     """
     #     Konvertiert ein Bild in Base64-codierter Form.
     #     """
-    #     with open(image.path, 'rb') as f:
+
+    #     with open(, 'rb') as f:
     #         image_data = f.read()
     #         image_base64 = base64.b64encode(image_data).decode('utf-8')
     #     return image_base64
-
+    

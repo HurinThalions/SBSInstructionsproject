@@ -7,7 +7,8 @@
 
 function loadAnleitungData1() {
 
-    var schritt_dict = JSON.parse(document.getElementById('schritt_dict'));
-    console.log(schritt_dict);
+    var schrittDataElement = document.getElementById('schrittData');
+    var schritt = JSON.parse(schrittDataElement.textContent);
+    console.log(schritt);
 
 }
