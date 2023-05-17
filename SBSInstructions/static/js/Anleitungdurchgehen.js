@@ -1,22 +1,27 @@
-// function loadAnleitungData() {
-    
-//     fetch('schritt_dict.json')
-//         .then(response => response.json)
-//         .then(data => console.log(data));
-// }
 
 function loadAnleitungData1() {
 
-    let elements = document.querySelectorAll('li');
-    let container = document.getElementById('schritt-details');
+    let elements = document.querySelectorAll('li')
+    let container = document.getElementById('schritt-details')
 
     // Holt die daten aus dem html und speichert sie in jsondata
-    let jsondata = JSON.parse(document.getElementById('schritte-json').textContent);
+    let jsondata = JSON.parse(document.getElementById('schritte-json').textContent)
     console.log(jsondata);
-    
 
-    // Entfernt informationen aus dem Container wenn neue gelden werden
-    let container1 = document.getElementById('einzelschritte');
+    document.addEventListener('load', function() {
+        addSchrittinfo()
+    })
+
+    function addSchrittinfo() {
+
+        let newDiv = document.createElement('div')
+        let schrittContent = document.createTextNode(data.schrittbenennung)
+        newDiv.appendChild(schrittContent)
+    
+        let schritt_detailDiv = document.getElementById('schritt-details')
+        document.body.insertBefore(newDiv, schritt_detailDiv)
+    }
+
 
 
     elements.forEach(element => {
@@ -50,3 +55,4 @@ function loadAnleitungData1() {
     }
 
 }
+

@@ -25,11 +25,19 @@
 
     <div id="schritt-details">
 
-        
+        <ul>
+            {% for schritt in schritte %}
+                <li data-index="{{ forloop.counter0 }}">
+                    {{ schritt.schrittbenennung }}
+                </li>
+            {% endfor %}
+            
+        </ul>
     </div>
 
     {{ einzelschritte|json_script:"schritte-json"}}
 
+    
 
 </body>
 </html>

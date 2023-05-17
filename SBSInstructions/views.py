@@ -100,12 +100,12 @@ class AnleitungdurchgehenDetailView(DetailView):
 
             # Schrittinformationen in die entsprechenden Listen hinzufügen
             schritt_benennung_list.append(schritt_dict)
-            
+        
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel
         # context['schritt_dict'] = json.dumps(schritt_dict)
-        # context ['test'] = json.dumps(my_dict)
-        context = { 'einzelschritte': list(Anleitungsschritt.objects.values())}
+        context = { 'einzelschritte': list(Anleitungsschritt.objects.values()), 'schritt_dict': tuple(schritt_dict)}
+
         return context
 
     # Holt Schrittbild
