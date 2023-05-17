@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../../static/js/Anleitungdurchgehen.js"></script>
+    <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
 
     <title>Anleitungdurchgehen</title>
 
@@ -15,22 +15,21 @@
 
 <body onload="loadAnleitungData1()">
 
-    <input type="hidden" id="schrittData" value="{{ schritt_dict_json }}">
+    <!-- <ul>
+        {% for schritt in schritte %}
+            <li data-index="{{ forloop.counter0 }}">
+                {{ schritt.schrittbenennung }}
+            </li>
+        {% endfor %}       
+    </ul> -->
 
+    <div id="schritt-details">
 
-    
-    {{ anleitung.anleittitel }}
+        
+    </div>
 
-    {% if schritt_dict %}
-        <p>Es gibt Schritte in der Anleitung</p>
-    {% else %}
-        <p>Es gibt keine Schritte in der Anleitung</p>
-    {% endif %}
+    {{ einzelschritte|json_script:"schritte-json"}}
 
-    {% for schritt in schritt_dict %}
-        <h3>{{ schritt.schrittbennenung }}</h3>
-        <p>{{ schritt.beschreibung }}</p>
-    {% endfor %}
 
 </body>
 </html>

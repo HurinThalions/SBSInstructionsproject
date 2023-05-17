@@ -75,6 +75,7 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         # Listen für Schritte und Komponenten erstellen
         schritt_benennung_list = []
+        schritt_benennung_tuple = ()
         komponenten_list = []
 
         # Schleife durch alle Schritte der Anleitung
@@ -99,11 +100,12 @@ class AnleitungdurchgehenDetailView(DetailView):
 
             # Schrittinformationen in die entsprechenden Listen hinzufügen
             schritt_benennung_list.append(schritt_dict)
-
+            
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel
-        context['schritt_dict'] = json.dumps(schritt_dict)
-
+        # context['schritt_dict'] = json.dumps(schritt_dict)
+        # context ['test'] = json.dumps(my_dict)
+        context = { 'einzelschritte': list(Anleitungsschritt.objects.values())}
         return context
 
     # Holt Schrittbild
@@ -139,3 +141,5 @@ class AnleitungdurchgehenDetailView(DetailView):
     #         image_base64 = base64.b64encode(image_data).decode('utf-8')
     #     return image_base64
     
+def index(request):
+    return render(request, 'Anleitungdurchgehen.html')
