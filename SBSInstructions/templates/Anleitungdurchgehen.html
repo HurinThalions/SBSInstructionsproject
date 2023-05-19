@@ -26,16 +26,32 @@
     <div id="schritt-details">
 
         <ul>
-            {% for schritt in schritte %}
+
+            {{ anleitungstitel }}
+
+
+            {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
-                    {{ schritt.schrittbenennung }}
+                    
+                    {{ einzelschritt.schrittbenennung }}
+                    {{ einzelschritt.beschreibung }}
+                    {{ einzelschritt.schrittbild }}
+
                 </li>
             {% endfor %}
             
+
+            {% for komponente in komponenten %}
+                <li data-index="forloop.counter0">
+
+                    {{ komponente.kompbeschreibung }}
+                    {{ komponente.kompbild }}
+                </li>
+            {% endfor %}
         </ul>
     </div>
 
-    {{ einzelschritte|json_script:"schritte-json"}}
+    {{ einzelschritte|json_script:"schritte-json" }}
 
     
 

@@ -8,21 +8,6 @@ function loadAnleitungData1() {
     let jsondata = JSON.parse(document.getElementById('schritte-json').textContent)
     console.log(jsondata);
 
-    document.addEventListener('load', function() {
-        addSchrittinfo()
-    })
-
-    function addSchrittinfo() {
-
-        let newDiv = document.createElement('div')
-        let schrittContent = document.createTextNode(data.schrittbenennung)
-        newDiv.appendChild(schrittContent)
-    
-        let schritt_detailDiv = document.getElementById('schritt-details')
-        document.body.insertBefore(newDiv, schritt_detailDiv)
-    }
-
-
 
     elements.forEach(element => {
         element.addEventListener('click', function() {
@@ -42,8 +27,10 @@ function loadAnleitungData1() {
         schrittbenennungElement.appendChild(benunngText)
 
         let schrittbeschreibungElement = document.createElement('p')
-        let beschreibungText = document.createTextNode(data.schrittbeschreibung)
+        let beschreibungText = document.createTextNode(data.beschreibung)
         schrittbeschreibungElement.appendChild(beschreibungText)
+
+
 
         container.append(schrittbenennungElement, schrittbeschreibungElement)
     }
