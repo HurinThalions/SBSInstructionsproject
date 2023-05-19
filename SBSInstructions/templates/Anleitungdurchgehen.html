@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/Anleitung_durchgehen.css">
 
     <title>Anleitungdurchgehen</title>
 
@@ -15,14 +16,10 @@
 
 <body onload="loadAnleitungData1()">
 
-    <!-- <ul>
-        {% for schritt in schritte %}
-            <li data-index="{{ forloop.counter0 }}">
-                {{ schritt.schrittbenennung }}
-            </li>
-        {% endfor %}       
-    </ul> -->
 
+
+
+    
     <div id="schritt-details">
 
         <ul>
@@ -52,8 +49,6 @@
     </div>
 
     {{ einzelschritte|json_script:"schritte-json" }}
-
-    
 
 </body>
 </html>
