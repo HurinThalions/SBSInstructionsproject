@@ -1,0 +1,512 @@
+/* Allgemeines */
+
+body {
+    font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+    background-color: #F3F5F6;
+}
+
+p {
+    font-size: 20px;
+    padding: none;
+}
+
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 3vh;
+    font-size: 3.5vh;
+    font-weight: 400;
+    margin: none;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 3vh;
+    font-size: 2.5vh;
+    font-weight: 250;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 3vh;
+    font-size: medium;
+}
+
+h4{
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: #606060;
+}
+
+.text {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+}
+
+.autoText {
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 25px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+
+}
+
+/* --------------------------------Header------------------------------- */
+
+body {
+    margin: 0;   
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 12vh;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 70px;
+    max-width: fit-content;
+}
+
+.boxumProfil:hover, .boxumAErstellen:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 30px;
+    width: 30px;
+
+    max-width: 30px;
+    max-height: 30px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+    cursor: pointer;
+}
+
+.profil {
+    background-image: url("SVG/Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("SVG/Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 10vh;
+    position: absolute;
+    top: 1vh;
+    left: 0.5vw;
+}
+
+.logocontainer:hover {
+    cursor: pointer;
+}
+
+/* --------------------------------Hintergrund---------------------------- */
+.hintergrund {
+    /* background-image:url(SVG/SVG_Hintergrund1.svg); */
+    margin: auto;
+    background-size: 100%;
+    /* background-position-y : 120px; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* -----------------------------Vollbild Overlay----------------------------- */
+
+#overlayVollbild {
+    position: fixed;
+    display: none;
+    width: 75vw; 
+    height: 75vh;
+    backdrop-filter: blur(1px);
+    z-index: 2;
+}
+
+.vollbild {
+    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    align-items: center;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid #000;
+    width: 80vw;
+    height: 80vh;
+}
+
+.schliessen {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* -----------------------------Schritte Overlay----------------------------- */
+
+#overlaySchritte {
+    position: fixed;
+    display: none;
+    width: 90vw; 
+    height: 80vh;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+.schritte {
+    background-color: #fff;
+    position: absolute;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid #000;
+    width: 80vw;
+    height: 70vh;
+    overflow-y: scroll;
+    padding: 1%;
+}
+
+.schritteFenster {
+    height: auto;
+    width: auto;
+    margin: 5%;
+}
+
+.auflistungSchritt {
+    background-position: center;
+    float: left;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    width: 15vw;
+    text-align: center;
+}
+
+#Bild1, #Bild2, #Bild3, #Bild4, #Bild5, #Bild6, #Bild7 {
+    object-fit: cover;
+    border: 1px solid #000;
+    border-radius: 3%;
+    width: 10vw;
+    height: 20vh;
+}
+
+/* -------------------------------Überblickicon------------------------------ */
+
+.navresbuttons{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    left: 93vw;
+    top: 15vh;
+}
+
+#ueberblick {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#sizeicon {
+    width: 35px;
+    height: 35px;
+    margin-left: 2vw;
+}
+
+#rueckmelder{
+    margin-top: 1vh;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#fragezeichen{
+    width: 35px;
+    height: 35px;
+    margin-left: 2vw;
+}
+
+/* --------------------------Anzeigen Schritt X----------------------------- */
+@media screen and (min-width: 700px) {
+ 
+#linkeZelle {
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 1.5%;
+    display: table-cell;
+    max-width: 45vw;
+    height: auto;
+    right: 50vw;
+    margin-top: 1.5vw;
+}
+
+.rechteZelle {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 42vw;
+    height: 75vh;
+    border-radius: 2%;
+    position: fixed;
+    left: 50vw;
+    bottom: 10vh;
+    margin-left: 2vw;
+}   
+}
+
+@media screen and (max-width: 700px) {
+    .alles{
+        display: flex;
+        flex-direction: column;
+    }
+    #linkeZelle {
+        border: 1px solid black;
+        border-radius: 1.5%;
+        display: table-cell;
+        width: 70vw;
+        height: auto;
+        margin-top: 1.5vw;
+    }
+    
+    .rechteZelle {
+        background-color: #FFFFFF;
+        text-align: center;
+        width: 42vw;
+        height: 75vh;
+        border-radius: 2%;
+        margin-left: 2vw;
+        position: relative;
+    }
+}
+
+#titel {
+    font-size: 18px;
+}
+
+#schritt {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 35px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.abstand {
+    padding-right: 2vw;
+    font-size: 28px;
+}
+
+.informationsrahmen {
+    text-align: left;
+    background-color: #fff;
+    /* border: 1px solid #000; */
+    border-radius: 7%;
+    width: auto;
+    height: auto;
+    margin: 2vh;
+}
+
+.informationsrahmen2 {
+    background-color: #fff;
+    /* border: 1px solid #000; */
+    border-radius: 7%;
+    max-width: 45vh;
+    min-height: 29vh;
+    margin: 2vh;
+}
+
+#komponenten {
+    margin-bottom: 0;
+}
+
+.einzelneKomponente {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.komponentenbild {
+    display: inline-block;
+    width: 10vw;
+    height: 10vh;
+    background-position: center;
+    object-fit: cover;
+    margin-left: 2vh;
+    margin-top: 2vh;
+    border-radius: 6%;
+}
+
+#komponente1 {
+    margin-bottom: 1vh;
+}
+
+.unterueberschrift {
+    margin-bottom: 2vh;
+}
+
+.rechteZelle:hover {
+    cursor: pointer;
+}
+
+#groesseBild {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: fill;
+}
+
+
+#BildSchritt1 {
+    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+#BildSchritt2 {
+    background-image: url(Bilder/GeschnitteneGurkeKnoblauch.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+
+#BildSchritt3 {
+    background-image: url(Bilder/Zaziki.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+
+#BildSchritt4 {
+    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+#BildSchritt5 {
+    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+#BildSchritt6 {
+    background-image: url(Bilder/Seehecht_angeordnet.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+.vorzurueck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    position: fixed;
+    left: 33vw;
+    top: 91vh;
+}
+
+.anzeige{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    height: 60vh;
+    width: 35vw;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.buttonkleinlinks {
+    width: 3vw;
+    height: 3vh;
+}
+
+.buttonkleinrechts {
+    width: 3vw;
+    height: 3vh;
+}
+
+.buttonkleinlinks:hover, .buttonkleinrechts:hover {
+    width: 3vw;
+    height: 3vh;
+    cursor: pointer;
+}
+
+#fortschrittsanzeige {
+    width: 75%;
+    height: 1vh;
+}
+
+#polygondunkel {
+    width: 30vw;
+    height: 30vh;
+    fill: #A65756;
+}
+
+#polygonhell {
+    
+    width: 30vw;
+    height: 30vh;
+    fill: #D9B4B4;
+}
+
+.fortschrittszahl{
+    justify-content: center;
+    margin: none;
+    position: relative;
+    bottom: 2vh;
+    
+}
