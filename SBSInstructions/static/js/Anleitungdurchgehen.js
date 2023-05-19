@@ -30,8 +30,6 @@ function loadAnleitungData1() {
         let beschreibungText = document.createTextNode(data.beschreibung)
         schrittbeschreibungElement.appendChild(beschreibungText)
 
-
-
         container.append(schrittbenennungElement, schrittbeschreibungElement)
     }
 
