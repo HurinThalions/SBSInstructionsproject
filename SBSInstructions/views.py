@@ -72,9 +72,7 @@ class AnleitungdurchgehenDetailView(DetailView):
         # anleitung = self.get_object()
 
         anleitungstitel = Anleitung.anleittitel
-
-
-        
+       
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel
         context = { 'anleitungstitel': Anleitung.objects.values('anleittitel'),
@@ -115,6 +113,3 @@ class AnleitungdurchgehenDetailView(DetailView):
     #         image_data = f.read()
     #         image_base64 = base64.b64encode(image_data).decode('utf-8')
     #     return image_base64
-    
-def index(request):
-    return render(request, 'Anleitungdurchgehen.html')

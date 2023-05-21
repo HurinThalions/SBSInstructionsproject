@@ -115,13 +115,13 @@ body {
 }
 
 .profil {
-    background-image: url("SVG/Profil_Logo.svg");
+    background-image: url("../../Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("SVG/Anleitunghinzufuegen.svg");
+    background-image: url("../../Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }

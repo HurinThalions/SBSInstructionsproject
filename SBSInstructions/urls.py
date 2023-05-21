@@ -6,7 +6,6 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.index, name='index'),
     path('anleitungerstellen/<int:pk>/', views.AnleitungerstellenDetailView.as_view(), name='anleitungerstellen_detail_view'),
     
 

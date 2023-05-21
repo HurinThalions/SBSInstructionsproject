@@ -7,8 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Link zur .js und static -->
+    <link rel="stylesheet" type="text/css" href="/static/css/Anleitungdurchgehen.css">
     <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="../../static/css/Anleitung_durchgehen.css">
+
+    <!-- Schriftart -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
 
     <title>Anleitungdurchgehen</title>
 
@@ -16,7 +23,20 @@
 
 <body onload="loadAnleitungData1()">
 
+    <!-- Header: grauer Balken mit Logo, Link zu Neue Anleitung und Profil -->
+    <div class="header">
+        <div class="boxumAErstellen">
+            <input class="aErstellen" type="button" onclick="location.href='Add_page.html'"> <!-- onclick muss noch ausgebessert werden -->
+        </div>
 
+        <div class="boxumProfil">
+            <input class="profil" type="button" onclick="location.href='Mein_Profil.html'"> <!-- onclick muss noch ausgebessert werden -->
+        </div>       
+    </div>
+
+    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+        <img class="logo" src="../../static/Bilder/Logo.svg">
+    </div>
 
 
     
@@ -26,13 +46,14 @@
 
             {{ anleitungstitel }}
 
+            {{ einzelschritt.schrittbenennung }}
+            {{ einzelschritt.beschreibung }}
+            {{ einzelschritt.schrittbild }}
 
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
                     
-                    {{ einzelschritt.schrittbenennung }}
-                    {{ einzelschritt.beschreibung }}
-                    {{ einzelschritt.schrittbild }}
+                    
 
                 </li>
             {% endfor %}
