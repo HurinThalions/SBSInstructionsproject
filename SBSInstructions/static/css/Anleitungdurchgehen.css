@@ -115,13 +115,13 @@ body {
 }
 
 .profil {
-    background-image: url("../../Bilder/Profil_Logo.svg");
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("../../Bilder/Anleitunghinzufuegen.svg");
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }
@@ -164,7 +164,7 @@ body {
 }
 
 .vollbild {
-    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-image: url(../../static/Bilder/Ofenkartoffeln.jpg); /* Neues Bild bzw richtige Verlinkung */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -405,7 +405,7 @@ body {
     object-fit: fill;
 }
 
-
+/* 
 #BildSchritt1 {
     background-image: url(Bilder/Ofenkartoffeln.jpg);
     background-size: cover;
@@ -440,7 +440,7 @@ body {
     background-image: url(Bilder/Seehecht_angeordnet.jpg);
     background-size: cover;
     background-position:center;
-}
+} */
 
 .vorzurueck {
     display: flex;
