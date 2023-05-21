@@ -42,22 +42,18 @@
         <img class="logo" src="../../static/Bilder/Logo.svg">
     </div>
 
-
     
     <div id="schritt-details">
 
         <ul>
-
             {{ anleitungstitel }}
-
-            {{ einzelschritt.schrittbenennung }}
-            {{ einzelschritt.beschreibung }}
-            {{ einzelschritt.schrittbild }}
 
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
                     
-                    
+                    {{ einzelschritt.schrittbenennung }}
+                    {{ einzelschritt.beschreibung }}
+                    {{ einzelschritt.schrittbild }}
 
                 </li>
             {% endfor %}
