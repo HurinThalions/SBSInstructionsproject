@@ -42,10 +42,83 @@
         <img class="logo" src="../../static/Bilder/Logo.svg">
     </div>
 
-    
+     <!-- Buttons -->
+    <!-- Hintergrund -->
+    <div class="hintergrund">
+        <div class="navresbuttons"> 
+            <button id="ueberblick">
+                <img id="sizeicon" src="SVG/Overview.svg" onclick="popupOnS()">
+            </button>
+            <button id="rueckmelder">
+                <img id="fragezeichen" src="Bilder/Fragezeichen.png" onclick="popupOnS()">
+            </button>
+        </div>
+        <!-- --------------------------Anzeigen Schritt X---------------------------- -->
+
+        {% for einzelschritt in einzelschritte %}
+        <li data-index="{{ forloop.counter0 }}">
+            {% for komponente in komponenten %}
+            <li data-index="forloop.counter0">
+                <div id="alles">
+                <div id="linkeZelle">
+                    <div>
+                        <div class="titel">
+                          <h1>{{ anleitungstitel }}</h1> 
+                        </div>
+                        <div id="schritt">
+                            <p class="abstand"> <h2>Schritt 1:</h2><u>
+                                    <h2>{{ einzelschritt.schrittbenennung }}</h2>
+                            </u>
+                        </div>
+                    </div>
+
+                    <div id="beschreibung">
+                        <div class="unterueberschrift"> <h3>Beschreibung:</h3></div>
+                        <div class="titel">
+                            <div class="informationsrahmen">
+                                <h4>{{ einzelschritt.beschreibung }}</h4> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="komponenten">
+                        <div class="unterueberschrift">  <h3>Komponenten:</h3></div>
+                        <div class="informationsrahmen2" >
+                            <div id="komponente1" class="einzelneKomponente">
+                                <img  class="komponentenbild" src="Bilder/Rohe_Kartoffeln.jpg">
+                                {{ komponente.kompbeschreibung }}
+                            </div>
+                            <div class="einzelneKomponente">
+                                <img class="komponentenbild" src="Bilder/Oel.jpg">
+                                {{ komponente.kompbeschreibung }}
+                                <p></p>                               
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                <div class="rechteZelle" id="BildSchritt1" onclick="popupOnV()">
+                </div>
+                <div class="vorzurueck">
+                    <div class="anzeige">
+                        <img class="buttonkleinlinks" src="SVG/Back button.svg" onload="fortschritt(1,6)"  onclick="location.href='Startbildschirm.html'">
+                        <svg id="fortschrittsanzeige" onload="fortschritt(1,6)"></svg>
+                        <img class="buttonkleinrechts" src="SVG/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
+                    </div>
+                    <div class="fortschrittszahl">
+                        <h4>1/6</h4>
+                    </div>
+            	</div>
+            </div>
+            </li>
+            {% endfor %}
+        </li>
+        {% endfor %}
+
     <div id="schritt-details">
 
-        <ul>
+        <!-- <ul>
             {{ anleitungstitel }}
 
             {% for einzelschritt in einzelschritte %}
@@ -66,7 +139,7 @@
                     {{ komponente.kompbild }}
                 </li>
             {% endfor %}
-        </ul>
+        </ul> -->
     </div>
 
     {{ einzelschritte|json_script:"schritte-json" }}
