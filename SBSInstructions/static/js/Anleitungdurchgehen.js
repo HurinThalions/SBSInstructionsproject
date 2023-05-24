@@ -6,6 +6,7 @@ function loadAnleitungData1() {
     let jsondata = JSON.parse(document.getElementById('schritte-json').textContent);
     let kompdata = JSON.parse(document.getElementById('komponenten-json').textContent);
 
+    
     let firstElement = elements[0];
     let firstIndex = firstElement.dataset.index;
     let firstData = jsondata[firstIndex];
@@ -30,7 +31,7 @@ function loadAnleitungData1() {
       let schrittbenennungElement = document.createElement('h1');
       let benennungText = document.createTextNode(data.schrittbenennung);
       schrittbenennungElement.appendChild(benennungText);
-  
+
       let beschreibungElement = document.createElement('p');
       let beschreibungText = document.createTextNode(data.beschreibung);
       beschreibungElement.appendChild(beschreibungText);
@@ -67,3 +68,4 @@ function loadAnleitungData1() {
   }
   
   loadAnleitungData1();
+
