@@ -44,16 +44,19 @@ function loadAnleitungData1() {
         container.appendChild(einzelschrittElement);
     }
 
-    function addKomponenten(container, data) {
+    function addKomponenten(container, dataKomponenten) {
         let komponentenElement = document.createElement('div');
         komponentenElement.classList.add('komponenten');
             
-        ersteSchrittKomponenten.forEach((komponente) => {
-          let komponenteElement = document.createElement('div');
-          komponenteElement.classList.add('komponente');
-          komponenteElement.textContent = komponente.kompbeschreibung; // Ändern Sie dies entsprechend Ihrer Datenstruktur
-          komponentenElement.appendChild(komponenteElement);
-        });
+        // ersteSchrittKomponenten.forEach((komponente) => {
+        let komponenteElement = document.createElement('div');
+        komponenteElement.classList.add('komponente');
+
+        let komponentenBeschreibungElement = document.createElement('h3')
+        let beschreibungText = document.createTextNode(dataKomponenten.kompbeschreibung)
+        komponentenBeschreibungElement.appendChild(beschreibungText)
+        komponentenElement.appendChild(komponenteElement);
+        // });
       
         container.appendChild(komponentenElement);
       }
