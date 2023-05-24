@@ -71,7 +71,8 @@ function loadAnleitungData1() {
     function nextAnleitungsschritt() {
         counter++;
         if (counter >= elements.length) {
-          counter = 0;
+            window.location.pathname='SBSInstructionsproject/anleitungfertig';
+            return;
         }
         let nextElement = elements[counter];
         let nextIndex = nextElement.dataset.index;
@@ -79,10 +80,27 @@ function loadAnleitungData1() {
         removeContainerChildren(container);
         addEinzelschritt(container, nextData);
         addKomponenten(container, nextData);
-      }
+    }
     
-      let buttonElement = document.getElementById('buttonkleinrechts');
-      buttonElement.addEventListener('click', nextAnleitungsschritt);
+      let buttonElementnaechster = document.getElementById('buttonkleinrechts');
+      buttonElementnaechster.addEventListener('click', nextAnleitungsschritt);
+
+      function previousAnleitungsschritt() {
+        counter--;
+        if (counter < 0) {
+          counter = elements.length - 1;
+        }
+        let previousElement = elements[counter];
+        let previousIndex = previousElement.dataset.index;
+        let previousData = jsondata[previousIndex];
+        removeContainerChildren(container);
+        addEinzelschritt(container, previousData);
+        addKomponenten(container, previousData);
+    }
+
+    let buttonElementzurueck = document.getElementById('buttonkleinlinks');
+    buttonElementzurueck.addEventListener('click', previousAnleitungsschritt);
+
   }
   
   loadAnleitungData1();

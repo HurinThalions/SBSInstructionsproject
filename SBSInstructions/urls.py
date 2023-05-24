@@ -7,9 +7,8 @@ from . import views
 urlpatterns = [
 
     path('anleitungerstellen/<int:pk>/', views.AnleitungerstellenDetailView.as_view(), name='anleitungerstellen_detail_view'),
-    
-
     path('anleitungdurchgehen/<int:pk>', views.AnleitungdurchgehenDetailView.as_view(), name='anleitungdurchgehen_detail_view'),
+    path('anleitungfertig', views.AnleitungfertigDetailView.as_view(), name='anleitungfertig_detail_view'),
     
 ]
 urlpatterns += staticfiles_urlpatterns()

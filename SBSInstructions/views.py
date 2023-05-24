@@ -81,6 +81,12 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         return context
 
+class AnleitungfertigDetailView(DetailView):
+
+    template_name = 'Anleitungfertig.html'
+
+    
+
     # # Holt Schrittbild
     # def get_base64_image_schritt(self, image):
     #     """
