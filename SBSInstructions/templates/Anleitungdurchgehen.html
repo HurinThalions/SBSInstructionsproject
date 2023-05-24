@@ -47,7 +47,8 @@
         </ul>
     </div>
 
-    <img class="buttonkleinrechts" src="SVG/weiter.svg"  onclick="loadAnleitungData1()">
+    <button class="buttonkleinrechts" id="buttonkleinrechts" src="SVG/weiter.svg" onclick="loadAnleitungData1()"></button>
+    <!-- <img class="buttonkleinrechts" src="SVG/weiter.svg"  onclick="loadAnleitungData1()"> -->
 
     {{ einzelschritte|json_script:"schritte-json" }}
     {{ komponenten|json_script:"komponenten-json"}}

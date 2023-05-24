@@ -1,4 +1,6 @@
 function loadAnleitungData1() {
+
+    let counter = 0;
     let elements = document.querySelectorAll('li');
     let container = document.getElementById('schritt-details');
 
@@ -6,8 +8,7 @@ function loadAnleitungData1() {
     let jsondata = JSON.parse(document.getElementById('schritte-json').textContent);
     let kompdata = JSON.parse(document.getElementById('komponenten-json').textContent);
 
-    
-    let firstElement = elements[0];
+    let firstElement = elements[counter];
     let firstIndex = firstElement.dataset.index;
     let firstData = jsondata[firstIndex];
   
@@ -15,12 +16,13 @@ function loadAnleitungData1() {
     addKomponenten(container, firstData);
   
     elements.forEach((element) => {
-      element.addEventListener('click', function() {
+      element.addEventListener('load', function() {
         removeContainerChildren(container);
         let index = element.dataset.index;
         let data = jsondata[index];
         addEinzelschritt(container, data);
         addKomponenten(container, data);
+        
       });
     });
 
@@ -65,7 +67,22 @@ function loadAnleitungData1() {
         container.removeChild(container.firstChild);
       }
     }
+
+    function nextAnleitungsschritt() {
+        counter++;
+        if (counter >= elements.length) {
+          counter = 0;
+        }
+        let nextElement = elements[counter];
+        let nextIndex = nextElement.dataset.index;
+        let nextData = jsondata[nextIndex];
+        removeContainerChildren(container);
+        addEinzelschritt(container, nextData);
+        addKomponenten(container, nextData);
+      }
+    
+      let buttonElement = document.getElementById('buttonkleinrechts');
+      buttonElement.addEventListener('click', nextAnleitungsschritt);
   }
   
   loadAnleitungData1();
-
