@@ -9,7 +9,7 @@ function loadAnleitungData1() {
     console.log(jsondata);
 
 
-    elements.forEach(element => {
+    elements.forEach((element) => {
         element.addEventListener('click', function() {
             removeContainerChildren(container)
             addEinzelschritt(container, element)
