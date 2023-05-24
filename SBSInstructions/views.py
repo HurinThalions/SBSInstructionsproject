@@ -76,7 +76,7 @@ class AnleitungdurchgehenDetailView(DetailView):
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel
         context = { 'anleitungstitel': Anleitung.objects.get(pk=self.kwargs['pk']).anleittitel,
-                   'einzelschritte': list(Anleitungsschritt.objects.values('schrittbenennung', 'beschreibung', 'schrittbild')),
+                   'einzelschritte': list(Anleitungsschritt.objects.values('id','schrittbenennung', 'beschreibung', 'schrittbild')),
                    'komponenten': list(Komponente.objects.values())}
 
         return context

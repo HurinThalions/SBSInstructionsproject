@@ -35,8 +35,8 @@
                         <p>{{ einzelschritt.beschreibung }}</p>
                     </div>
 
-                    <div class="komponenten">
-                        {% for komponente in einzelschritt.komponenten %}
+                    <div class="komponenten-container" id="komponenten-container">
+                        {% for komponente in komponenten.komponenten %}
                             <div class="komponente">{{ komponente }}</div>
                         {% endfor %}
                     </div>
