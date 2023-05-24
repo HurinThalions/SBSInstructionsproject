@@ -1,7 +1,9 @@
+
 function loadAnleitungData1() {
     let elements = document.querySelectorAll('li');
     let container = document.getElementById('schritt-details');
     let jsondata = JSON.parse(document.getElementById('schritte-json').textContent);
+    let kompdata = JSON.parse(document.getElementById('komponenten-json').textContent)
 
     let firstElement = elements[0];
     let firstIndex = firstElement.dataset.index;
