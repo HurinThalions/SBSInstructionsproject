@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link zur .js und static -->
-    <link rel="stylesheet" type="text/css" href="/static/css/Anleitungdurchgehen.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/Anleitungdurchgehen.css">
     <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
 
     <!-- Schriftart -->
@@ -46,6 +46,8 @@
 
         </ul>
     </div>
+
+    <img class="buttonkleinrechts" src="SVG/weiter.svg"  onclick="location.href='Anleitung_durchgehen2.html'">
 
     {{ einzelschritte|json_script:"schritte-json" }}
     {{ komponenten|json_script:"komponenten-json"}}

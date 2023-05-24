@@ -3,7 +3,8 @@ function loadAnleitungData1() {
     let elements = document.querySelectorAll('li');
     let container = document.getElementById('schritt-details');
     let jsondata = JSON.parse(document.getElementById('schritte-json').textContent);
-    let kompdata = JSON.parse(document.getElementById('komponenten-json').textContent)
+    let kompdata = JSON.parse(document.getElementById('komponenten-json').textContent);
+    console.log(kompdata);
 
     let firstElement = elements[0];
     let firstIndex = firstElement.dataset.index;
@@ -15,8 +16,10 @@ function loadAnleitungData1() {
     elements.forEach((element) => {
         element.addEventListener('click', function() {
             removeContainerChildren(container);
-            let index = element.dataset.index;
-            let data = jsondata[index];
+            let index_schritte = element.dataset.index;
+            let data = jsondata[index_schritte];
+            let index_komponenten = element.dataset.index;
+            let dataKomponenten = kompdata[index_komponenten];
             addEinzelschritt(container, data);
             addKomponenten(container, data);
         });
@@ -44,16 +47,16 @@ function loadAnleitungData1() {
     function addKomponenten(container, data) {
         let komponentenElement = document.createElement('div');
         komponentenElement.classList.add('komponenten');
-
-        data.komponenten.forEach((komponente) => {
-            let komponenteElement = document.createElement('div');
-            komponenteElement.classList.add('komponente');
-            komponenteElement.textContent = komponente;
-            komponentenElement.appendChild(komponenteElement);
+            
+        ersteSchrittKomponenten.forEach((komponente) => {
+          let komponenteElement = document.createElement('div');
+          komponenteElement.classList.add('komponente');
+          komponenteElement.textContent = komponente.kompbeschreibung; // Ändern Sie dies entsprechend Ihrer Datenstruktur
+          komponentenElement.appendChild(komponenteElement);
         });
-
+      
         container.appendChild(komponentenElement);
-    }
+      }
 
     function removeContainerChildren(container) {
         while (container.firstChild) {
