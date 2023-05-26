@@ -117,7 +117,10 @@ function loadAnleitungData1() {
       function previousAnleitungsschritt() {
         counter--;
         if (counter < 0) {
-          counter = elements.length - 1;
+          
+          // Popup für Anleitung Abbrechen? -> Ja/Nein
+          // wenn ja -> window.location.pathname = "SBSInstructionsproject/Startbildschirm";
+          // wenn nein -> counter = 0;
         }
         let previousElement = elements[counter];
         let previousIndex = previousElement.dataset.index;
