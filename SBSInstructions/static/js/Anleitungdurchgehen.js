@@ -88,8 +88,11 @@ function loadAnleitungData1() {
       function previousAnleitungsschritt() {
         counter--;
         if (counter < 0) {
-          counter = elements.length - 1;
+          // Pop up zu Anleitung abbrechen. Text: "Wollen Sie die Anleitung wirklich abbrechen?" -> Ja/Nein
+          // wenn ja -> window.location.pathname='SBSInstructionsproject/Startseite';
+          // wenn nein -> return;
         }
+        
         let previousElement = elements[counter];
         let previousIndex = previousElement.dataset.index;
         let previousData = jsondata[previousIndex];
