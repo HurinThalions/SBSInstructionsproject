@@ -21,6 +21,30 @@
 </head>
 
 <body>
+    <!-- Header mit Logo und Buttons -->
+    <div class="header">
+        <div class="boxumAErstellen">
+            <input class="aErstellen" type="button" onclick="location.href='Add_page.html'">
+        </div>
+
+        <div class="boxumProfil">
+            <input class="profil" type="button" onclick="location.href='Mein_Profil.html'">
+        </div>       
+    </div>
+
+    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+        <img class="logo" src="SVG/Logo.svg">
+    </div>
+
+    <!-- Buttons -->
+    <div class="navresbuttons"> 
+        <button id="ueberblick">
+            <img id="sizeicon" src="SVG/Overview.svg" onclick="popupOnS()">
+        </button>
+        <button id="rueckmelder">
+            <img id="fragezeichen" src="Bilder/Fragezeichen.png" onclick="popupOnS()">
+        </button>
+    </div>
 
     <div id="schritt-details">
 
@@ -62,3 +86,50 @@
 </body>
 
 </html>
+
+
+
+
+
+<div id="linkeZelle">
+    {% for einzelschritt in einzelschritte %}
+    <div>
+        <div class="titel">
+          <h1>{{ anleitungstitel }}</h1> 
+        </div>
+        <div id="schritt">
+            <p class="abstand"> <h2>Schritt 1:</h2><u>
+                    <li data-index="{{ forloop.counter0 }}"> 
+                        <div class="einzelschritt">
+                            <h2> {{ einzelschritt.schrittbenennung }} </h2>
+                        </div>
+                    </li>
+            </u>
+        </div>
+    </div>
+
+    <div id="beschreibung">
+        <div class="unterueberschrift"> <h3>Beschreibung:</h3></div>
+        <div class="titel">
+            <div class="informationsrahmen">
+                <h4> Kartoffeln in Spalten schneiden. Auf ein mit Backpapier belegtes Backblech mit Öl vermengen. Für 30min backen. </h4> 
+            </div>
+        </div>
+    </div>
+
+    <div id="komponenten">
+        <div class="unterueberschrift">  <h3>Komponenten:</h3></div>
+        <div class="informationsrahmen2" >
+            <div id="komponente1" class="einzelneKomponente">
+                <img  class="komponentenbild" src="Bilder/Rohe_Kartoffeln.jpg">
+                <!-- Hier Komponente einfuegen -->
+            </div>
+            <div class="einzelneKomponente">
+                <img class="komponentenbild" src="Bilder/Oel.jpg">
+                <!-- Hier Komponente einfuegen -->
+                <p></p>                               
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
