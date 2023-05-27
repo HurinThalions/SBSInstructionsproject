@@ -6,7 +6,8 @@ from . import views
 
 urlpatterns = [
 
-    path('anleitungerstellen/<int:pk>/', views.AnleitungerstellenDetailView.as_view(), name='anleitungerstellen_detail_view'),
+    path('anleitungerstellenaddpage', views.AnleitungerstellenAddPageCreateView.as_view(), name='anleitungerstellen_add_page_create_view'),
+
     path('anleitungdurchgehen/<int:pk>', views.AnleitungdurchgehenDetailView.as_view(), name='anleitungdurchgehen_detail_view'),
     path('anleitungfertig', views.AnleitungfertigDetailView.as_view(), name='anleitungfertig_detail_view'),
     
