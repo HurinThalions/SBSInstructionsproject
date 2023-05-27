@@ -1,21 +1,47 @@
-import base64, json
+import base64
+from django.forms import inlineformset_factory
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, CreateView
 
-from SBSInstructions.form import AnleitungForm
+from SBSInstructions.form import AnleitungForm, AnleitungsschrittForm, KomponenteForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 # Create your views here.
 
-class AnleitungerstellenAddPageCreateView(CreateView):
+class AnleitungerstellenCreateView(CreateView):
 
     model = Anleitung
     form_class = AnleitungForm
 
-    template_name = 'AnleitungerstellenAddPage.html'
+    template_name = 'Anleitungerstellen.html'
+    success_url = 'anleitungsschritteerstellen'
+
+class AnleitungsschritterstellenCreateView(CreateView):
+
+    model = Anleitungsschritt
+    form_class = AnleitungsschrittForm
+
+    template_name = 'Anleitungsschritterstellen.html'
     success_url = 'anleitungdurchgehen/1'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        KomponenteFormSet = inlineformset_factory(Anleitungsschritt, Komponente, form=KomponenteForm, extra=1)
+        if self.request.POST:
+            context['komponente_formset'] = KomponenteFormSet(self.request.POST, prefix='komponente')
+        else:
+            context['komponente_formset'] = KomponenteFormSet(prefix='komponente')
+        return context
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        komponente_formset = context['komponente_formset']
+        if komponente_formset.is_valid():
+            self.object = form.save()
+            komponente_formset.instance = self.object
+            komponente_formset.save()
+            return
 
 class AnleitungdurchgehenDetailView(DetailView):
 

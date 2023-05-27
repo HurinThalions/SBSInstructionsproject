@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anleitungsschritt erstellen</title>
+</head>
+<body>
+    
+    <h1>Anleitungsschritt und Komponenten erstellen</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Anleitungsschritt-Formular -->
+        <h2>Anleitungsschritt</h2>
+        {{ anleitungsschritt_form.as_p }}
+        
+        <!-- Komponenten-Formular -->
+        <h2>Komponenten</h2>
+        {{ komponente_formset.management_form }}
+        {% for form in komponente_formset %}
+            {{ form.as_p }}
+        {% endfor %}
+        
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="submit" value="Speichern">
+    </form>
+</body>
+</html>
