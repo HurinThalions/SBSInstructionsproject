@@ -7,24 +7,29 @@
     <title>Anleitungsschritt erstellen</title>
 </head>
 <body>
-    
+
     <h1>Anleitungsschritt und Komponenten erstellen</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         
-        <!-- Anleitungsschritt-Formular -->
-        <h2>Anleitungsschritt</h2>
-        {{ anleitungsschritt_form.as_p }}
+        <!-- Anleitungsschritt-Felder -->
+        {{ form.schrittbenennung.label_tag }}
+        {{ form.schrittbenennung }}
         
-        <!-- Komponenten-Formular -->
-        <h2>Komponenten</h2>
-        {{ komponente_formset.management_form }}
-        {% for form in komponente_formset %}
-            {{ form.as_p }}
-        {% endfor %}
+        {{ form.beschreibung.label_tag }}
+        {{ form.beschreibung }}
+        
+        {{ form.schrittbild.label_tag }}
+        {{ form.schrittbild }}
+        
+        <!-- Komponenten-Felder -->
+        {{ komponente_form.kompbeschreibung.label_tag }}
+        {{ komponente_form.kompbeschreibung }}
+        
+        {{ komponente_form.kompbild.label_tag }}
+        {{ komponente_form.kompbild }}
         
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         <input type="submit" value="Speichern">
-    </form>
 </body>
 </html>

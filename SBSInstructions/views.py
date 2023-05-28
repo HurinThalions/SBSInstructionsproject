@@ -19,29 +19,33 @@ class AnleitungerstellenCreateView(CreateView):
 
 class AnleitungsschritterstellenCreateView(CreateView):
 
-    model = Anleitungsschritt
-    form_class = AnleitungsschrittForm
-
     template_name = 'Anleitungsschritterstellen.html'
-    success_url = 'anleitungdurchgehen/1'
+    form_class = AnleitungsschrittForm
+    success_url = '/anleitungdurchgehen/1'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        KomponenteFormSet = inlineformset_factory(Anleitungsschritt, Komponente, form=KomponenteForm, extra=1)
         if self.request.POST:
-            context['komponente_formset'] = KomponenteFormSet(self.request.POST, prefix='komponente')
+            context['komponente_form'] = KomponenteForm(self.request.POST)
         else:
-            context['komponente_formset'] = KomponenteFormSet(prefix='komponente')
+            context['komponente_form'] = KomponenteForm()
         return context
 
+    
     def form_valid(self, form):
         context = self.get_context_data()
-        komponente_formset = context['komponente_formset']
-        if komponente_formset.is_valid():
+        komponente_form = context['komponente_form']
+
+        return super().form_valid(form)
+        if komponente_form.is_valid():
             self.object = form.save()
-            komponente_formset.instance = self.object
-            komponente_formset.save()
-            return
+            Komponente = komponente_form.save(commit=False)
+            Komponente.anleitungsschritt_id = self.object.id
+            Komponente.save()
+            return super().form_valid(form)
+        else:
+            return self.render_to_response(self.get_context_data(form=form))
+
 
 class AnleitungdurchgehenDetailView(DetailView):
 
