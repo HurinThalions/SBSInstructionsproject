@@ -1,21 +1,22 @@
+
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
 <head>
-
-    <link rel="stylesheet" type="text/css" href="/static/css/Anleitungerstellen.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anleitung erstellen</title>
-</head>
 
+</head>
 <body>
+
     <h1>Anleitung erstellen</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Anleitung erstellen">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="submit" value="Anleitung speichern">
     </form>
-    {% if form.errors %}
-        <p>Error: Bitte überprüfen Sie Ihre Eingaben</p>
-    {% endif %}
+    
 </body>
 </html>

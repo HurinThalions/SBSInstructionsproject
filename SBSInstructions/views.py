@@ -1,63 +1,50 @@
-import base64, json
+import base64
+from django.forms import inlineformset_factory
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, CreateView
 
-from SBSInstructions.form import AnleitungForm
+from SBSInstructions.form import AnleitungForm, AnleitungsschrittForm, KomponenteForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 # Create your views here.
 
-
-class AnleitungerstellenDetailView(DetailView):
+class AnleitungerstellenCreateView(CreateView):
 
     model = Anleitung
+    form_class = AnleitungForm
+
     template_name = 'Anleitungerstellen.html'
+    success_url = 'anleitungsschritteerstellen'
+
+class AnleitungsschritterstellenCreateView(CreateView):
+
+    template_name = 'Anleitungsschritterstellen.html'
+    form_class = AnleitungsschrittForm
+    success_url = '/anleitungdurchgehen/1'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = AnleitungForm()
-        return context
-    
-    def post(self, request, *args, **kwargs):
-        form = AnleitungForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Zugriff auf die Felder des Anleitung-Modells
-            
-            profil = Profil.objects.get(id=request.id)  # Hier Profil-Objekt passend zum eingeloggten Benutzer abrufen
-            anleittitel = request.POST.get('anleittitel')
-            ersteller = request.POST.get('ersteller')
-            kategorie = request.POST.get('kategorie')
-            dauer = request.POST.get('dauer')
-            datum = request.POST.get('datum')
-            # Weitere Felder hier auflisten
-
-            # Speichern der Daten in der Datenbank
-            anleitung = Anleitung(
-                profil=profil,
-                anleittitel=anleittitel,
-                ersteller=ersteller,
-                kategorie=kategorie,
-                dauer=dauer,
-                datum=datum
-            )
-            anleitung.save()
-
-            # Speichern des Formulars
-            form.save()
-
-            
-            return redirect('anleitungerstellenDetailView', pk=self.kwargs['pk'])
-        
+        if self.request.POST:
+            context['komponente_form'] = KomponenteForm(self.request.POST)
         else:
+            context['komponente_form'] = KomponenteForm()
+        return context
 
-            context = self.get_context_data(form=form)
-            # Fehlermeldungen für spezifische Felder
-            context['titel_error'] = form.errors.get('anleittitel', '')
-            context['profil_error'] = form.errors.get('profil', '')
-            context['kategorie_error'] = form.errors.get('kategorie', '')
-            context['dauer_error'] = form.errors.get('dauer', '')
-            return self.render_to_response(context)
+    
+    def form_valid(self, form):
+        context = self.get_context_data()
+        komponente_form = context['komponente_form']
+
+        return super().form_valid(form)
+        if komponente_form.is_valid():
+            self.object = form.save()
+            Komponente = komponente_form.save(commit=False)
+            Komponente.anleitungsschritt_id = self.object.id
+            Komponente.save()
+            return super().form_valid(form)
+        else:
+            return self.render_to_response(self.get_context_data(form=form))
 
 
 class AnleitungdurchgehenDetailView(DetailView):
