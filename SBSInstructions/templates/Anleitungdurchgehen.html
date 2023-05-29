@@ -46,7 +46,21 @@
         </button>
     </div>
 
-    
+    <!-- <div id="schritt-details">
+
+        <div class="komponenten-container">
+            <div class="unterueberschrift">
+                <h3>Komponenten:</h3>
+            </div>
+            <div class="informationsrahmen2">
+                {% for komponente in komponenten.komponenten %}
+                    <div class="komponente">{{ komponente }}</div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div> -->
+
     <div id="schritt-details">
 
         <ul>
@@ -58,6 +72,8 @@
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
+                        <img src="../../static/Bilder/AbbrechenX.svg">
+                        <img src="{{ einzelschritt.schrittbild.url }}">
                     </div>
 
                     <div class="komponenten-container">
@@ -71,7 +87,7 @@
 
         </ul>
     </div>
-
+    
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
     <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
     <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">

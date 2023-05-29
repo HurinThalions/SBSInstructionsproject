@@ -9,6 +9,10 @@ from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Kompone
 
 # Create your views here.
 
+def index(request):
+
+    return render(request, 'Startseite.html')
+
 class AnleitungerstellenCreateView(CreateView):
 
     model = Anleitung
@@ -59,6 +63,10 @@ class AnleitungdurchgehenDetailView(DetailView):
         # anleitung = self.get_object()
 
         anleitungstitel = Anleitung.anleittitel
+
+        einzelschritte = list(
+            Anleitungsschritt.objects.values('id','schrittbenennung', 'beschreibung', 'schrittbild')
+        )
        
         # Kontextdaten setzen
         context['anleitungstitel'] = anleitungstitel

@@ -50,8 +50,13 @@ function loadAnleitungData1() {
     let beschreibungText = document.createTextNode(data.beschreibung);
     beschreibungElement.appendChild(beschreibungText);
 
+    let schrittBildElement = document.createElement("img");
+    schrittBildElement.setAttribute("src", data.schrittbild)
+    schrittBildElement.setAttribute("alt", "Schrittbild");
+    
     einzelschrittElement.appendChild(schrittbenennungElement);
     einzelschrittElement.appendChild(beschreibungElement);
+    einzelschrittElement.appendChild(schrittBildElement);
 
     container.innerHTML = "";
     container.appendChild(einzelschrittElement);

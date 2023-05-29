@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
 
+    path('', views.index, name='index'),
     path('anleitungerstellen', views.AnleitungerstellenCreateView.as_view(), name='anleitungerstellen_add_page_create_view'),
     path('anleitungsschritteerstellen', views.AnleitungsschritterstellenCreateView.as_view(), name='anleitungsschritteerstellen_add_page_create_view'),
 
