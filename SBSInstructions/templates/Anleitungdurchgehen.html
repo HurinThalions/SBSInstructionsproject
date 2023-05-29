@@ -72,6 +72,7 @@
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
+                        <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
                     </div>
 
                     <div class="komponenten-container">
@@ -83,7 +84,7 @@
                 </li>
             {% endfor %}
             </div>
-            <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
+            
 
     </div>
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
