@@ -1,0 +1,209 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #F3F5F6;
+    margin: 0;
+    
+}
+
+p {
+    font-size: 16px;
+}
+
+::placeholder {
+    color: #606060;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.text {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+}
+
+
+/* --------------------------------Header--------------------------- */
+
+body {
+    margin: 0;   
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 10%;
+}
+
+.boxumProfil:hover, .boxumAErstellen:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+}
+
+.profil:hover, .aErstellen:hover {
+    cursor: pointer;
+}
+
+.profil {
+    background-image: url("../SVG/Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("../SVG/Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+/* --------------------------------Hintergrund---------------------------- */
+.hintergrund {
+    background-image:url(../SVG/SVG_Hintergrund1.svg);
+    margin: 0;
+    background-position-y: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+
+.searchbar {
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+.Suchleiste {
+    border-radius: 17px;
+    border-color: #000;
+    border-width: 2px;
+    height: 40px;
+    padding-left: 14px;
+    width: 100%;
+}
+
+.Positiontabelle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.auflistungSchritt {
+    background-position: center;
+    float: left;
+    width: 19%;
+    text-align: center;
+}
+
+#Bild1 {
+    object-fit: cover;
+    border: 1px solid #000;
+    width: 100%;
+    height: 150px;
+}
+
+.vorschlaege {
+    width: 70%;
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#zuletzt {
+    padding-bottom: 20px;
+}
+
+/* Bild von Auusserhalb einfuegen */
+
+.BildVonAusserhalb {
+
+    right: 50%;
+    top: 50%;
+    border: 2px;
+}
+
+.katalog {
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #c3c3c3;
+    padding-left: 10px;
+    border: 2px solid #000;
+}
+
+.anordnungTabelle {
+    overflow-y: scroll;
+    width: 100%;
+    height: 200px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* TVorschlaege in Tabelle */
+#moeglicheAnleitungen {
+    border: 2px solid #000;
+    background-color: #fff;
+    width: 70%;
+}
+
+
+table#moeglicheAnleitungen tr {
+    color: black;
+    padding: 4px 4px 2px 4px;
+    margin: 2px;
+    font-size: 16px;
+}
+
+table#moeglicheAnleitungen th {
+    color: black;
+    padding: 4px 4px 2px 4px;
+    margin: 2px;
+    font-size: 16px;
+    text-align: left;
+}
