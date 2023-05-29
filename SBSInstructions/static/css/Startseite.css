@@ -3,56 +3,40 @@ body {
     font-size: 20px;
     background-color: #F3F5F6;
     margin: 0;
-    
 }
 
-p {
-    font-size: 16px;
-}
-
-::placeholder {
-    color: #606060;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-}
-
-.text {
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0;
-}
-
-
-/* --------------------------------Header--------------------------- */
-
-body {
-    margin: 0;   
+h2 {
+    text-align: center;
+    font-size: 50px;
 }
 
 .header {
     display: flex;
     justify-content: right;
-    height: 120px;
+    height: 12vh;
     background-color: #BCBCBC;
     background-image: linear-gradient(#FFFFFF, #A8A8A8);
-    box-shadow: 0px 2px 5px #c3c3c3;
 }
 
-.boxumProfil, .boxumAErstellen {
+.boxumProfil,
+.boxumAErstellen {
     /* Positionierung der Box */
     position: relative;
 
     /* Einbetten der Box in den Header */
     height: inherit;
-    min-width: 10%;
+    min-width: 70px;
+    max-width: fit-content;
 }
 
-.boxumProfil:hover, .boxumAErstellen:hover {
+.boxumProfil:hover,
+.boxumAErstellen:hover {
     cursor: pointer;
     background-image: linear-gradient(#d6e1e875, #1d415967);
 }
 
-.profil, .aErstellen{
+.profil,
+.aErstellen {
     /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
     position: absolute;
     top: 50%;
@@ -60,29 +44,27 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
-    /* Groeße des Buttons */
-    height: 50%;
-    width: 50%;
-    max-height: 40px;
-    max-width: 40px;
+    /* Größe des Buttons */
+    height: 30px;
+    width: 30px;
+
+    max-width: 30px;
+    max-height: 30px;
 
     /* Runder Button */
     border-radius: 50%;
     border: 0px;
-}
-
-.profil:hover, .aErstellen:hover {
     cursor: pointer;
 }
 
 .profil {
-    background-image: url("../SVG/Profil_Logo.svg");
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("../SVG/Anleitunghinzufuegen.svg");
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }
@@ -90,15 +72,17 @@ body {
 .logocontainer {
     display: flex;
     justify-content: left;
-    height: 120px;
+    height: 10vh;
     position: absolute;
-    top: 0.25%;
-    left: 3%;
+    top: 1vh;
+    left: 0.5vw;
 }
 
-/* --------------------------------Hintergrund---------------------------- */
+.logocontainer:hover {
+    cursor: pointer;
+}
+
 .hintergrund {
-    background-image:url(../SVG/SVG_Hintergrund1.svg);
     margin: 0;
     background-position-y: 120px;
     background-size: cover;
@@ -159,51 +143,53 @@ body {
     padding-bottom: 20px;
 }
 
-/* Bild von Auusserhalb einfuegen */
-
-.BildVonAusserhalb {
-
-    right: 50%;
-    top: 50%;
-    border: 2px;
-}
-
 .katalog {
-    margin-top: 30px;
     margin-left: 15%;
     margin-right: 15%;
     background-color: #c3c3c3;
-    padding-left: 10px;
     border: 2px solid #000;
+    display: grid; /* Verwende Grid-Layout */
+    grid-template-columns: repeat(2, 1fr); /* Teile den Platz in zwei Spalten auf */
+    grid-gap: 20px; /* Füge einen Abstand zwischen den Blöcken hinzu */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.anordnungTabelle {
-    overflow-y: scroll;
-    width: 100%;
-    height: 200px;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-/* TVorschlaege in Tabelle */
-#moeglicheAnleitungen {
-    border: 2px solid #000;
+.anleitungsBlock {
     background-color: #fff;
+    border: 2px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.anleitungsBlock:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    transform: translate(0, -0.3rem);
+}
+
+.anleitungsBlockImg {
+    width: 20%;
+}
+
+.anleitungsBlockImg img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.anleitungsBlockText {
     width: 70%;
+    margin-left: 10px;
 }
 
-
-table#moeglicheAnleitungen tr {
-    color: black;
-    padding: 4px 4px 2px 4px;
-    margin: 2px;
-    font-size: 16px;
+.anleitungsBlockSave {
+    width: 10%;
 }
 
-table#moeglicheAnleitungen th {
-    color: black;
-    padding: 4px 4px 2px 4px;
-    margin: 2px;
-    font-size: 16px;
-    text-align: left;
+.anleitungsBlockSave img {
+    width: 100%;
+    max-height: 25px;
+    object-fit: contain;
 }
+
