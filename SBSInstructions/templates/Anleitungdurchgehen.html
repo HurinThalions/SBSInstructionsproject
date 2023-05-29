@@ -63,7 +63,7 @@
 
     <div id="schritt-details">
 
-        <ul>
+        <div>
             {{ anleitungstitel }}
 
             {% for einzelschritt in einzelschritte %}
@@ -72,8 +72,6 @@
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
-                        <img src="../../static/Bilder/AbbrechenX.svg">
-                        <img src="{{ einzelschritt.schrittbild.url }}">
                     </div>
 
                     <div class="komponenten-container">
@@ -84,10 +82,10 @@
 
                 </li>
             {% endfor %}
+            </div>
+            <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
 
-        </ul>
     </div>
-    
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
     <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
     <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">

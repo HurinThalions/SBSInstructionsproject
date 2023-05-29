@@ -27,10 +27,10 @@ function loadAnleitungData1() {
   // Alle Elemente werden geladen und angezeigt
   // Diesen teil verstehe ich noch nicht ganz. Doppelung mit dem Codeteil darüber?
   elements.forEach((element) => {
-    element.addEventListener("load", function () {
-      removeContainerChildren(container);
       let index = element.dataset.index;
       let data = jsondata[index];
+    element.addEventListener("load", function () {
+      removeContainerChildren(container);
       addEinzelschritt(container, data);
       addKomponenten(container, data);
     });
@@ -51,9 +51,9 @@ function loadAnleitungData1() {
     beschreibungElement.appendChild(beschreibungText);
 
     let schrittBildElement = document.createElement("img");
-    schrittBildElement.setAttribute("src", data.schrittbild)
-    schrittBildElement.setAttribute("alt", "Schrittbild");
-    
+    schrittBildElement.setAttribute("src", "/media/" + data.schrittbild);
+    console.log(data.schrittbild);
+
     einzelschrittElement.appendChild(schrittbenennungElement);
     einzelschrittElement.appendChild(beschreibungElement);
     einzelschrittElement.appendChild(schrittBildElement);
