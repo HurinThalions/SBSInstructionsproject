@@ -82,6 +82,9 @@ function loadAnleitungData1() {
       let komponenteElement = document.createElement("div");
       komponenteElement.classList.add("komponente");
       komponenteElement.textContent = komponente.kompbeschreibung;
+      let komponenteBildElement = document.createElement("img");
+      komponenteBildElement.setAttribute("src", "/media/" + komponente.kompbild);
+      
       komponentenContainer.appendChild(komponenteElement);
       container.appendChild(komponentenContainer);
     });
