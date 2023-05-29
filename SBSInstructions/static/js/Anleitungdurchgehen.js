@@ -114,21 +114,21 @@ function loadAnleitungData1() {
   let buttonElementnaechster = document.getElementById("buttonkleinrechts");
   buttonElementnaechster.addEventListener("click", nextAnleitungsschritt);
 
-      function previousAnleitungsschritt() {
-        counter--;
-        if (counter < 0) {
+  function previousAnleitungsschritt() {
+    counter--;
+    if (counter < 0) {
           
           // Popup für Anleitung Abbrechen? -> Ja/Nein
           // wenn ja -> window.location.pathname = "SBSInstructionsproject/Startbildschirm";
           // wenn nein -> counter = 0;
-        }
-        let previousElement = elements[counter];
-        let previousIndex = previousElement.dataset.index;
-        let previousData = jsondata[previousIndex];
-        removeContainerChildren(container);
-        addEinzelschritt(container, previousData);
-        addKomponenten(container, previousData);
     }
+    let previousElement = elements[counter];
+    let previousIndex = previousElement.dataset.index;
+    let previousData = jsondata[previousIndex];
+    removeContainerChildren(container);
+    addEinzelschritt(container, previousData);
+    addKomponenten(container, previousData);
+  }
 
   // Button der geklickt wird, um zu dem vorherigem Anleitungsschritt zu kommen
   let buttonElementzurueck = document.getElementById("buttonkleinlinks");
