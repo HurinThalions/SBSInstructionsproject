@@ -2,149 +2,100 @@
 <html lang="en">
 
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SbS - Startbildschirm</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins">
-
-    <link rel="stylesheet" href="../static/CSS/Startbildschirm.css" type="text/css">
-    
+    <link rel="stylesheet" href="../../static/css/Startseite.css" type="text/css">
 </head>
 
 <body>
-
+    <!-- Header mit Logo und Buttons -->
     <div class="header">
-        <div class="boxumAErstellen" onclick="location.href='a'">
-            <input class="aErstellen" type="button">
+        <div class="boxumAErstellen">
+            <input class="aErstellen" type="button" onclick="location.href='Add_page.html'">
         </div>
 
-        <div class="boxumProfil" onclick="location.href='Mein_Profil.html'">
-            <input class="profil" type="button">
-        </div>       
+        <div class="boxumProfil">
+            <input class="profil" type="button" onclick="location.href='Mein_Profil.html'">
+        </div>
     </div>
 
-    <div class="logocontainer">
-        <img class="logo" src='../static/SVG/Logo.svg'>
+    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+        <img class="logo" src="../../static/Bilder/Logo.svg">
     </div>
 
-    <!-- Hintergrund -->
     <div class="hintergrund">
-
-        <div class="searchbar">
-        <!-- in 'action' kommt eine Funtion damit Vorschlaege angezeigt werden -->
-            <form action="filler">
-            
-            <input class="Suchleiste" type="text" placeholder="Suche">
-            </form>
-        </div>
-
-        <div class="Positiontabelle">
-
-            <div class="vorschlaege">
-                <div id="zuletzt">
-                    <u>Zuletzt angesehen:</u>
-                </div>
-                
-                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen/2/7/'">
-                    <img id="Bild1" src="../static/Bilder/Seehecht_angeordnet.jpg">
-                    <p>Gebratener Seehecht mit Kartoffelstreifen</p>
-                </div>
+            <div class="searchbar">
+                <form action="filler">
+                    <input class="Suchleiste" type="text" placeholder="Suche">
+                </form>
             </div>
 
+            <div class="kataloguberschrift">
+                <h2>Katalog</h2>
+            </div>
             <div class="katalog">
-                <div>Katalog</div>
+                <div class="anleitungsBlock">
+                    <div class="anleitungsBlockImg">
+                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
+                    </div>
+                    <div class="anleitungsBlockText">
+                        <p>Gebratener Seehecht mit Kartoffelstreifen</p>
+                        <p>Von: BolliTV</p>
+                        <p>Kategorie: Essen</p>
+                        <p>Dauer: 50 min</p>
+                        <div class="anleitungsBlockSave">
+                            <img src="../../static/Bilder/Anleitungsichern.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anleitungsBlock">
+                    <div class="anleitungsBlockImg">
+                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
+                    </div>
+                    <div class="anleitungsBlockText">
+                        <p>MMK Anleitungen erstellen</p>
+                        <p>Von: RotY</p>
+                        <p>Kategorie: How To's</p>
+                        <p>Dauer: 15 min</p>
+                        <div class="anleitungsBlockSave">
+                            <img src="../../static/Bilder/Anleitungsichern.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anleitungsBlock">
+                    <div class="anleitungsBlockImg">
+                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
+                    </div>
+                    <div class="anleitungsBlockText">
+                        <p>MMK Anleitungen erstellen</p>
+                        <p>Von: RotY</p>
+                        <p>Kategorie: How To's</p>
+                        <p>Dauer: 15 min</p>
+                        <div class="anleitungsBlockSave">
+                            <img src="../../static/Bilder/Anleitungsichern.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anleitungsBlock">
+                    <div class="anleitungsBlockImg">
+                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
+                    </div>
+                    <div class="anleitungsBlockText">
+                        <p>MMK Anleitungen erstellen</p>
+                        <p>Von: RotY</p>
+                        <p>Kategorie: How To's</p>
+                        <p>Dauer: 15 min</p>
+                        <div class="anleitungsBlockSave">
+                            <img src="../../static/Bilder/Anleitungsichern.svg">
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="anordnungTabelle">
-
-                <table id="moeglicheAnleitungen">
-                    <tr>
-                        <th></th>
-                        <th>Titel</th>
-                        <th>Ersteller</th>
-                        <th>Kategorien</th>
-                        <th>Dauer [min]</th>
-                        <th>Datum</th>
-                        <th><img src="../static/SVG/Anleitungsichern.svg"></th>
-                    </tr>
-
-                    <tr onclick="location.href='Anleitung_durchgehen/2/7/'">
-                        <td> <img src="../static/SVG/Weiteres.svg"> </td>
-                        <td> Gebratener Seehecht mit Kartoffelstreifen </td>
-                        <td> BolliTV </td>
-                        <td> Essen</td>
-                        <td> 50 </td>
-                        <td> 06.01.2023 </td>
-                        <td><img src="../static/Gesichert.svg"></td>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../static/Weiteres.svg"> </td>
-                        <td> MMK Anleitungen erstellen </td>
-                        <td> RotY </td>
-                        <td> How To's </td>
-                        <td> 15 </td>
-                        <td> 06.12.2022 </td>
-                        <td><img src="../static/Anleitungsichern.svg"></td>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../static/Weiteres.svg"> </td>
-                        <td> MMK Anleitungen erstellen </td>
-                        <td> RotY </td>
-                        <td> How To's </td>
-                        <td> 15 </td>
-                        <td> 06.12.2022 </td>
-                        <td><img src="../static/Anleitungsichern.svg"></td>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../static/Weiteres.svg"> </td>
-                        <td> MMK Anleitungen erstellen </td>
-                        <td> RotY </td>
-                        <td> How To's </td>
-                        <td> 15 </td>
-                        <td> 06.12.2022 </td>
-                        <td><img src="../static/Anleitungsichern.svg"></td>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../static/Weiteres.svg"> </td>
-                        <td> MMK Anleitungen erstellen </td>
-                        <td> RotY </td>
-                        <td> How To's </td>
-                        <td> 15 </td>
-                        <td> 06.12.2022 </td>
-                        <td><img src="../static/Anleitungsichern.svg"></td>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../static/Weiteres.svg"> </td>
-                        <td> MMK Anleitungen erstellen </td>
-                        <td> RotY </td>
-                        <td> How To's </td>
-                        <td> 15 </td>
-                        <td> 06.12.2022 </td>
-                        <td><img src="../static/Anleitungsichern.svg"></td>
-                    </tr>
-                </table>
-            </div>
-
-        </div>
-
-        <!-- Bild von ausserhalb anzeigen lassen -->
-        <!-- <div class="BildVonAusserhalb">
-
-            <img class="Fillbild" src="https://www.w3schools.com/images/w3schools_green.jpg" >
-
-        </div> -->
     </div>
-    
 </body>
-
 </html>
