@@ -53,7 +53,7 @@ function loadAnleitungData1() {
 
     let schrittBildElement = document.createElement("img");
     schrittBildElement.setAttribute("src", "/media/" + data.schrittbild);
-    schrittBildElement.classList.add("schrittBild");
+    schrittBildElement.classList.add("rechteZelle");
     console.log(data.schrittbild);
 
     einzelschrittElement.appendChild(schrittbenennungElement);

@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Link zur .js und static -->
+    <!-- Link zu .js und static -->
     <link rel="stylesheet" type="text/css" href="../../static/css/Anleitungdurchgehen.css">
     <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
+    <script src="../../static/js/AD.js" defer></script>
 
     <!-- Schriftart -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +18,50 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
 
     <title>Anleitungdurchgehen</title>
-
 </head>
 
 <body>
+    <!-- Divider für Vollbild-Popup -->
+    <div id="overlayVollbild">
+        <div class="vollbild">
+            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">
+            <img id="popupBild" src="" alt="Vergrößertes Bild">
+        </div>
+    </div>
+    
+    <!-- Divider für Schritte-Popup -->
+    <div id="overlaySchritte">
+        <div class="schritte">
+            <img class="schliessen" src="SVG/closecircle.svg" onclick="popupOffS()">
+            <div id="schrittefenster">
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
+                    <img id="Bild1" src="Bilder/Ofenkartoffeln.jpg">
+                    <p>Schritt 1</p>
+                </div>
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
+                    <img id="Bild2" src="Bilder/GeschnitteneGurkeKnoblauch.jpeg">
+                    <p>Schritt 2</p>
+                </div>
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
+                    <img id="Bild3" src="Bilder/Zaziki.jpeg">
+                    <p>Schritt 3</p>
+                </div>
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen4.html'">
+                    <img id="Bild4">
+                    <p>Schritt 4</p>
+                </div>
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen5.html'">
+                    <img id="Bild5" src="Bilder/FischPfanne.jpeg">
+                    <p>Schritt 5</p>
+                </div>
+                <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
+                    <img id="Bild6" src="Bilder/Seehecht_angeordnet.jpg">
+                    <p>Schritt 6</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header mit Logo und Buttons -->
     <div class="header">
         <div class="boxumAErstellen">
@@ -31,9 +72,8 @@
             <input class="profil" type="button" onclick="location.href='Mein_Profil.html'">
         </div>       
     </div>
-
-    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
-        <img class="logo" src="SVG/Logo.svg">
+    <div class="logocontainer" onclick="location.href='Startseite.html'">
+        <img class="logo" src="../../static/Bilder/Logo.svg">
     </div>
 
     <!-- Buttons -->
@@ -46,20 +86,6 @@
         </button>
     </div>
 
-    <!-- <div id="schritt-details">
-
-        <div class="komponenten-container">
-            <div class="unterueberschrift">
-                <h3>Komponenten:</h3>
-            </div>
-            <div class="informationsrahmen2">
-                {% for komponente in komponenten.komponenten %}
-                    <div class="komponente">{{ komponente }}</div>
-                {% endfor %}
-            </div>
-
-        </div>
-    </div> -->
     {{ anleitungstitel }}
 
     <div id="linkeZelle">
@@ -67,7 +93,6 @@
         <div>
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
-
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
@@ -82,22 +107,16 @@
             </div>
         </div>
     </div>
-
-    <div class="rechteZelle">
-         <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
+    <div class="rechteZelle" onclick="popupOnV()">
+         <img src="{{ einzelschritt.bild }}" id="schrittbildrechtezelle" onclick="popupOnV()">
     </div>
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
     <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
     <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">
-   
-    
     <!-- Daten aus views.py werden geholt mit der id="schritte-json" und der id="komponenten-json" -->
     {{ einzelschritte|json_script:"schritte-json" }}
     {{ komponenten|json_script:"komponenten-json" }}
-
-
 </body>
-
 </html>
 
 
