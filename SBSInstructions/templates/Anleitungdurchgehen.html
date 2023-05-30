@@ -72,13 +72,13 @@
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
-                        <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
+                        <!-- <img src="{{ einzelschritt.bild }}" alt="Schrittbild"> -->
                     </div>
 
                     <div class="komponenten-container">
                         {% for komponente in komponenten.komponenten %}
                             <div class="komponente">{{ komponente }}</div>
-                            <img src="{{ komponente.bild }}" alt="Komponentenbild">
+                            <!-- <img src="{{ komponente.bild }}" alt="Komponentenbild"> -->
                         {% endfor %}
                     </div>
 

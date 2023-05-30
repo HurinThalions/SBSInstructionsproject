@@ -85,7 +85,7 @@ function loadAnleitungData1() {
       let komponenteBildElement = document.createElement("img");
       komponenteBildElement.setAttribute("src", "/media/" + komponente.kompbild);
       
-      komponentenContainer.appendChild(komponenteElement);
+      komponentenContainer.appendChild(komponenteElement, komponenteBildElement);
       container.appendChild(komponentenContainer);
     });
   }
