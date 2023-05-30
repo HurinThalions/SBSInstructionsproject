@@ -49,9 +49,11 @@ function loadAnleitungData1() {
     let beschreibungElement = document.createElement("p");
     let beschreibungText = document.createTextNode(data.beschreibung);
     beschreibungElement.appendChild(beschreibungText);
+    beschreibungElement.classList.add("beschreibung");
 
     let schrittBildElement = document.createElement("img");
     schrittBildElement.setAttribute("src", "/media/" + data.schrittbild);
+    schrittBildElement.classList.add("schrittBild");
     console.log(data.schrittbild);
 
     einzelschrittElement.appendChild(schrittbenennungElement);
