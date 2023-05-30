@@ -60,11 +60,10 @@
 
         </div>
     </div> -->
+    {{ anleitungstitel }}
 
     <div id="schritt-details">
-
         <div>
-            {{ anleitungstitel }}
 
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
@@ -85,7 +84,6 @@
                 </li>
             {% endfor %}
             </div>
-            
 
     </div>
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
