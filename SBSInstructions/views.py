@@ -1,7 +1,9 @@
 # import base64
-# from django.forms import inlineformset_factory
+from datetime import datetime
+from typing import Any, Dict
+from django.forms.models import BaseModelForm
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, CreateView
 
 from SBSInstructions.form import AnleitungForm, SchrittundKomponentenMultiForm
@@ -15,18 +17,29 @@ def index(request):
     return render(request, 'Startseite.html')
 
 class AnleitungerstellenCreateView(CreateView):
-
-    model = Anleitung
+    model = Profil
     form_class = AnleitungForm
-
     template_name = 'Anleitungerstellen.html'
-    success_url = 'anleitungsschritteerstellen'
+    success_url = 'anleitungdurchgehen/1'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        ersteller = None
+
+        # if self.request.user.is_authenticated:
+        #     ersteller = self.request.user.profil.ersteller
+
+        # kwargs['ersteller'] = ersteller
+        kwargs['initial'] = {'datum': datetime.today()}  # Füge das heutige Datum als Initialwert hinzu
+        return kwargs
+
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 class AnleitungsschritterstellenCreateView(CreateView):
 
     template_name = 'Anleitungsschritterstellen.html'
-
-    
+ 
     form_class = SchrittundKomponentenMultiForm
 
     success_url = 'anleitungdurchgehen/1'
