@@ -107,17 +107,24 @@
             </div>
         </div>
     </div>
+
     <div class="rechteZelle" onclick="popupOnV()">
          <img src="{{ einzelschritt.bild }}" id="schrittbildrechtezelle" onclick="popupOnV()">
     </div>
-    <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
-    <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
-    <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">
+    
+    <div class="vorzurueck">
+        <div class="anzeige">
+            <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
+            <svg id="fortschrittsanzeige" onload="fortschritt(1,6)"></svg>
+            <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">
+        </div>
+        <div class="fortschrittszahl">
+            <h4>1/6</h4>
+        </div>
+    </div>
+
     <!-- Daten aus views.py werden geholt mit der id="schritte-json" und der id="komponenten-json" -->
     {{ einzelschritte|json_script:"schritte-json" }}
     {{ komponenten|json_script:"komponenten-json" }}
 </body>
 </html>
-
-
-<!-- <img src="{{ komponente.bild }}" alt="Komponentenbild"> -->
