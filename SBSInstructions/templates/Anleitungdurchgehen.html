@@ -62,29 +62,29 @@
     </div> -->
     {{ anleitungstitel }}
 
+    <div id="linkeZelle">
     <div id="schritt-details">
         <div>
-
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
 
                     <div class="einzelschritt">
                         <h1>{{ einzelschritt.schrittbenennung }}</h1>
                         <p>{{ einzelschritt.beschreibung }}</p>
-                        <!-- <img src="{{ einzelschritt.bild }}" alt="Schrittbild"> -->
                     </div>
-
                     <div class="komponenten-container">
                         {% for komponente in komponenten.komponenten %}
                             <div class="komponente">{{ komponente }}</div>
-                            <!-- <img src="{{ komponente.bild }}" alt="Komponentenbild"> -->
                         {% endfor %}
                     </div>
-
                 </li>
             {% endfor %}
             </div>
+        </div>
+    </div>
 
+    <div class="rechteZelle">
+         <img src="{{ einzelschritt.bild }}" alt="Schrittbild">
     </div>
     <!-- Buttons um zum vorherigem nachfolgendem Schritt zu kommen -->
     <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
@@ -102,3 +102,4 @@
 
 
 
+<!-- <img src="{{ komponente.bild }}" alt="Komponentenbild"> -->
