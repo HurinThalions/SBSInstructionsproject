@@ -1,4 +1,5 @@
 from django import forms
+from betterforms.multiform import MultiModelForm
 
 from .models import Anleitung, Anleitungsschritt, Komponente
 
@@ -15,5 +16,10 @@ class AnleitungsschrittForm(forms.ModelForm):
 class KomponenteForm(forms.ModelForm):
     class Meta:
         model = Komponente
-        fields = ('anleitungsschritt', 'kompbild')
+        fields = ('anleitungsschritt', 'kompbeschreibung', 'kompbild')
 
+class SchrittundKomponentenMultiForm(MultiModelForm):
+    form_classes = {
+        'Anleitungsschritt': AnleitungsschrittForm,
+        'Komponente': KomponenteForm,
+    }

@@ -1,11 +1,12 @@
-import base64
-from django.forms import inlineformset_factory
+# import base64
+# from django.forms import inlineformset_factory
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import DetailView, CreateView
 
-from SBSInstructions.form import AnleitungForm, AnleitungsschrittForm, KomponenteForm
+from SBSInstructions.form import AnleitungForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
+
 
 # Create your views here.
 
@@ -24,31 +25,11 @@ class AnleitungerstellenCreateView(CreateView):
 class AnleitungsschritterstellenCreateView(CreateView):
 
     template_name = 'Anleitungsschritterstellen.html'
-    form_class = AnleitungsschrittForm
-    success_url = '/anleitungdurchgehen/1'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        if self.request.POST:
-            context['komponente_form'] = KomponenteForm(self.request.POST)
-        else:
-            context['komponente_form'] = KomponenteForm()
-        return context
 
     
-    def form_valid(self, form):
-        context = self.get_context_data()
-        komponente_form = context['komponente_form']
+    form_class = SchrittundKomponentenMultiForm
 
-        return super().form_valid(form)
-        if komponente_form.is_valid():
-            self.object = form.save()
-            Komponente = komponente_form.save(commit=False)
-            Komponente.anleitungsschritt_id = self.object.id
-            Komponente.save()
-            return super().form_valid(form)
-        else:
-            return self.render_to_response(self.get_context_data(form=form))
+    success_url = 'anleitungdurchgehen/1'
 
 
 class AnleitungdurchgehenDetailView(DetailView):
