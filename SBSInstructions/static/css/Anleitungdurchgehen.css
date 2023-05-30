@@ -115,13 +115,13 @@ body {
 }
 
 .profil {
-    background-image: url("SVG/Profil_Logo.svg");
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("SVG/Anleitunghinzufuegen.svg");
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }
@@ -160,11 +160,11 @@ body {
     width: 75vw; 
     height: 75vh;
     backdrop-filter: blur(1px);
-    z-index: 2;
+    z-index: 3;
 }
 
 .vollbild {
-    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-image: url("../../media/images/Schrittbilder/pexels-phil-desforges-15185102_hcN7Q5y.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -175,8 +175,9 @@ body {
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     border: 2px solid #000;
-    width: 80vw;
+    width: 75vw;
     height: 80vh;
+    border-radius: 20px;
 }
 
 .schliessen {
@@ -291,7 +292,7 @@ body {
 }
 
 .rechteZelle {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     text-align: center;
     width: 42vw;
     height: 75vh;
@@ -301,6 +302,7 @@ body {
     bottom: 10vh;
     margin-left: 2vw;
 }   
+
 }
 
 @media screen and (max-width: 700px) {
@@ -325,32 +327,19 @@ body {
         border-radius: 2%;
         margin-left: 2vw;
         position: relative;
+        margin-top: 10px;
     }
 }
 
-.schrittBild {
-    z-index: 1;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 60vw;
-  }
-
-
   .beschreibung {
-    background-color: #9c8a8a;
+    background-color: #ffffff;
     padding: 10px;
     width: 70%;
-    margin-left: 100px;
+    margin-left: 15%;
+    text-align: center;
+    border: 1px;
+    border-radius: 10px;
   }
-
-
-#titel {.beschreibung {
-  background-color: #F2F2F2;
-  padding: 10px;
-}
-    font-size: 18px;
-}
 
 #schritt {
     display: flex;
