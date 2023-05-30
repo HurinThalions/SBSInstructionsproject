@@ -174,8 +174,8 @@
                         <div class="iconposition">
                             <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
                         </div>
-                        <!-- <input class="texteingabe" type="text" name="Name" size="70%"placeholder="Aussagekräftige Titel helfen bei der späteren Suche..."> -->
-                        {{ form.anleittitel }}
+                        <input class="texteingabe" type="text" name="Name" size="70%" placeholder='{{ form.anleittitel }}'>
+                        
                     </div>
 
                     <!-- Kategorie -->
@@ -183,7 +183,7 @@
                         <div class="iconposition">
                             <p>Kategorie:</p><p hidden class="fehlermeldungtext">Bitte geben Sie mindestens eine Kategorie an!</p>
                         </div>
-                        <input class="texteingabe" type="text" placeholder="{{ form.kategorie }}">
+                        <input class="texteingabe" type="text" placeholder='{{ form.kategorie }}'>
                     </div>
 
                     <!-- Dauer -->
@@ -191,7 +191,7 @@
                         <div class="iconposition">
                             <p>Dauer: [min]</p>
                         </div>
-                        <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder="{{ form.dauer }}">  
+                        <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder='{{ form.dauer }}'>  
                     </div>
 
                 </div>
@@ -203,8 +203,9 @@
                     <!-- <form method="post" enctype="multipart/form-data">  
                         <button type="submit"></button>
                     </form> -->
-                        <button class="platzhalterBild" input type="file" name="neuerhintergrund" accept="image/*"  
-                        onclick="loadFile(event)"><img src="../../static/Bilder/documentupload.svg">
+
+                        <button class="platzhalterBild" type="file" name="neuerhintergrund" accept="image/*"  
+                        onclick="loadFile(event)"><img src="../../static/Bilder/documentupload.svg" placeholder='{{ form.img }}'>
                 </div>      
             </div>
         </div>
