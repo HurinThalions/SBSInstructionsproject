@@ -5,7 +5,13 @@ from django.core.files.base import File
 from django.db.models.base import Model
 from django.forms.utils import ErrorList
 
-from .models import Anleitung, Anleitungsschritt, Komponente
+from .models import Profil, Anleitung, Anleitungsschritt, Komponente
+
+class ProfilForm(forms.ModelForm):
+
+    class Meta:
+        model = Profil
+        fields = ('email', 'passwort', 'ersteller')
 
 class AnleitungForm(forms.ModelForm):
 

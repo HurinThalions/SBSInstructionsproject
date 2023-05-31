@@ -6,22 +6,31 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, CreateView
 
-from SBSInstructions.form import AnleitungForm, SchrittundKomponentenMultiForm
+from SBSInstructions.form import ProfilForm, AnleitungForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 
 # Create your views here.
 
+# Startseite
 def index(request):
 
     return render(request, 'Startseite.html')
 
-class AnleitungerstellenCreateView(CreateView):
-    model = Profil
-    form_class = AnleitungForm
-    template_name = 'Anleitungerstellen.html'
-    success_url = 'anleitungdurchgehen/1'
 
+# erste Seite von Anleitungen wird hiermit erstellt
+class AnleitungerstellenCreateView(CreateView):
+
+    model = Profil
+
+    # Formular um die Daten aufzunehmen und Abzuspeichern
+    # siehe form.py
+    form_class = AnleitungForm
+
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Anleitungerstellen.html'
+
+    # Falls der Benutzer eingelogt ist soll der Ersteller automatisch ausgefuellt werden
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         ersteller = None
@@ -30,29 +39,36 @@ class AnleitungerstellenCreateView(CreateView):
         #     ersteller = self.request.user.profil.ersteller
 
         # kwargs['ersteller'] = ersteller
-        kwargs['initial'] = {'datum': datetime.today()}  # Füge das heutige Datum als Initialwert hinzu
         return kwargs
 
+    # Daten werden im Formular gespeichert und zur datenbank geschickt
     def form_valid(self, form):
         return super().form_valid(form)
 
+# Anleitungsschritte werden erstellt
 class AnleitungsschritterstellenCreateView(CreateView):
 
-    template_name = 'Anleitungsschritterstellen.html'
- 
+    # Formular um die Daten aufzunehmen und Abzuspeichern
+    # Multiform um die Komponenten auf der selben Seite und zeitgleich abspeichern zu koennen
     form_class = SchrittundKomponentenMultiForm
 
-    success_url = 'anleitungdurchgehen/1'
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Anleitungsschritterstellen.html'
 
 
+# Anleitungen koennen hier durchgegangen werden
 class AnleitungdurchgehenDetailView(DetailView):
 
+    #  Definierung des Models das verwendet wird
     model = Anleitung
-    template_name = 'Anleitungdurchgehen.html'
 
-    context_object_name = 'anleitung'
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Anleitungdurchgehen.html'
     
+    # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
     def get_context_data(self, **kwargs):
+
+        # Holt die Anleitung
         context = super().get_context_data(**kwargs)
         anleitung = self.get_object()
 
@@ -68,11 +84,46 @@ class AnleitungfertigDetailView(DetailView):
     template_name = 'Anleitungfertig.html'
 
 
-class ProfilDetailView(DetailView):
+# Erstellung des Profils
+class ProfilerstellenCreateView(CreateView):
 
+    # Model Formular um die Daten aufzunehmen und Abzuspeichern 
+    model = Profil
+    form_class = ProfilForm
+
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Profilerstellen.html'
+  
+
+# Einloggen
+class ProfileinloggenDetailView(DetailView):
+    
+    # Definierung des Models, um die eingaben mit den daten in der Datenbank abzugleichen
+    model = Profil
+
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Profileinloggen.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profil = self.get_object()
+
+        context = { ''}
+
+
+# Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
+class ProfileigeneAnleitungenDetailView(DetailView):
+
+    model = Profil
     template_name = 'Profil'
 
-    # # Holt Schrittbild
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profil = self.get_object()
+
+        context = { ''}
+
+    # Holt Schrittbild
     # def get_base64_image_schritt(self, image):
     #     """
     #     Konvertiert ein Bild in Base64-codierter Form.
