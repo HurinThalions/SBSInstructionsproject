@@ -104,12 +104,6 @@ class ProfileinloggenDetailView(DetailView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profileinloggen.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        profil = self.get_object()
-
-        context = { ''}
-
 
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
