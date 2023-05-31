@@ -64,7 +64,7 @@ h4{
 
 }
 
-/* --------------------------------Header------------------------------- */
+/* --------------------------------Header--------------------------- */
 
 body {
     margin: 0;   
@@ -73,9 +73,10 @@ body {
 .header {
     display: flex;
     justify-content: right;
-    height: 12vh;
+    height: 120px;
     background-color: #BCBCBC;
     background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
 }
 
 .boxumProfil, .boxumAErstellen {
@@ -84,12 +85,15 @@ body {
 
     /* Einbetten der Box in den Header */
     height: inherit;
-    min-width: 70px;
-    max-width: fit-content;
+    min-width: 110px;
 }
 
 .boxumProfil:hover, .boxumAErstellen:hover {
     cursor: pointer;
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.boxumAErstellen {
     background-image: linear-gradient(#d6e1e875, #1d415967);
 }
 
@@ -102,16 +106,14 @@ body {
     transform: translate(-50%, -50%);
 
     /* Groeße des Buttons */
-    height: 30px;
-    width: 30px;
-
-    max-width: 30px;
-    max-height: 30px;
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
 
     /* Runder Button */
     border-radius: 50%;
     border: 0px;
-    cursor: pointer;
 }
 
 .profil {
@@ -129,14 +131,10 @@ body {
 .logocontainer {
     display: flex;
     justify-content: left;
-    height: 10vh;
+    height: 120px;
     position: absolute;
-    top: 1vh;
-    left: 0.5vw;
-}
-
-.logocontainer:hover {
-    cursor: pointer;
+    top: 0.25%;
+    left: 3%;
 }
 
 /* --------------------------------Hintergrund---------------------------- */
