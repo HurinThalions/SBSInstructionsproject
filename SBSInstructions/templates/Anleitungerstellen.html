@@ -98,7 +98,6 @@
         </ul>
     </div>
     
-    {{ form.profil }}
     <!-- Eingabeblock -->
 
     <div class="eingabeundweiter">
@@ -113,8 +112,7 @@
 
                     <p class="text">Ersteller:
                         
-                        {{ form.ersteller }}
-                        
+                        {{ form.profil }}                        
                     </p>
                     
                 </div>
@@ -177,7 +175,7 @@
                         <button type="submit"></button>
                     </form> -->{{ form.img }}
                         <button class="platzhalterBild" type="file" name="neuerhintergrund" accept="image/*"  
-                        onclick="loadFile(event)" placeholder='{{ form.img }}'>
+                        onclick="loadFile(event)">
                         <img src="../../static/Bilder/documentupload.svg">
                 </div>      
             </div>
@@ -198,20 +196,20 @@
         <div class="abbrechen">
             <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
             <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
-            <div class="buttonschriftsekundaer">Abbrechen</div>
+            <div class="buttonschriftsekundaer">Anleitung abbrechen</div>
             </button> 
         </div>
 
         <div class="speichern">
             <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
             <div class="buttoninnenprimaer"><img src="../../static/Bilder/SpeichernX.svg"></div>
-            <div class="buttonschriftprimaer">Speichern</div>
+            <div class="buttonschriftprimaer">Anleitung speichern</div>
             </button> 
         </div>
         
     </div>
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-    <input type="submit" value="speichern">
+    <input type="submit" value="Eingaben speichern">
     </form>
 </div>
 </body>

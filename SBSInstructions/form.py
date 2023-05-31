@@ -13,14 +13,14 @@ class ProfileinloggenForm(AuthenticationForm):
 
 class AnleitungForm(forms.ModelForm):
 
-    def __init__(self, **kwargs):
-        ersteller = kwargs.pop('ersteller', None)
-        super().__init__(**kwargs)
-        self.fields['ersteller'].initial = ersteller
-                
+    # def __init__(self, **kwargs):
+    #     ersteller = kwargs.pop('ersteller', None)
+    #     super().__init__(**kwargs)
+    #     self.fields['ersteller'].initial = ersteller
+
     class Meta:
         model = Anleitung
-        fields = ('profil', 'anleittitel', 'ersteller', 'kategorie','dauer', 'datum', 'img')
+        fields = ('profil', 'anleittitel', 'kategorie','dauer', 'datum', 'img')
 
 class AnleitungsschrittForm(forms.ModelForm):
     class Meta:

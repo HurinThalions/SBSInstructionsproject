@@ -6,16 +6,14 @@ from django.contrib.auth.models import AbstractUser
 class Profil(models.Model):
     email = models.EmailField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
-    ersteller = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.ersteller
+        return self.email
 
 
 class Anleitung(models.Model):
     profil = models.ForeignKey(Profil, on_delete=models.RESTRICT)
     anleittitel = models.CharField(max_length=100)
-    ersteller = models.CharField(max_length=100)
     kategorie = models.CharField(max_length=100)
     dauer = models.DurationField()
     datum = models.DateField('datum_erstellt')
