@@ -1,4 +1,7 @@
+import datetime
 from multiprocessing import AuthenticationError
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView
@@ -28,6 +31,8 @@ class AnleitungerstellenCreateView(CreateView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Anleitungerstellen.html'
 
+    success_url = 'anleitungsschritteerstellen'
+
     # Falls der Benutzer eingelogt ist soll der Ersteller automatisch ausgefuellt werden
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -37,10 +42,14 @@ class AnleitungerstellenCreateView(CreateView):
         #     ersteller = self.request.user.profil.ersteller
 
         # kwargs['ersteller'] = ersteller
+        kwargs['initial'] = {'datum': datetime.date.today()}
         return kwargs
 
+    
     # Daten werden im Formular gespeichert und zur datenbank geschickt
     def form_valid(self, form):
+        
+        form.instance.datum = datetime.date.today()
         return super().form_valid(form)
 
 # Anleitungsschritte werden erstellt
@@ -101,7 +110,7 @@ class ProfileinloggenLoginView(LoginView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profileinloggen.html'
 
-    authentication_form = ProfileinloggenForm
+    form = ProfileinloggenForm
 
     success_url = reverse_lazy('profileigeneanleitungen')
 

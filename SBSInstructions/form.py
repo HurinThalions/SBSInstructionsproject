@@ -7,8 +7,8 @@ from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 class ProfileinloggenForm(AuthenticationForm):
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+    
     class Meta:
-
         fields = ('email', 'password')
 
 class AnleitungForm(forms.ModelForm):

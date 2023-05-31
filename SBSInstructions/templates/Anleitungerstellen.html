@@ -81,7 +81,7 @@
 
 <!-- Hintergrund -->
 <div class="hintergrund">
-
+    <form method="post" enctype="multipart/form-data">
     <!-- Systemstatuszeile  -->
     <div class="statuscontainer">
         <br /><br />
@@ -97,7 +97,8 @@
         </li>
         </ul>
     </div>
-
+    
+    {{ form.profil }}
     <!-- Eingabeblock -->
 
     <div class="eingabeundweiter">
@@ -112,7 +113,7 @@
 
                     <p class="text">Ersteller:
                         
-                            <p class="autoText" id="ersteller">{{ form.ersteller }}</p>
+                        {{ form.ersteller }}
                         
                     </p>
                     
@@ -121,8 +122,9 @@
                 <!-- Automatisches Datum -->
                 <div class="datum">
                     <p class="text">Datum:</p>
-                    <div class="autoText" id="heutigesDatum"></div>
-                    <script>getDate();</script>
+                    <!-- <div class="autoText" id="heutigesDatum"></div>
+                    <script>getDate();</script> -->
+                    {{ form.datum }}
                 </div>
 
                 <!-- Schalter Privat/Oeffentlich -->
@@ -145,24 +147,24 @@
                     <div class="textbox">
                         <div class="iconposition">
                             <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
-                        </div>
-                        <input class="texteingabe" type="text" name="Name" size="70%" placeholder="Hier Titel einfügen" placeholder='{{ form.anleittitel }}'>
+                        </div>{{ form.anleittitel }}
+                        <!-- <input class="texteingabe" type="text" name="Name" size="70%" placeholder="Hier Titel einfügen" placeholder='{{ form.anleittitel }}'> -->
                     </div>
 
                     <!-- Kategorie -->
                     <div class="textbox">
                         <div class="iconposition">
                             <p>Kategorie:</p><p hidden class="fehlermeldungtext">Bitte geben Sie mindestens eine Kategorie an!</p>
-                        </div>
-                        <input class="texteingabe" type="text" placeholder='{{ form.kategorie }}'>
+                        </div>{{ form.kategorie }}
+                        <!-- <input class="texteingabe" type="text" placeholder='{{ form.kategorie }}'> -->
                     </div>
 
                     <!-- Dauer -->
                     <div class="textbox">
                         <div class="iconposition">
                             <p>Dauer: [min]</p>
-                        </div>
-                        <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder="0" placeholder='{{ form.dauer }}'>  
+                        </div>{{ form.dauer }}
+                        <!-- <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder="0" placeholder='{{ form.dauer }}'>   -->
                     </div>
 
                 </div>
@@ -173,7 +175,7 @@
                     <p>Thumbnail:</p>
                     <!-- <form method="post" enctype="multipart/form-data">  
                         <button type="submit"></button>
-                    </form> -->
+                    </form> -->{{ form.img }}
                         <button class="platzhalterBild" type="file" name="neuerhintergrund" accept="image/*"  
                         onclick="loadFile(event)" placeholder='{{ form.img }}'>
                         <img src="../../static/Bilder/documentupload.svg">
@@ -208,7 +210,10 @@
         </div>
         
     </div>
-
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <input type="submit" value="speichern">
+    </form>
+</div>
 </body>
 
 </html>
