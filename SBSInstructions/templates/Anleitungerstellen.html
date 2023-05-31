@@ -141,7 +141,9 @@
                 <div class="ersteller">
 
                     <p class="text">Ersteller:
-                        <p class="autoText" id="ersteller">{{ form.ersteller }}</p>
+                        
+                            <p class="autoText" id="ersteller">{{ form.ersteller }}</p>
+                        
                     </p>
                     
                 </div>
@@ -174,8 +176,7 @@
                         <div class="iconposition">
                             <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
                         </div>
-                        <input class="texteingabe" type="text" name="Name" size="70%" placeholder='{{ form.anleittitel }}'>
-                        
+                        <input class="texteingabe" type="text" name="Name" size="70%" placeholder="Hier Titel einfügen" placeholder='{{ form.anleittitel }}'>
                     </div>
 
                     <!-- Kategorie -->
@@ -191,7 +192,7 @@
                         <div class="iconposition">
                             <p>Dauer: [min]</p>
                         </div>
-                        <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder='{{ form.dauer }}'>  
+                        <input class="texteingabedauer" type="number"  name="Dauer" size="20" min="0" step="5" placeholder="Hier Ihre dauer Einfügen" placeholder='{{ form.dauer }}'>  
                     </div>
 
                 </div>
