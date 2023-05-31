@@ -36,7 +36,7 @@ class AnleitungerstellenCreateView(CreateView):
     # Falls der Benutzer eingelogt ist soll der Ersteller automatisch ausgefuellt werden
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        ersteller = None
+        # ersteller = None
 
         # if self.request.user.is_authenticated:
         #     ersteller = self.request.user.profil.ersteller
