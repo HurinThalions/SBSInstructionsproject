@@ -12,9 +12,146 @@
         
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet"
-                href="https://fonts.googleapis.com/css2?family=Poppins">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
     </head>
+
+    <body>
+    <!-- Divider für Speichern-Popup -->
+    <div id="overlaySpeichern">
+        <div class="speichernDialog">
+            <button class="schliessen" onclick="popupOffS()"><img src=" ../../static/Bilder/closecircle.svg"></button>
+            <h3 class="mittigeSchriftUeberschrift">Auswahl</h3>
+            <button class="buttonAuswahl" onclick="popupOffS()"> <!-- Abbrech-Popup hier verlinkt -->
+                <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Entwurf.svg"></div>
+                <div class="buttonschriftprimaer" onclick="location.href='./Entwurf_gespeichert.html'">Als Entwurf speichern</div>
+            </button> 
+            <button class="buttonAuswahl" onclick="location.href='./Anleitung_gespeichert_und_hochgeladen.html'"> <!-- Speichern-Seite hier verlinken -->
+                <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Speichern.svg"></div>
+                <div class="buttonschriftprimaer">Speichern und hochladen</div>  <!-- Beispielhafte Verlinkung -->
+            </button> 
+        </div>
+    </div> 
+
+<!-- Divider für Loeschen-Popup -->
+    <div id="overlayLoeschen">
+        <div class="abbrechenDialog" type="hidden">
+            <h3 class="mittigeSchriftUeberschrift">Löschen</h3>
+            <p class="mittigeSchrift">Sind Sie sicher das Sie die Daten löschen wollen?</p>
+            <div class="jaNein">
+                <button class="buttonNein" onclick="popupOffL()"> <!-- Abbrech-Popup hier verlinkt -->
+                    <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
+                    <div class="buttonschriftsekundaer">Nein</div>
+                </button> 
+                <button class="buttonJa" onClick="window.location.reload();"> <!-- Entwurfgespeichert-Seite hier verlinkt -->
+                    <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Ja.svg"></div>
+                    <div class="buttonschriftprimaer">Ja</div>
+                </button> 
+            </div>
+        </div>
+    </div> 
+
+<!-- Abbrechen-Popup -->
+    <div id="overlayAbbrechen">
+        <div class="abbrechenDialog">
+            <h3 class="mittigeSchriftUeberschrift">Abbrechen</h3>
+            <p class="mittigeSchrift">Sind Sie sicher, dass Sie den Kreationsprozess abbrechen wollen?</p>
+            <div class="jaNein">
+                <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
+                    <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
+                    <div class="buttonschriftsekundaer">Nein</div>
+                </button> 
+                <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'"> <!-- Speichern-Seite hier verlinken -->
+                    <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Ja.svg"></div>
+                    <div class="buttonschriftprimaer">Ja</div>
+                </button> 
+            </div>
+        </div>
+    </div>
+
+<!-- Hintergrund -->
+    <div class="hintergrund">
+        <!-- Header mit Logo und Buttons -->
+        <div class="header">
+            <div class="boxumAErstellen">
+                <input class="aErstellen" type="button" onclick="NavigateToSite()"/>
+            </div>
+            <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
+                <input class="profil" type="button">
+            </div>       
+        </div>
+        <div class="logocontainer">
+            <img class="logo" src=" ../../static/Bilder/Logo.svg" type="button" onclick="window.location.pathname = '/SBSInstructionsproject'">
+        </div>
+
+        <!-- Systemstatuszeile  -->
+        <div class="statuscontainer">
+            <br /><br />
+            <ul class="list-unstyled multi-steps">
+                <li>
+                    <div style="margin-left: -4px;">Infos</div>
+                </li>
+                <li class="is-active">
+                    <div style="margin-left: -18px;">Schritte</div>
+                </li>
+                <li>
+                    <div style="margin-right: -7px;">Fertig</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="eingabeundweiter">  
+            <div class= "SchritteHaupt">
+                <div class="BeschreibungKompBild">
+                    <div class="BeschreibungKomp">
+                        <p>Beschreibung:</p>
+                            <div class= "Beschreibung">
+                                <textarea placeholder="Beispieltext..." style="appearance: none; border: 1px solid #000; resize: none; border-radius: 10px; width: 400px; height:250px; font-size: 20px;"></textarea>
+                            </div>
+                        <p>Komponente:</p>  
+                            <div class= "Komponenten">
+                                <div class ="area1"><button class="komp1"> <img src=" ../../static/Bilder/documentupload.svg" ></button></div>
+                                <div class ="area2"><button class="komp2"> <img src=" ../../static/Bilder/documentupload.svg"> </button></div>
+                                <div class= "textinKomp">
+                                    <input type="text" class = "textKomp1" placeholder="Name der Komponente 1">
+                                    <input type="text" class = "textKomp2" placeholder="Name der Komponente 2">
+                                </div>
+                            </div>
+                    </div> 
+                </div>
+                <button class="menue"> <img src=" ../../static/Bilder/Overview.svg"></button>
+                <button class="trash" onclick="popupOnL()"> <img src=" ../../static/Bilder/🦆 icon _trash_.svg"></button>
+                <button class="Schritt1"> Schritt 1:________</button>
+                <div class= "Bild">
+                    <p>Bild hochladen:</p>
+                    <button class="bildupload"> <img src=" ../../static/Bilder/documentupload.svg"> </button>
+                </div>
+            </div>
+            <!-- Weiter Block -->
+            <div class="weiter">
+                <button class="weitericon" onClick="window.location.reload();"><img src=" ../../static/Bilder/weiter.svg"></button> <!-- Schritt hinzufuegen hier verlinken -->
+            </div> 
+        </div>
+
+        <div class="abbruchspeichern">
+            <div class="abbrechen">
+                <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
+                    <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
+                    <div class="buttonschriftsekundaer">Abbrechen</div>
+                </button> 
+            </div>
+            <div class="speichern">
+                <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
+                    <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/SpeichernX.svg"></div>
+                    <div class="buttonschriftprimaer">Speichern</div>
+                </button> 
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
 
 
 <!-- <body>
@@ -46,174 +183,3 @@
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         <input type="submit" value="Speichern">
 </body> -->
-
-<body>
-
-    <!-- Divider für Speichern-Popup -->
-<div id="overlaySpeichern">
-    <div class="speichernDialog">
-
-        <button class="schliessen" onclick="popupOffS()"><img src=" ../../static/Bilder/closecircle.svg"></button>
-
-        <h3 class="mittigeSchriftUeberschrift">Auswahl</h3>
-
-        <button class="buttonAuswahl" onclick="popupOffS()"> <!-- Abbrech-Popup hier verlinkt -->
-            <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Entwurf.svg"></div>
-            <div class="buttonschriftprimaer" onclick="location.href='./Entwurf_gespeichert.html'">Als Entwurf speichern</div>
-        </button> 
-
-        <button class="buttonAuswahl" onclick="location.href='./Anleitung_gespeichert_und_hochgeladen.html'"> <!-- Speichern-Seite hier verlinken -->
-            <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Speichern.svg"></div>
-            <div class="buttonschriftprimaer">Speichern und hochladen</div>  <!-- Beispielhafte Verlinkung -->
-        </button> 
-
-    </div>
-</div> 
-
-
-<!-- Divider für Loeschen-Popup -->
-<div id="overlayLoeschen">
-    <div class="abbrechenDialog" type="hidden">
-        <h3 class="mittigeSchriftUeberschrift">Löschen</h3>
-
-        <p class="mittigeSchrift">Sind Sie sicher das Sie die Daten löschen wollen?</p>
-
-        <div class="jaNein">
-
-            <button class="buttonNein" onclick="popupOffL()"> <!-- Abbrech-Popup hier verlinkt -->
-                <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
-                <div class="buttonschriftsekundaer">Nein</div>
-            </button> 
-
-            <button class="buttonJa" onClick="window.location.reload();"> <!-- Entwurfgespeichert-Seite hier verlinkt -->
-                <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Ja.svg"></div>
-                <div class="buttonschriftprimaer">Ja</div>
-            </button> 
-
-        </div>
-    </div>
-</div> 
-
-<!-- Abbrechen-Popup -->
-
-<div id="overlayAbbrechen">
-    <div class="abbrechenDialog">
-        <h3 class="mittigeSchriftUeberschrift">Abbrechen</h3>
-
-        <p class="mittigeSchrift">Sind Sie sicher, dass Sie den Kreationsprozess abbrechen wollen?</p>
-
-        <div class="jaNein">
-
-            <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
-                <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
-                <div class="buttonschriftsekundaer">Nein</div>
-            </button> 
-
-            <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'"> <!-- Speichern-Seite hier verlinken -->
-                <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Ja.svg"></div>
-                <div class="buttonschriftprimaer">Ja</div>
-            </button> 
-
-        </div>
-    </div>
-</div>
-
-<!-- Hintergrund -->
-<div class="hintergrund">
-
-        <!-- Header mit Logo und Buttons -->
-        <div class="header">
-            <div class="boxumAErstellen">
-                <input class="aErstellen" type="button" onclick="NavigateToSite()"/>
-            </div>
-    
-            <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
-                <input class="profil" type="button">
-            </div>       
-        </div>
-    
-        <div class="logocontainer">
-            <img class="logo" src=" ../../static/Bilder/Logo.svg" type="button" onclick="window.location.pathname = '/SBSInstructionsproject'">
-        
-        </div>
-    
-
-            <!-- Systemstatuszeile  -->
-            <div class="statuscontainer">
-                <br /><br />
-                <ul class="list-unstyled multi-steps">
-                <li>
-                    <div style="margin-left: -4px;">Infos</div>
-                </li>
-                <li class="is-active">
-                    <div style="margin-left: -18px;">Schritte</div>
-                </li>
-                <li>
-                    <div style="margin-right: -7px;">Fertig</div>
-                </li>
-                </ul>
-            </div>
-
-    
-<div class="eingabeundweiter">
-    <div class= "SchritteHaupt">
-        <div class="BeschreibungKompBild">
-            <div class="BeschreibungKomp">                
-                
-                <p>Beschreibung:</p>
-                <div class= "Beschreibung">
-                    <textarea placeholder="Beispieltext..." style="appearance: none; border: 1px solid #000; resize: none; border-radius: 10px; width: 400px; height:250px; font-size: 20px;"></textarea>
-                </div>
-
-                    <p>Komponente:</p>  
-
-                 <div class= "Komponenten">
-                    <div class ="area1"><button class="komp1"> <img src=" ../../static/Bilder/documentupload.svg" ></button></div>
-                    <div class ="area2"><button class="komp2"> <img src=" ../../static/Bilder/documentupload.svg"> </button></div>
-
-                    <div class= "textinKomp">
-                        <input type="text" class = "textKomp1" placeholder="Name der Komponente 1">
-                        <input type="text" class = "textKomp2" placeholder="Name der Komponente 2">
-                    </div>
-                 </div>    
-                
-              </div>
-
-            <p>Bild:</p>
-            <div class= "Bild">
-                <button class="bildupload"> <img src=" ../../static/Bilder/documentupload.svg"> </button>
-            </div> 
-        </div>
-     
-        <button class="menue"> <img src=" ../../static/Bilder/Overview.svg"></button>
-        <button class="trash" onclick="popupOnL()"> <img src=" ../../static/Bilder/🦆 icon _trash_.svg"></button>
-        <button class="Schritt1"> Schritt 1:________</button>
-    </div>
-   
-    <!-- Weiter Block -->
-     <div class="weiter">
-        <button class="weitericon" onClick="window.location.reload();"><img src=" ../../static/Bilder/weiter.svg"></button> <!-- Schritt hinzufuegen hier verlinken -->
-     </div> 
-    
-</div>
-    <div class="abbruchspeichern">
-
-        <div class="abbrechen">
-            <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
-            <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
-            <div class="buttonschriftsekundaer">Abbrechen</div>
-            </button> 
-        </div>
-
-        <div class="speichern">
-            <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
-            <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/SpeichernX.svg"></div>
-            <div class="buttonschriftprimaer">Speichern</div>
-            </button> 
-        </div>
-
-    </div>
-</div> 
-
-</body>
-</html>

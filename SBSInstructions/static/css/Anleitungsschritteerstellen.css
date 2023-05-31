@@ -1,9 +1,4 @@
 /* --------------------------------Header--------------------------- */
-
-body {
-    margin: 0;   
-}
-
 .header {
     display: flex;
     justify-content: right;
@@ -82,6 +77,11 @@ body {
     background-attachment: fixed;
     min-height: 100%;
     height: 100%;
+}
+
+.hintergrund{
+    height: 100vh;
+    width: 100vw;
 }
 
 html {
@@ -233,14 +233,16 @@ html {
         border-color: #A65756;
     }
 
+    /* -------------Eingabe und Weiter------------ */
   
-    .eingabeundweiter {
-        display: table;
-        width: 90%;
-        margin-left: 10%;
-        margin-top: 30px;
-        justify-content: baseline;
-        align-items: center;
+.eingabeundweiter {
+    display: table;
+    width: 90%;
+    height: fit-content;
+    margin-left: 10%;
+    margin-top: 30px;
+    justify-content: baseline;
+    align-items: center;
     }
 
 .weiter {
@@ -277,6 +279,7 @@ html {
     padding-bottom: 2%;
     border: 1px solid rgb(0, 0, 0);
     background-color: white;
+    height: auto;
 }
     
 .BeschreibungKompBild {
@@ -298,25 +301,23 @@ html {
 
  /*Bildcolum*/
  .Bild{
-    position: ;
-    height: 50vh;
-    width: 40vw;
     border: 1px solid black;
-    border-radius: 10px;
-    left: 50vw;
+    z-index: 0;
+    text-align: center;
+    width: 40%; height: auto; margin-top: 7.5%; margin-left: auto ; border-radius: 10px; margin-right: 5vw;
 }
 
 
 .Schritt1 {
-    margin-top:3%; margin-left: 4%; position: absolute; background-color:white; border: none; font-size: 24px;
+    margin-top:1%; margin-left: 4%; position: absolute; background-color:white; border: none; font-size: 24px;
 }
 
 .menue {
-   margin-top:2%; margin-left: 76%;   position: absolute; background-color:white; border: none; font-size: 24px;
+   margin-top:2%; margin-left:70%; margin-right: 5vw; position: absolute; background-color: none; border: none; font-size: 24px;
 }
 
 .trash {
-    margin-top:2%;  margin-left: 79%; position: absolute; background-color:white; border: none; font-size: 24px;
+    margin-top:2%;  margin-left: 73%; position: absolute; border: none; font-size: 24px;
 }
 
 
@@ -357,7 +358,7 @@ html {
 
    
     .bildupload{
-       margin-top: 650%; margin-left: 750%; background-color: white; border: none; 
+        background-color: white; border: none; 
     }
 
     .komp1{
@@ -475,6 +476,7 @@ html {
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 5%;
+        z-index: 2;
     }
     
     .mittigeSchriftUeberschrift {
