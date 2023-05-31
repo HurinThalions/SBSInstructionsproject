@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anleitungsschritt erstellen</title>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
 
-    <link rel="stylesheet" type="text/css" href="../../static/Anleitungsschritteerstellen.css">
-</head>
-<body>
-
-    <!-- Header mit Logo und Buttons -->
-<div class="header">
-    <div class="boxumAErstellen">
-        <input class="aErstellen" type="button"/>
-    </div>
-
-    <div class="boxumProfil" onclick="location.href='Mein_Profil.html'">
-        <input class="profil" type="button"/>
-    </div>       
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <input type="submit" value="Speichern">
+</form>
 </div>
-
-<div class="logocontainer" onclick="location.href='Startbildschirm.html'">
-    <img class="logo" src="../../static/Bilder/Logo.svg">
-</div>
-
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        
-        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-        <input type="submit" value="Speichern">
-</body>
-</html>
