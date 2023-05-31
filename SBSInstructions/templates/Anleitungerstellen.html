@@ -171,12 +171,10 @@
 
                 <div class="thumbnail">
                     <p>Thumbnail:</p>
-                    <!-- <form method="post" enctype="multipart/form-data">  
-                        <button type="submit"></button>
-                    </form> -->{{ form.img }}
                         <button class="platzhalterBild" type="file" name="neuerhintergrund" accept="image/*"  
-                        onclick="loadFile(event)">
-                        <img src="../../static/Bilder/documentupload.svg">
+                            onclick="loadFile(event)">
+                            {{ form.img }}
+                        </button>
                 </div>      
             </div>
         </div>
@@ -206,10 +204,9 @@
             <div class="buttonschriftprimaer">Anleitung speichern</div>
             </button> 
         </div>
-        
+        <input class="eingabenspeichernbutton" type="submit" value="Eingaben speichern">
     </div>
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-    <input type="submit" value="Eingaben speichern">
     </form>
 </div>
 </body>
