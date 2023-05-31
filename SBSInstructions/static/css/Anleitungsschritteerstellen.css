@@ -1,3 +1,77 @@
+/* --------------------------------Header--------------------------- */
+
+body {
+    margin: 0;   
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 110px;
+}
+
+.boxumProfil:hover, .boxumAErstellen:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.boxumAErstellen {
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+}
+
+.profil {
+    background-image: url("Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+
 body {
     margin: 0;
     font-family: 'Asap', sans-serif;
