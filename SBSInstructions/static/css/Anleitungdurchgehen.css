@@ -134,12 +134,16 @@ body {
     left: 3%;
 }
 
+.logocontainer :hover{
+    cursor: pointer;
+}
+
 /* --------------------------------Hintergrund---------------------------- */
 .hintergrund {
-    /* background-image:url(SVG/SVG_Hintergrund1.svg); */
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
     margin: auto;
     background-size: 100%;
-    /* background-position-y : 120px; */
+    background-position-y : 120px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: static;
