@@ -27,8 +27,28 @@
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        Zuteilung zu Anleitung
+        {{ form.forms.Anleitungsschritt.anleitung }}
         
-        {{ form.as_p }}
+        schrittbenennung
+        {{ form.forms.Anleitungsschritt.schrittbenennung }}
+
+        Beschreibung
+        {{ form.forms.Anleitungsschritt.beschreibung }}
+
+        schrittbild
+        {{ form.forms.Anleitungsschritt.schrittbild }}
+
+        Zuteilung zu Anleitungsschritt
+        {{ form.forms.Komponente.anleitungsschritt }}
+
+        Komponentenbeschreibung
+        {{ form.forms.Komponente.kompbeschreibung }}
+
+        KomponentenBild
+        {{ form.forms.Komponente.kompbild }}
+
+
         
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         <input type="submit" value="Speichern">
