@@ -89,13 +89,13 @@ body {
 }
 
 .profil {
-    background-image: url("Profil_Logo.svg");
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("Anleitunghinzufuegen.svg");
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
 }
@@ -107,6 +107,10 @@ body {
     position: absolute;
     top: 0.25%;
     left: 3%;
+}
+
+.logocontainer:hover{
+    cursor: pointer;
 }
 
 /* --------------------------------Hintergrund---------------------------- */
