@@ -67,7 +67,10 @@ class AnleitungfertigDetailView(DetailView):
 
     template_name = 'Anleitungfertig.html'
 
-    
+
+class ProfilDetailView(DetailView):
+
+    template_name = 'Profil'
 
     # # Holt Schrittbild
     # def get_base64_image_schritt(self, image):

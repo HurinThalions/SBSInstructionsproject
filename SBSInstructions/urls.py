@@ -13,7 +13,7 @@ urlpatterns = [
     path('anleitungdurchgehen/<int:pk>', views.AnleitungdurchgehenDetailView.as_view(), name='anleitungdurchgehen_detail_view'),
     path('anleitungfertig', views.AnleitungfertigDetailView.as_view(), name='anleitungfertig_detail_view'),
     
-    path('profil', views.ProfilDetaiView.as_view(), name='profil_detail_view'),
+    path('profil', views.ProfilDetailView.as_view(), name='profil_detail_view'),
 
 ]
 urlpatterns += staticfiles_urlpatterns()
