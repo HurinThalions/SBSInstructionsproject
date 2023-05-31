@@ -5,10 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anleitungsschritt erstellen</title>
+
+    <link rel="stylesheet" type="text/css" href="../../static/Anleitungsschritteerstellen.css">
 </head>
 <body>
 
-    <h1>Anleitungsschritt und Komponenten erstellen</h1>
+    <!-- Header mit Logo und Buttons -->
+<div class="header">
+    <div class="boxumAErstellen">
+        <input class="aErstellen" type="button"/>
+    </div>
+
+    <div class="boxumProfil" onclick="location.href='Mein_Profil.html'">
+        <input class="profil" type="button"/>
+    </div>       
+</div>
+
+<div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+    <img class="logo" src="../../static/Bilder/Logo.svg">
+</div>
+
+<!-- Hintergrund -->
+<div class="hintergrund">
+
+    <!-- Systemstatuszeile  -->
+    <div class="statuscontainer">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+        <li class="is-active">
+            <div style="margin-left: -4px;">Infos</div>
+        </li>
+        <li>
+            <div style="margin-left: -18px;">Schritte</div>
+        </li>
+        <li>
+            <div style="margin-right: -7px;">Fertig</div>
+        </li>
+        </ul>
+    </div>
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         

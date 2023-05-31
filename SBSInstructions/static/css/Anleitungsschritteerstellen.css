@@ -1,0 +1,529 @@
+body {
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+    background-image: url("SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: 100%;
+}
+
+html {
+    min-height: 100%;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 110px;
+}
+
+.boxumAErstellen {
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+
+    cursor: pointer;
+}
+
+.profil:hover, .aErstellen:hover {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.profil {
+    background-image: url("Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+/* ---------------------------Step Progress Bar-------------------------- */
+
+/* Breite der Statusbar */
+.statuscontainer {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    }
+    
+    .statuscontainer:hover {
+        cursor: default;
+    }
+    
+    .multi-steps {
+        margin: 0;
+        display: flex;
+        padding: 0;
+    }
+    
+    /* Stepbar Verhalten */
+    .multi-steps > li {
+        flex: 1;
+        position: relative;
+        text-align: center;
+        display: flex;
+        counter-increment: stepNum;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #A65756;
+    }
+    
+    /* Design Layout Stepbar (Kreise usw) */
+    .multi-steps > li:before {
+        content: "";
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        display: block;
+        background-color: #A65756;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #A65756;
+        border-radius: 50%;
+    }
+    
+    /* Linie zwischen den Steps */
+    .multi-steps > li:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #A65756;
+        top: 19px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+    
+    /*  Ende der Stepbar definiert */
+    .multi-steps > li:last-child {
+    
+        flex-grow: 0;
+        align-items: flex-end;
+        white-space: nowrap;
+    }
+    
+    /* Aussehen naechste Schritte */
+    .multi-steps > li.is-active ~ li:before {
+        background-color: white;
+        border-color: #A65756;
+    }
+
+  
+    .eingabeundweiter {
+        display: table;
+        width: 90%;
+        margin-left: 10%;
+        margin-top: 30px;
+        justify-content: baseline;
+        align-items: center;
+    }
+
+.weiter {
+    display: table-cell;
+    border-left: 2px dotted #000;
+    border-top: 2px dotted #000;
+    border-bottom: 2px dotted #000;
+    background: none;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 10%;
+}
+
+.weiter:hover {
+    background-color: #c4c4c469;
+    cursor: pointer;
+}
+
+.weitericon {
+    background: none;
+    border: none;
+}
+
+.weitericon:hover {
+    cursor: pointer;
+}
+
+
+.SchritteHaupt {
+    display: flex;
+    align-items: stretch;
+    margin-right: 50px;
+    padding-bottom: 2%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+}
+    
+.BeschreibungKompBild {
+    display: flex;
+    align-items: stretch;
+    margin-top: 4%;
+    margin-bottom: 1%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    
+}
+
+.BeschreibungKomp {
+    margin-top: 0.5%;
+    margin-left: 5%;
+    margin-right: 10%;
+    
+}
+
+ /*Bildcolum*/
+ .Bild{
+     padding-right: 650px; margin-top:7%; margin-left: -3.5%; margin-right: 2%;  max-width: 600px; border: 1px solid black; border-radius: 10px;
+}
+
+
+.Schritt1 {
+    margin-top:3%; margin-left: 4%; position: absolute; background-color:white; border: none; font-size: 24px;
+}
+
+.menue {
+   margin-top:2%; margin-left: 76%;   position: absolute; background-color:white; border: none; font-size: 24px;
+}
+
+.trash {
+    margin-top:2%;  margin-left: 79%; position: absolute; background-color:white; border: none; font-size: 24px;
+}
+
+
+    .Beschreibung {
+    width: 500px; height: 250px; border: 1px solid gray; margin-top: 5%; margin-left:1%; border-radius: 10px; 
+    }
+
+    .Komponenten {
+        width: 500px; height: 250px; border: 1px solid gray; margin-top: 5%; margin-left: 1%;  border-radius: 10px; 
+        }
+
+    .area1{
+        width: 150px; height: 80px; border: 2px solid gray; margin-top: 5%; margin-left: 3%; 
+    }
+    .area2{
+        width: 150px; height:80px; border: 2px solid gray;  margin-top: 7%; margin-left: 3%; 
+    }
+
+    
+    
+
+    .textinKomp{
+        width:200px;
+        height:200px;
+        margin-top: -40%;
+        margin-left: 45%;
+    }
+
+    /*Textfeld*/
+    .tfeld {
+    border-radius: 10px; border-color: white;
+    }
+    .textKomp1{
+        position: relative; margin-top: 15%;  font-size: 20px; border: none; 
+    }
+    .textKomp2{
+        position: relative; margin-top: 45%; font-size: 20px; border: none;
+    }
+
+    /*Buttons*/
+
+   
+    .bildupload{
+       margin-top: 650%; margin-left: 750%; background-color: white; border: none; 
+    }
+
+    .komp1{
+       margin-top: 17%; margin-left: 37%; background-color: white; border: none; 
+    }
+
+    .komp2{
+       margin-top: 17%; margin-left: 37%; background-color: white; border: none; 
+    }
+
+    .menue:hover, .trash:hover, .bildupload:hover, .komp1:hover, .komp2:hover{
+        background-color: none;
+        cursor: pointer;
+    }
+
+    
+
+    
+
+    /*Schrift*/
+    
+    .abbruchspeichern {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 25%;
+        width: 50%;
+        padding-bottom: 30px;
+    }
+    
+    /* Design der Buttons */
+    .buttonabbrechen {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 35px;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 20px;
+        padding: 10%;
+        margin-top: 10%;
+    }
+    
+    .buttonabbrechen:hover {
+        background-color: #D5DFE5;
+        cursor: pointer;
+    }
+    
+    .buttonspeichern {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 35px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+        margin-top: 10%;
+    }
+    
+    .buttonspeichern:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
+    
+    .buttoninnensekundaer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    
+    .buttonschriftsekundaer {
+        font-size: 18px;
+        color: #4680A7;
+    }
+    
+    .buttoninnenprimaer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    
+    .buttonschriftprimaer {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    #overlayAbbrechen {
+        position: fixed;
+        display: none;
+        width: 100%; 
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(2px);
+        z-index: 2; 
+        cursor: default;
+      }
+    
+    .abbrechenDialog {
+        position: absolute;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+    
+    .mittigeSchriftUeberschrift {
+        text-align: center;
+        color:#4680A7 ;
+        font-size: 24px;
+    }
+    
+    .mittigeSchrift {
+        text-align: center;
+    }
+    
+    .jaNein {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 30px;
+    }
+    
+    .buttonNein {
+        display:flex;
+        justify-content: left;
+        padding-left: 3%;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 20px;
+    }
+    .buttonNein:hover {
+        background-color: #D5DFE5;
+        cursor: pointer;
+    }
+    
+    .buttonJa {
+        display:flex;
+        justify-content: left;
+        padding-left: 5%;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+    }
+    
+    .buttonJa:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
+      
+    /* ------------------------------Speichern Popup------------------------- */
+    
+    #overlaySpeichern {
+        position: fixed;
+        display: none;
+        width: 100%; 
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(2px);
+        z-index: 2; 
+        cursor: default;
+      }
+    
+    .schliessen {
+        position: fixed;
+        top: 7px;
+        right: 7px;
+        border: none;
+        background: none;
+    }
+    
+    .schliessen:hover {
+        cursor: pointer;
+    }
+    
+    .speichernDialog {
+        position: absolute;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+    
+    .mittigeSchriftUeberschrift {
+        text-align: center;
+        color:#4680A7 ;
+        font-size: 24px;
+    }
+    
+    .auswahl {
+        justify-content: center;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 30px;
+    }
+    
+    .buttonAuswahl {
+        display:flex;
+        justify-content: left;
+        margin: 20px;
+        align-items: center;
+        width: 280px;
+        height: 35px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+    }
+    
+    .buttonAuswahl:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
