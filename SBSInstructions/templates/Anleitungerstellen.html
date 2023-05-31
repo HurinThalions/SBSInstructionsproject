@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SbS - Anleitung erstellen</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/Add_page.css">  <!-- Referrenz zu CSS Seite  -->
-    <script src="../../static/js/Add_page.js"></script> <!-- Referrenz zu JavaScript Seite --> 
+    <link rel="stylesheet" type="text/css" href="../../static/css/Anleitungerstellen.css">  <!-- Referrenz zu CSS Seite  -->
+    <script src="../../static/js/Anleitungerstellen.js"></script> <!-- Referrenz zu JavaScript Seite --> 
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
                 <div class="buttonschriftsekundaer">Nein</div>
             </button> 
 
-            <button class="buttonJa" onclick="location.href='./Startbildschirm.html'">      
+            <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'">      
                 <div class="buttoninnenprimaer"><img src="../../static/Bilder/Ja.svg"></div>
                 <div class="buttonschriftprimaer">Ja</div>
             </button> 
@@ -70,12 +70,12 @@
         <input class="aErstellen" type="button"/>
     </div>
 
-    <div class="boxumProfil" onclick="location.href='Mein_Profil.html'">
+    <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
         <input class="profil" type="button"/>
     </div>       
 </div>
 
-<div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+<div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
     <img class="logo" src="../../static/Bilder/Logo.svg">
 </div>
 
@@ -183,7 +183,7 @@
 
         <!-- Weiter Block -->
         <div class="weiter">
-            <button class="weitericon" type="button" onclick="location.href='AnleitungSchritte.html'"> 
+            <button class="weitericon" type="button" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungsschritteerstellen'"> 
                 <img id="weiterklein" src="../../static/Bilder/weiter.svg" >
             </button> <!-- Schritt hinzufuegen hier verlinken -->
         </div>

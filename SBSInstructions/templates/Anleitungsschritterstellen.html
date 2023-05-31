@@ -3,7 +3,38 @@
     
     {{ form.as_p }}
 
+<<<<<<< HEAD
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
     <input type="submit" value="Speichern">
 </form>
 </div>
+=======
+    <link rel="stylesheet" type="text/css" href="../../static/Anleitungsschritteerstellen.css">
+</head>
+<body>
+
+    <!-- Header mit Logo und Buttons -->
+<div class="header">
+    <div class="boxumAErstellen" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungerstellen'">
+        <input class="aErstellen" type="button"/>
+    </div>
+
+    <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
+        <input class="profil" type="button"/>
+    </div>       
+</div>
+
+<div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
+    <img class="logo" src="../../static/Bilder/Logo.svg">
+</div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="submit" value="Speichern">
+</body>
+</html>
+>>>>>>> 3e1b74c42b3a0c1838416d605e33a3df58f43d70
