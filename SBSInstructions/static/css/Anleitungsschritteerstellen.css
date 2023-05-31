@@ -75,7 +75,7 @@ body {
 body {
     margin: 0;
     font-family: 'Asap', sans-serif;
-    background-image: url("SVG_Hintergrund1.svg");
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -158,6 +158,9 @@ html {
     left: 3%;
 }
 
+.logocontainer :hover{
+    cursor: pointer;
+}
 /* ---------------------------Step Progress Bar-------------------------- */
 
 /* Breite der Statusbar */
@@ -295,7 +298,12 @@ html {
 
  /*Bildcolum*/
  .Bild{
-     padding-right: 650px; margin-top:7%; margin-left: -3.5%; margin-right: 2%;  max-width: 600px; border: 1px solid black; border-radius: 10px;
+    position: ;
+    height: 50vh;
+    width: 40vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    left: 50vw;
 }
 
 
@@ -313,7 +321,7 @@ html {
 
 
     .Beschreibung {
-    width: 500px; height: 250px; border: 1px solid gray; margin-top: 5%; margin-left:1%; border-radius: 10px; 
+    width: 500px; height: 250px; margin-top: 5%; margin-left:1%; border-radius: 10px; 
     }
 
     .Komponenten {
@@ -326,9 +334,6 @@ html {
     .area2{
         width: 150px; height:80px; border: 2px solid gray;  margin-top: 7%; margin-left: 3%; 
     }
-
-    
-    
 
     .textinKomp{
         width:200px;
@@ -369,9 +374,6 @@ html {
     }
 
     
-
-    
-
     /*Schrift*/
     
     .abbruchspeichern {
