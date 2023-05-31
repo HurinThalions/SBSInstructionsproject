@@ -12,16 +12,16 @@
 <body>
     <!-- Header mit Logo und Buttons -->
     <div class="header">
-        <div class="boxumAErstellen">
-            <input class="aErstellen" type="button" onclick="location.href='Add_page.html'">
+        <div class="boxumAErstellen" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungerstellen'">
+            <input class="aErstellen" type="button">
         </div>
 
-        <div class="boxumProfil">
-            <input class="profil" type="button" onclick="location.href='Mein_Profil.html'">
+        <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
+            <input class="profil" type="button">
         </div>
     </div>
 
-    <div class="logocontainer" onclick="location.href='Startbildschirm.html'">
+    <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
         <img class="logo" src="../../static/Bilder/Logo.svg">
     </div>
 
@@ -36,7 +36,7 @@
                 <h2>Katalog</h2>
             </div>
             <div class="katalog">
-                <div class="anleitungsBlock">
+                <div class="anleitungsBlock" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungdurchgehen/1'">
                     <div class="anleitungsBlockImg">
                         <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
                     </div>
