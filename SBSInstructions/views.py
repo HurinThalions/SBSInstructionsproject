@@ -1,12 +1,10 @@
-# import base64
-from datetime import datetime
-from typing import Any, Dict
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from multiprocessing import AuthenticationError
+from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView
+from django.contrib.auth.views import LoginView
 
-from SBSInstructions.form import ProfilForm, AnleitungForm, SchrittundKomponentenMultiForm
+from SBSInstructions.form import ProfileinloggenForm, AnleitungForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 
@@ -89,14 +87,13 @@ class ProfilerstellenCreateView(CreateView):
 
     # Model Formular um die Daten aufzunehmen und Abzuspeichern 
     model = Profil
-    form_class = ProfilForm
 
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profilerstellen.html'
   
 
 # Einloggen
-class ProfileinloggenDetailView(DetailView):
+class ProfileinloggenLoginView(LoginView):
     
     # Definierung des Models, um die eingaben mit den daten in der Datenbank abzugleichen
     model = Profil
@@ -104,48 +101,13 @@ class ProfileinloggenDetailView(DetailView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profileinloggen.html'
 
+    authentication_form = ProfileinloggenForm
+
+    success_url = reverse_lazy('profileigeneanleitungen')
 
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
 
     model = Profil
-    template_name = 'Profil'
+    template_name = 'Profileigeneanleitungen.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        profil = self.get_object()
-
-        context = { ''}
-
-    # Holt Schrittbild
-    # def get_base64_image_schritt(self, image):
-    #     """
-    #     Konvertiert ein Bild in Base64-codierter Form.
-    #     """
-
-    #     with open('media/images/Schrittbilder/pexels-phil-desforges-15185102.jpg', 'rb') as f:
-    #         image_data = f.read()
-    #         image_base64 = base64.b64encode(image_data).decode('utf-8')
-    #     return image_base64
-
-    # # Holt Komponentenbild
-    # def get_base64_image_komponente(self, image):
-    #     """
-    #     Konvertiert ein Bild in Base64-codierter Form.
-    #     """
-
-    #     with open('media/images/Komponentenbilder/pexels-phil-desforges-15185102.jpg', 'rb') as f:
-    #         image_data = f.read()
-    #         image_base64 = base64.b64encode(image_data).decode('utf-8')
-    #     return image_base64
-
-
-    # def get_base64_image_thumbnail(self, image):
-    #     """
-    #     Konvertiert ein Bild in Base64-codierter Form.
-    #     """
-
-    #     with open(, 'rb') as f:
-    #         image_data = f.read()
-    #         image_base64 = base64.b64encode(image_data).decode('utf-8')
-    #     return image_base64

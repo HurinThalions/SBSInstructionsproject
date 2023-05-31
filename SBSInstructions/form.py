@@ -1,17 +1,15 @@
-from typing import Any, Dict, Mapping, Optional, Type, Union
 from django import forms
 from betterforms.multiform import MultiModelForm
-from django.core.files.base import File
-from django.db.models.base import Model
-from django.forms.utils import ErrorList
+from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
-class ProfilForm(forms.ModelForm):
+class ProfileinloggenForm(AuthenticationForm):
 
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
     class Meta:
-        model = Profil
-        fields = ('email', 'passwort', 'ersteller')
+
+        fields = ('email', 'password')
 
 class AnleitungForm(forms.ModelForm):
 
