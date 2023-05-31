@@ -39,7 +39,15 @@ p {
 /* --------------------------------Header--------------------------- */
 
 body {
-    margin: 0;   
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: 100%;
 }
 
 .header {
@@ -115,9 +123,9 @@ body {
 
 /* --------------------------------Hintergrund---------------------------- */
 .hintergrund {
-    background-image:url(SVG_Hintergrund1.svg);
+    /* background-image:url("../../static/Bilder/SVG_Hintergrund1.svg"); */
     margin: 0;
-    background-position-y: 120px;
+    /* background-position-y: 120px; */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
