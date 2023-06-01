@@ -254,7 +254,7 @@ html {
     align-content: center;
     vertical-align: middle;
     text-align: center;
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 
 .weiter:hover {
@@ -275,7 +275,7 @@ html {
 .SchritteHaupt {
     display: flex;
     align-items: stretch;
-    margin-right: 50px;
+    margin-right: 2%;
     padding-bottom: 2%;
     border: 1px solid rgb(0, 0, 0);
     background-color: white;
@@ -308,9 +308,14 @@ html {
 }
 
 
-.Schritt1 {
+#schritte {
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
     margin-top:1%; margin-left: 4%; position: absolute; background-color:white; border: none; font-size: 24px;
 }
+
+
 
 .menue {
    margin-top:2%; margin-left:70%; margin-right: 5vw; position: absolute; background-color: none; border: none; font-size: 24px;
@@ -322,18 +327,32 @@ html {
 
 
     .Beschreibung {
-    width: 500px; height: 250px; margin-top: 5%; margin-left:1%; border-radius: 10px; 
+    width: auto; height: auto; margin-top: 5%; margin-left:1%; border-radius: 10px;
     }
 
     .Komponenten {
-        width: 500px; height: 250px; border: 1px solid gray; margin-top: 5%; margin-left: 1%;  border-radius: 10px; 
+        width: 35vw; height: auto; border: 1px solid gray; margin-top: 5%; margin-left: 1%; border-radius: 10px; 
         }
 
     .area1{
-        width: 150px; height: 80px; border: 2px solid gray; margin-top: 5%; margin-left: 3%; 
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        width: auto;
+        height: 10vh;
+        margin-top: auto;
+        margin-left: 3%;
+        border-bottom: 1px solid black;
     }
     .area2{
-        width: 150px; height:80px; border: 2px solid gray;  margin-top: 7%; margin-left: 3%; 
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        width: auto;
+        height: 10vh;
+        /* margin-top: 7%; */
+        margin-left: 3%;
+        margin-bottom: 2%;
     }
 
     .textinKomp{
@@ -347,26 +366,22 @@ html {
     .tfeld {
     border-radius: 10px; border-color: white;
     }
-    .textKomp1{
-        position: relative; margin-top: 15%;  font-size: 20px; border: none; 
-    }
-    .textKomp2{
-        position: relative; margin-top: 45%; font-size: 20px; border: none;
-    }
-
-    /*Buttons*/
-
-   
+  
+    /*Buttons*/ 
     .bildupload{
         background-color: white; border: none; 
     }
 
     .komp1{
-       margin-top: 17%; margin-left: 37%; background-color: white; border: none; 
+       background-color: white;
+       border: 1 px solid gray;
+       padding: 20px;
     }
 
     .komp2{
-       margin-top: 17%; margin-left: 37%; background-color: white; border: none; 
+        background-color: white;
+        border: 1 px solid gray;
+        padding: 20px; 
     }
 
     .menue:hover, .trash:hover, .bildupload:hover, .komp1:hover, .komp2:hover{
@@ -374,30 +389,34 @@ html {
         cursor: pointer;
     }
 
+    /* #kompbeschreibungFormInput {
+        margin-right: auto;
+    } */
     
     /*Schrift*/
     
     .abbruchspeichern {
+        margin-top: 2vh;
+        font-family: 'Poppins', sans-serif;
         display: flex;
         justify-content: space-between;
         margin-left: 25%;
+        display: flex;
         width: 50%;
-        padding-bottom: 30px;
+        padding-bottom: 35px;
     }
     
-    /* Design der Buttons */
-    .buttonabbrechen {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        width: 160px;
-        height: 35px;
-        background-color: #fff;
-        border-color: #4680A7;
-        border-radius: 20px;
-        padding: 10%;
-        margin-top: 10%;
-    }
+   /* Design der Buttons */
+.buttonabbrechen {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: auto;
+    background-color: #fff;
+    border-color: #4680A7;
+    border-radius: 20px;
+}
     
     .buttonabbrechen:hover {
         background-color: #D5DFE5;
@@ -409,12 +428,11 @@ html {
         justify-content: center;
         align-items: center;
         width: 160px;
-        height: 35px;
+        height: auto;
         color: #fff;
         background-color:#4680A7;
         border-radius: 20px;
         border-color: #4680a700;
-        margin-top: 10%;
     }
     
     .buttonspeichern:hover {
@@ -422,6 +440,21 @@ html {
         cursor: pointer;
     }
     
+    .eingabenspeichernbutton{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: auto;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 20px;
+    }
+
+    .eingabenspeichernbutton:hover{
+        cursor: pointer;
+    }
+
     .buttoninnensekundaer {
         display: flex;
         justify-content: center;
@@ -606,6 +639,4 @@ html {
         cursor: pointer;
     }
 
-.kompbeschreibungFormInput {
-
-    padding: auto;}
+    

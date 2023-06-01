@@ -70,6 +70,7 @@
 
 <!-- Hintergrund -->
     <div class="hintergrund">
+        <form method="post" enctype="multipart/form-data">
         <!-- Header mit Logo und Buttons -->
         <div class="header">
             <div class="boxumAErstellen">
@@ -106,25 +107,27 @@
                         <p>Beschreibung:</p>
                             <div class= "Beschreibung">
                                 {{ form.forms.Anleitungsschritt.beschreibung }}
-                                <!-- <textarea placeholder="Beispieltext..." style="appearance: none; border: 1px solid #000; resize: none; border-radius: 10px; width: 400px; height:250px; font-size: 20px;"></textarea> -->
                             </div>
-                        <p>Komponente:</p>  
+                        <p>Komponente:</p> 
                             <div class= "Komponenten">
-                                <div class ="area1"><button class="komp1">{{ form.forms.Komponente.kompbild }}</button></div>
-                                <div class ="area2"><button class="komp2">{{ form.forms.Komponente.kompbild }}</button></div>
-
-                                <div class= "textinKomp">
+                                {{ form.forms.Komponente.anleitungsschritt }}
+                                <div class ="area1">
+                                    <button class="komp1">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
+                                </div>
+                                {{ form.forms.Komponente.anleitungsschritt }}
+                                <div class ="area2">
+                                    <button class="komp2">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
-                                    <!-- <input type="text" class = "textKomp1" placeholder="Name der Komponente 1"> -->
-                                    <!-- <input type="text" class = "textKomp2" placeholder="Name der Komponente 2"> -->
                                 </div>
                             </div>
                     </div> 
                 </div>
                 <button class="menue"> <img src=" ../../static/Bilder/Overview.svg"></button>
                 <button class="trash" onclick="popupOnL()"> <img src=" ../../static/Bilder/🦆 icon _trash_.svg"></button>
-                <button class="Schritt1">{{ form.forms.Anleitungsschritt.anleitung }} Schritt 1: {{ form.forms.Anleitungsschritt.schrittbenennung }}</button>
+                <div id="schritte">
+                    {{ form.forms.Anleitungsschritt.anleitung }} Schritt <span id="counter"></span>: {{ form.forms.Anleitungsschritt.schrittbenennung }}
+                </div>
                 <div class= "Bild">
                     <p>Bild hochladen:</p>
                     <button class="bildupload">{{ form.forms.Anleitungsschritt.schrittbild }} </button>
@@ -132,28 +135,44 @@
             </div>
             <!-- Weiter Block -->
             <div class="weiter">
-                <button class="weitericon" onClick="window.location.reload();"><img src=" ../../static/Bilder/weiter.svg"></button> <!-- Schritt hinzufuegen hier verlinken -->
+                <button class="weitericon" onclick="schritthoch()"><img src="../../static/Bilder/weiter.svg"></button>
             </div> 
         </div>
 
         <div class="abbruchspeichern">
+
             <div class="abbrechen">
                 <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
-                    <div class="buttoninnensekundaer"><img src=" ../../static/Bilder/AbbrechenX.svg"></div>
-                    <div class="buttonschriftsekundaer">Abbrechen</div>
+                <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
+                <div class="buttonschriftsekundaer">Anleitung abbrechen</div>
                 </button> 
             </div>
+    
             <div class="speichern">
                 <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
-                    <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/SpeichernX.svg"></div>
-                    <div class="buttonschriftprimaer">Speichern</div>
+                <div class="buttoninnenprimaer"><img src="../../static/Bilder/SpeichernX.svg"></div>
+                <div class="buttonschriftprimaer">Anleitung speichern</div>
                 </button> 
             </div>
+            <input class="eingabenspeichernbutton" type="submit" value="Eingaben speichern">
         </div>
-
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </form>
     </div>
 </body>
 </html>
+
+
+<script>
+    let counter = 0;
+    var variableWertElement = document.getElementById("counter");
+    variableWertElement.textContent = counter;
+
+    function schritthoch() {
+        counter++;
+        variableWertElement.textContent = counter;
+    }
+</script>
 
 
 

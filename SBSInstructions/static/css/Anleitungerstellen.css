@@ -616,7 +616,7 @@ input[type=number] {
     margin-left: 25%;
     display: flex;
     width: 50%;
-    padding-bottom: 35px;
+    margin-top: 2vh;
 }
 
 /* Design der Buttons */
