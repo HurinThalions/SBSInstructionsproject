@@ -1,13 +1,12 @@
 import datetime
-from multiprocessing import AuthenticationError
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
+from django import views
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, CreateView
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import login
 
-from SBSInstructions.form import ProfileinloggenForm, AnleitungForm, SchrittundKomponentenMultiForm
+from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 
@@ -94,26 +93,23 @@ class AnleitungfertigDetailView(DetailView):
 # Erstellung des Profils
 class ProfilerstellenCreateView(CreateView):
 
-    # Model Formular um die Daten aufzunehmen und Abzuspeichern 
-    model = Profil
-
+    form_class = SignupForm 
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profilerstellen.html'
-  
 
+    success_url = 'login'
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return super().form_valid(form)
+    
 # Einloggen
 class ProfileinloggenLoginView(LoginView):
-    
-    # Definierung des Models, um die eingaben mit den daten in der Datenbank abzugleichen
-    model = Profil
-
-    # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profileinloggen.html'
-
-    form = ProfileinloggenForm
-
-    success_url = reverse_lazy('profileigeneanleitungen')
-
+    authentication_form = EmailAuthenticationForm
+    success_url = '/profileigeneanleitungen'
+    
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
 

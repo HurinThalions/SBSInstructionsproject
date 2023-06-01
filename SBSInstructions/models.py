@@ -1,14 +1,17 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 # Create your models here.
 
-class Profil(models.Model):
+class Profil(AbstractUser):
+    benutzername = models.CharField(max_length=100, unique=True)
     email = models.EmailField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
+    groups = models.ManyToManyField(Group, related_name='profil_set', blank=True)
+    user_permissions = models.ManyToManyField(Permission, related_name='profil_set', blank=True)
 
     def __str__(self):
-        return self.email
+        return self.benutzername
 
 
 class Anleitung(models.Model):

@@ -4,10 +4,17 @@ from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
-class ProfileinloggenForm(AuthenticationForm):
-
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+class SignupForm(forms.ModelForm):
+    email = forms.EmailField(max_length=100, help_text='Required. Enter a valid email address.')
+    password = forms.CharField(widget=forms.PasswordInput)
     
+    class Meta:
+        model = Profil
+        fields = ('benutzername', 'email', 'password')
+
+class EmailAuthenticationForm(AuthenticationForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+
     class Meta:
         fields = ('email', 'password')
 

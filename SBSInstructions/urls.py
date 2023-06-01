@@ -2,6 +2,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.urls import path
 
+
 from . import views
 
 urlpatterns = [
@@ -14,8 +15,9 @@ urlpatterns = [
     path('anleitungfertig', views.AnleitungfertigDetailView.as_view(), name='anleitungfertig_detail_view'),
     
     path('profilerstellen', views.ProfilerstellenCreateView.as_view(), name='profilerstellen_create_view'),
-    path('profileinloggen', views.ProfileinloggenLoginView.as_view(), name='profileinloggen_detail_view'),
+    path('login', views.ProfileinloggenLoginView.as_view(), name='Profileinloggen_login_view'),
     path('profileigeneanleitungen', views.ProfileigeneAnleitungenDetailView.as_view(), name='profileigeneanleitungen'),
+
 ]
 urlpatterns += staticfiles_urlpatterns()
 
