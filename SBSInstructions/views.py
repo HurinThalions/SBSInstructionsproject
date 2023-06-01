@@ -103,7 +103,7 @@ class ProfilerstellenCreateView(CreateView):
         user = form.save()
         login(self.request, user)
         return super().form_valid(form)
-    
+
 # Einloggen
 class ProfileinloggenLoginView(LoginView):
     template_name = 'Profileinloggen.html'
