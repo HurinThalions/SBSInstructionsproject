@@ -22,11 +22,16 @@
     <div class="center">
         <form method="post" class="card" novalidate>
             {% csrf_token %}
-
             {{ form.email }}
-            hallo
             {{ form.password }}
             <input type="submit" value="Login">
+          </form>
+          
+    </div>
+
+</body>
+</html>
+
             <!-- <div class="form-field">
                 <label for="{{ form.email.id_for_label }}">Email</label>
                 {{ form.email }}
@@ -47,8 +52,3 @@
 
             <input type="submit" value="Login" class="btn btn-primary full-width">
             {% csrf_token %} -->
-        </form>
-    </div>
-
-</body>
-</html>
