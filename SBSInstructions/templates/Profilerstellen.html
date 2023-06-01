@@ -10,7 +10,7 @@
     
     <form method="post" class="card" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.}}
         <button type="submit">Sign Up</button>
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
       </form>

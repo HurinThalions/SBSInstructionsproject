@@ -16,7 +16,7 @@ urlpatterns = [
     
     path('profilerstellen', views.ProfilerstellenCreateView.as_view(), name='profilerstellen_create_view'),
     path('login', views.ProfileinloggenLoginView.as_view(), name='Profileinloggen_login_view'),
-    path('profileigeneanleitungen', views.ProfileigeneAnleitungenDetailView.as_view(), name='profileigeneanleitungen'),
+    path('profileigeneanleitungen/<int:pk>', views.ProfileigeneAnleitungenDetailView.as_view(), name='profileigeneanleitungen'),
 
 ]
 urlpatterns += staticfiles_urlpatterns()

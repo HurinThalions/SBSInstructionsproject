@@ -1,3 +1,4 @@
+from datetime import timedelta
 from django import forms
 from betterforms.multiform import MultiModelForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -19,15 +20,16 @@ class EmailAuthenticationForm(AuthenticationForm):
         fields = ('email', 'password')
 
 class AnleitungForm(forms.ModelForm):
-
-    # def __init__(self, **kwargs):
-    #     ersteller = kwargs.pop('ersteller', None)
-    #     super().__init__(**kwargs)
-    #     self.fields['ersteller'].initial = ersteller
+    dauer = forms.IntegerField(label='Dauer (in Minuten)')
 
     class Meta:
         model = Anleitung
-        fields = ('profil', 'anleittitel', 'kategorie','dauer', 'datum', 'img')
+        fields = ('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img')
+
+    def clean_dauer(self):
+        dauer = self.cleaned_data['dauer']
+        dauer_in_minuten = timedelta(minutes=dauer)
+        return dauer_in_minuten
 
 class AnleitungsschrittForm(forms.ModelForm):
     class Meta:
