@@ -106,35 +106,44 @@
                     <div class="BeschreibungKomp">
                         <p>Beschreibung:</p>
                             <div class= "Beschreibung">
-                                {{ form.beschreibung }}
+                                {{ form.kompbeschreibung }}
                             </div>
-                        <!-- <p>Komponente:</p>  -->
                             <div class= "Komponenten">
-                                <!-- {{ form.forms.Komponente.anleitungsschritt }}
-                                <div class ="area1">
-                                    <button class="komp1">{{ form.forms.Komponente.kompbild }}</button>
-                                    <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
-                                </div>
-                                <input type="hidden" name="Komponente-anleitungsschritt" value="{{ form.forms.Anleitungsschritt.id.value }}">
-                                {{ form.forms.Komponente.anleitungsschritt }}
-                                <div class ="area2">
-                                    <button class="komp2">{{ form.forms.Komponente.kompbild }}</button>
-                                    <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
-                                </div>
-                                <input type="hidden" name="Komponente-anleitungsschritt" value="{{ form.forms.Anleitungsschritt.id.value }}"> -->
                             </div>
                     </div>
                 </div>
                 <button class="menue"> <img src=" ../../static/Bilder/Overview.svg"></button>
                 <button class="trash" onclick="popupOnL()"> <img src=" ../../static/Bilder/🦆 icon _trash_.svg"></button>
                 <div id="schritte">
-                     Schritt <span id="counter"></span>: {{ form.schrittbenennung }}
+                    Komponente:
                 </div>
                 <div class= "Bild">
                     <p>Bild hochladen:</p>
-                    <button class="bildupload">{{ form.schrittbild }} </button>
+                    <button class="bildupload">{{ form.kompbild }} </button>
                 </div>
+                
             </div>
+            <!-- <div class= "SchritteHaupt">
+                <div class="BeschreibungKompBild">
+                    <div class="BeschreibungKomp">
+                        <p>Beschreibung:</p>
+                            <div class= "Beschreibung">
+                                {{ form.kompbeschreibung }}
+                            </div>
+                            <div class= "Komponenten">
+                            </div>
+                    </div>
+                </div>
+                
+                <div id="schritte">
+                    Komponente: 
+                </div>
+                <div class= "Bild">
+                    <p>Bild hochladen:</p>
+                    <button class="bildupload">{{ form.kompbild }} </button>
+                </div>
+                
+            </div> -->
             <!-- Weiter Block -->
             <div class="weiter">
                 <button class="weitericon" onclick="schritthoch()"><img src="../../static/Bilder/weiter.svg"></button>
@@ -163,17 +172,3 @@
     </div>
 </body>
 </html>
-
-
-<script>
-    let counter = 0;
-    var variableWertElement = document.getElementById("counter");
-    variableWertElement.textContent = counter;
-
-    function schritthoch() {
-        counter++;
-        variableWertElement.textContent = counter;
-    }
-</script>
-
-

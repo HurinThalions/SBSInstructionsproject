@@ -30,19 +30,37 @@ class AnleitungForm(forms.ModelForm):
         dauer = self.cleaned_data['dauer']
         dauer_in_minuten = timedelta(minutes=dauer)
         return dauer_in_minuten
+    
 
 class AnleitungsschrittForm(forms.ModelForm):
     class Meta:
         model = Anleitungsschritt
         fields = ('anleitung', 'schrittbenennung', 'beschreibung', 'schrittbild')
+        exclude = ('anleitung',)
+
+    def save_with_anleitung_id(self, anleitung):
+        form = super().save(commit=False)
+        form.anleitung = anleitung
+        form.save()
+        return form
 
 class KomponenteForm(forms.ModelForm):
     class Meta:
         model = Komponente
-        fields = ('anleitungsschritt', 'kompbeschreibung', 'kompbild')
+        fields = ['anleitungsschritt', 'kompbeschreibung', 'kompbild']
+        exclude = ('anleitungsschritt',)
 
+    def save_with_anleitungsschritt_id(self, anleitungsschritt):
+        form = super().save(commit=False)
+        form.anleitungsschritt = anleitungsschritt
+        form.save()
+        return form
+
+# Formular um Anleitungsschritte und Komponenten in einem Schritt zu erfassen
+# Gleichzeitige Abspeicherung noch nicht möglich
 class SchrittundKomponentenMultiForm(MultiModelForm):
     form_classes = {
         'Anleitungsschritt': AnleitungsschrittForm,
         'Komponente': KomponenteForm,
     }
+

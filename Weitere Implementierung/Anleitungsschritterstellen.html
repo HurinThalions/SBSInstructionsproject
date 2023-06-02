@@ -106,17 +106,17 @@
                     <div class="BeschreibungKomp">
                         <p>Beschreibung:</p>
                             <div class= "Beschreibung">
-                                {{ form.beschreibung }}
+                                {{ form.forms.Anleitungsschritt.beschreibung }}
                             </div>
-                        <!-- <p>Komponente:</p>  -->
+                        <p>Komponente:</p> 
                             <div class= "Komponenten">
-                                <!-- {{ form.forms.Komponente.anleitungsschritt }}
+                                {{ form.forms.Komponente.anleitungsschritt }}
                                 <div class ="area1">
                                     <button class="komp1">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
                                 </div>
                                 <input type="hidden" name="Komponente-anleitungsschritt" value="{{ form.forms.Anleitungsschritt.id.value }}">
-                                {{ form.forms.Komponente.anleitungsschritt }}
+                                <!-- {{ form.forms.Komponente.anleitungsschritt }}
                                 <div class ="area2">
                                     <button class="komp2">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
@@ -128,11 +128,11 @@
                 <button class="menue"> <img src=" ../../static/Bilder/Overview.svg"></button>
                 <button class="trash" onclick="popupOnL()"> <img src=" ../../static/Bilder/🦆 icon _trash_.svg"></button>
                 <div id="schritte">
-                     Schritt <span id="counter"></span>: {{ form.schrittbenennung }}
+                    {{ form.forms.Anleitungsschritt.anleitung }} Schritt <span id="counter"></span>: {{ form.forms.Anleitungsschritt.schrittbenennung }}
                 </div>
                 <div class= "Bild">
                     <p>Bild hochladen:</p>
-                    <button class="bildupload">{{ form.schrittbild }} </button>
+                    <button class="bildupload">{{ form.forms.Anleitungsschritt.schrittbild }} </button>
                 </div>
             </div>
             <!-- Weiter Block -->

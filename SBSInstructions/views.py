@@ -1,12 +1,16 @@
+from dataclasses import field
 import datetime
 from django import views
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, CreateView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
+from django.views.generic.edit import FormView
+from SBSInstructions import form
 
-from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, SchrittundKomponentenMultiForm
+from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, AnleitungsschrittForm, KomponenteForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 
@@ -18,10 +22,9 @@ def index(request):
     return render(request, 'Startseite.html')
 
 
+
 # erste Seite von Anleitungen wird hiermit erstellt
 class AnleitungerstellenCreateView(CreateView):
-
-    model = Profil
 
     # Formular um die Daten aufzunehmen und Abzuspeichern
     # siehe form.py
@@ -51,15 +54,29 @@ class AnleitungerstellenCreateView(CreateView):
         form.instance.datum = datetime.date.today()
         return super().form_valid(form)
 
-# Anleitungsschritte werden erstellt
 class AnleitungsschritterstellenCreateView(CreateView):
 
-    # Formular um die Daten aufzunehmen und Abzuspeichern
-    # Multiform um die Komponenten auf der selben Seite und zeitgleich abspeichern zu koennen
-    form_class = SchrittundKomponentenMultiForm
-
-    # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Anleitungsschritterstellen.html'
+
+    form_class = AnleitungsschrittForm
+
+    success_url = 'komponentenerstellen'
+
+    def form_valid(self, form):
+        anleitung = Anleitung.objects.latest('id')
+        form.save_with_anleitung_id(anleitung)
+        return super().form_valid(form)
+
+class KomponentenerstellenCreateView(CreateView):
+    template_name = 'Komponentenerstellen.html'
+    form_class = KomponenteForm
+    success_url = 'anleitungsschritteerstellen'
+
+    def form_valid(self, form):
+        anleitungsschritt = Anleitungsschritt.objects.latest('id')
+        form.save_with_anleitungsschritt_id(anleitungsschritt)
+        return super().form_valid(form)
+
 
 
 # Anleitungen koennen hier durchgegangen werden
@@ -85,9 +102,12 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         return context
 
+
+
 class AnleitungfertigDetailView(DetailView):
 
     template_name = 'Anleitungfertig.html'
+
 
 
 # Erstellung des Profils
@@ -115,4 +135,16 @@ class ProfileigeneAnleitungenDetailView(DetailView):
 
     model = Profil
     template_name = 'Profileigeneanleitungen.html'
+
+
+
+
+# Anleitungsschritt und Komponenten werden in einem Schritt aufgenommen. Funktioniert noch nicht
+# Anleitungsschritte werden erstellt
+# class AnleitungsschritterstellenCreateView(FormView):
+
+#     form_class = SchrittundKomponentenMultiForm
+
+#     template_name = 'Anleitungsschritterstellen.html'
+
 
