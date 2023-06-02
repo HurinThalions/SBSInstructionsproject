@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="block">
         <form method="post" class="card" novalidate>
             <h1>Erstelle dein Profil in SBS-Instructions</h1>
@@ -25,5 +26,15 @@
             <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         </form>
     </div>
+=======
+    
+    <form method="post" class="card" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+      </form>
+      
+>>>>>>> f06dbb3b85328cd0214b7cd5a059263a270f0e18
 </body>
 </html>
