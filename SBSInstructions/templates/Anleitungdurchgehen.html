@@ -86,23 +86,23 @@
     </div>
 
     <div id="anleitungstitel">
-        <h1>{{ anleitungstitel }}</h1>
+        <h1>Anleitungstitel: {{ anleitungstitel }}</h1>
     </div>
 
     <div id="linkeZelle">
     <div id="schritt-details">
+        <div> Überschrift</div>
         <div>
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
                     <div class="einzelschritt">
-                        {{ einzelschritt.schrittbenennung }}
-                        <p>{{ einzelschritt.beschreibung }}</p>
+                      {{ einzelschritt.schrittbenennung }}
+                      <p>{{ einzelschritt.beschreibung }}</p>
                     </div>
                     <div class="komponenten-container">
                         {% for komponente in komponenten.komponenten %}
                             <div class="komponente">
-
-                                <p>Komponente: {{ komponente }}</p>
+                                  <p>  {{ komponente }}</p>
                             </div>
                             <div class="kompbild">
                                 <p>Komponentenbild:</p>
@@ -119,6 +119,8 @@
     <div class="rechteZelle" onclick="popupOnV()">
          <img src="{{ einzelschritt.bild }}" id="schrittbildrechtezelle" onclick="popupOnV()">
     </div>
+
+</div>
     
     <div class="vorzurueck">
         <div class="anzeige">

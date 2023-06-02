@@ -27,7 +27,6 @@ h1{
 
 h2{
     font-family: 'Poppins', sans-serif;
-    margin-left: 3vh;
     font-size: 2.5vh;
     font-weight: 250;
 }
@@ -257,7 +256,7 @@ h4{
     flex-direction: column;
     justify-content: right;
     left: 93vw;
-    top: 15vh;
+    top: 17vh;
 }
 
 #ueberblick {
@@ -307,14 +306,13 @@ h4{
     border-radius: 2%;
     position: fixed;
     left: 50vw;
-    bottom: 10vh;
+    bottom: 9vh;
     margin-left: 2vw;
-    box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
 }
 
 }
 
-/* @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     #linkeZelle {
         border: 1px solid black;
         border-radius: 10px;
@@ -334,7 +332,7 @@ h4{
         position: relative;
         margin-top: 10px;
     }
-} */
+}
 
 .schrittbenennung{
     position: relative;
@@ -342,9 +340,9 @@ h4{
 
   .beschreibung {
     background-color: #4680a72e;
+    margin: auto;
     padding: 10px;
-    width: auto;
-    margin-right: 15%;
+    width: 90%;
     text-align: left;
     border: 1px;
     border-radius: 10px;
@@ -358,7 +356,7 @@ h4{
   }
 
   .komponente{
-    max-width: 40vw;
+    max-width: 90%;
     border: solid black 1px;
     border-radius: 10px;
     display: flex;
