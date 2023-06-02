@@ -13,6 +13,12 @@ function popupOnV()
     document.getElementById("overlayVollbild").style.display = "block";
 }
 
+// function popupOnV() {
+//     var imageURL = document.getElementById("schrittbildrechtezelle").src;
+//     document.documentElement.style.setProperty('--bg-image', 'url("' + imageURL + '")');
+//     document.getElementById("overlayVollbild").style.display = "block";
+// }
+
 function popupOffV()
 {
     document.getElementById("overlayVollbild").style.display = "none";

@@ -37,7 +37,6 @@ function loadAnleitungData1() {
   });
 
   // Einzelner Schritt wird geholt und auf die Seite geladen
-  // Schrittbild fehlt noch
   function addEinzelschritt(container, data) {
     let einzelschrittElement = document.createElement("div");
     einzelschrittElement.classList.add("einzelschritt");
@@ -53,7 +52,7 @@ function loadAnleitungData1() {
 
     let schrittBildElement = document.createElement("img");
     schrittBildElement.setAttribute("src", "/media/" + data.schrittbild);
-    schrittBildElement.classList.add("rechteZelle");
+    schrittBildElement.classList.add("rechteZelle", "hover-effect");
     console.log(data.schrittbild);
 
     einzelschrittElement.appendChild(schrittbenennungElement);
@@ -64,33 +63,42 @@ function loadAnleitungData1() {
     container.appendChild(einzelschrittElement);
   }
 
-  // Komponenten die zum derzeitugem Schritt gehoeren werden geholt und auf der die Seite geladen
-  function addKomponenten(container, data) {
-    // ID des aktuellen Anleitungsschritts
-    let anleitungsschrittId = data.id;
-    let komponentenContainer = document.createElement("div");
+  // Komponenten, die zum aktuellen Schritt gehören, werden geholt und auf der Seite geladen
+function addKomponenten(container, data) {
+  // ID des aktuellen Anleitungsschritts
+  let anleitungsschrittId = data.id;
+  let komponentenContainer = document.createElement("div");
 
-    // Leeren des Containers bevor neue Komponenten hinzugefuegt werden
-    komponentenContainer.innerHTML = "";
+  // Leeren des Containers bevor neue Komponenten hinzugefügt werden
+  komponentenContainer.innerHTML = "";
 
-    // Komponenten werden anhand des ForeignKeys gefiltert
-    let komponenten = kompdata.filter(
-      (komponente) => komponente.anleitungsschritt_id === anleitungsschrittId
-    );
+  // Komponenten werden anhand des ForeignKeys gefiltert
+  let komponenten = kompdata.filter(
+    (komponente) => komponente.anleitungsschritt_id === anleitungsschrittId
+  );
 
-    // Komponenten werden auf die Seite geladen
-    // Komponentenbild fehlt noch
-    komponenten.forEach((komponente) => {
-      let komponenteElement = document.createElement("div");
-      komponenteElement.classList.add("komponente");
-      komponenteElement.textContent = komponente.kompbeschreibung;
-      let komponenteBildElement = document.createElement("img");
-      komponenteBildElement.setAttribute("src", "/media/" + komponente.kompbild);
-      
-      komponentenContainer.appendChild(komponenteElement, komponenteBildElement);
-      container.appendChild(komponentenContainer);
-    });
-  }
+  // Komponenten werden auf die Seite geladen
+  komponenten.forEach((komponente) => {
+    let komponenteElement = document.createElement("div");
+    komponenteElement.classList.add("komponente");
+
+    let komponenteBeschreibung = document.createElement("p");
+    komponenteBeschreibung.textContent = komponente.kompbeschreibung;
+    komponenteBeschreibung.classList.add("kompbeschreibung");
+    komponenteElement.appendChild(komponenteBeschreibung);
+
+    let komponenteBildElement = document.createElement("img");
+    komponenteBildElement.setAttribute("src", "/media/" + komponente.kompbild);
+    komponenteBildElement.classList.add("kompbild");
+    
+    komponenteElement.appendChild(komponenteBildElement);
+    komponentenContainer.appendChild(komponenteElement);
+  });
+
+  container.appendChild(komponentenContainer);
+}
+
+  
 
   // Entfernen des Anleitungsschritts und der Komponenten
   function removeContainerChildren(container) {

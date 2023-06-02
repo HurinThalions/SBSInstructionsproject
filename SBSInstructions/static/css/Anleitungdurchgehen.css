@@ -1,9 +1,15 @@
 /* Allgemeines */
 
 body {
-    font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-    background-color: #F3F5F6;
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: 100%;
 }
 
 p {
@@ -65,11 +71,6 @@ h4{
 }
 
 /* --------------------------------Header--------------------------- */
-
-body {
-    margin: 0;   
-}
-
 .header {
     display: flex;
     justify-content: right;
@@ -125,6 +126,14 @@ body {
     background-color: white;
 }
 
+.aErstellen:hover{
+    cursor: pointer;
+}
+
+.profil:hover{
+    cursor: pointer;
+}
+
 .logocontainer {
     display: flex;
     justify-content: left;
@@ -134,18 +143,13 @@ body {
     left: 3%;
 }
 
-.logocontainer :hover{
+.logocontainer:hover{
     cursor: pointer;
 }
 
 /* --------------------------------Hintergrund---------------------------- */
 .hintergrund {
-    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
     margin: auto;
-    background-size: 100%;
-    background-position-y : 120px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     position: static;
     width: auto;
     height: auto;
@@ -164,7 +168,6 @@ body {
 }
 
 .vollbild {
-    background-image: url("../../media/images/Schrittbilder/pexels-phil-desforges-15185102_hcN7Q5y.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -241,6 +244,12 @@ body {
     height: 20vh;
 }
 
+#Bild1:hover, #Bild2:hover, #Bild3:hover, #Bild4:hover, #Bild5:hover, #Bild6:hover, #Bild7:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.7);
+    transform: translate(0, -0.3rem);
+}
+
 /* -------------------------------Überblickicon------------------------------ */
 
 .navresbuttons{
@@ -284,15 +293,16 @@ body {
     position: absolute;
     border: 1px solid black;
     border-radius: 10px;
-    display: table-cell;
+    display: flex;
     max-width: 45vw;
     height: auto;
-    right: 50vw;
+    left: 15vw;
     margin-top: 1.5vw;
+    padding: 20px;
+    top: 12vw;
 }
 
 .rechteZelle {
-    /* background-color: #FFFFFF; */
     text-align: center;
     width: 42vw;
     height: 75vh;
@@ -301,7 +311,8 @@ body {
     left: 50vw;
     bottom: 10vh;
     margin-left: 2vw;
-}   
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
+}
 
 }
 
@@ -327,8 +338,13 @@ body {
     }
 }
 
+.hover-effect:hover{
+    cursor: pointer;
+    transform: translate(0, -0.3rem);
+}
+
   .beschreibung {
-    background-color: #ffffff;
+    background-color: #4680a72e;
     padding: 10px;
     width: auto;
     margin-left: 15%;
@@ -336,6 +352,30 @@ body {
     text-align: left;
     border: 1px;
     border-radius: 10px;
+  }
+
+  .kompbild{
+    max-width: auto;
+    max-height: 20vh;
+    border-radius: 10px;
+    margin-left: 10%;
+  }
+
+  .komponente{
+    max-width: 40vw;
+    border: solid black 1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    padding: 10px;
+    background-color: #d7dcf890;
+  }
+  
+  #anleitungstitel{
+    position: absolute;
+    left: 5vw;
+    top: 7vw;
   }
 
 #schritt {
@@ -353,102 +393,49 @@ body {
     font-size: 28px;
 }
 
-.informationsrahmen {
-    text-align: left;
-    background-color: #fff;
-    /* border: 1px solid #000; */
-    border-radius: 7%;
-    width: auto;
-    height: auto;
-    margin: 2vh;
-}
-
-.informationsrahmen2 {
-    background-color: #fff;
-    /* border: 1px solid #000; */
-    border-radius: 7%;
-    max-width: 45vh;
-    min-height: 29vh;
-    margin: 2vh;
-}
-
-#komponenten {
-    margin-bottom: 0;
-}
-
-.einzelneKomponente {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.komponentenbild {
-    display: inline-block;
-    width: 10vw;
-    height: 10vh;
-    background-position: center;
-    object-fit: cover;
-    margin-left: 2vh;
-    margin-top: 2vh;
-    border-radius: 6%;
-}
-
-#komponente1 {
-    margin-bottom: 1vh;
-}
-
-.unterueberschrift {
-    margin-bottom: 2vh;
-}
-
 .rechteZelle:hover {
     cursor: pointer;
 }
 
-#groesseBild {
-    max-height: 90%;
-    max-width: 90%;
-    object-fit: fill;
-}
-
 
 #BildSchritt1 {
-    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-image: url(../../static/Bilder/Ofenkartoffeln.jpg);
     background-size: cover;
     background-position:center;
 }
 
 #BildSchritt2 {
-    background-image: url(Bilder/GeschnitteneGurkeKnoblauch.jpeg);
+    background-image: url(../../static/Bilder/GeschnitteneGurkeKnoblauch.jpeg);
     background-size: cover;
     background-position:center;
 }
 
 #BildSchritt3 {
-    background-image: url(Bilder/Zaziki.jpeg);
+    background-image: url(../../static/Bilder/Zaziki.jpeg);
     background-size: cover;
     background-position:center;
 }
 
 #BildSchritt4 {
-    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-image: url(../../static/Bilder/Ofenkartoffeln.jpg);
     background-size: cover;
     background-position:center;
 }
 
 #BildSchritt5 {
-    background-image: url(Bilder/Ofenkartoffeln.jpg);
+    background-image: url(../../static/Bilder/Ofenkartoffeln.jpg);
     background-size: cover;
     background-position:center;
 }
 
 #BildSchritt6 {
-    background-image: url(Bilder/Seehecht_angeordnet.jpg);
+    background-image: url(../../static/Bilder/Seehecht_angeordnet.jpg);
     background-size: cover;
     background-position:center;
 }
 
 .vorzurueck {
+    margin-top: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;

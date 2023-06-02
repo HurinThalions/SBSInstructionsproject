@@ -24,26 +24,25 @@
     <!-- Divider für Vollbild-Popup -->
     <div id="overlayVollbild">
         <div class="vollbild">
-            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">
-            <img id="popupBild" src="" alt="Vergrößertes Bild">
+            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">           
         </div>
     </div>
     
     <!-- Divider für Schritte-Popup -->
     <div id="overlaySchritte">
         <div class="schritte">
-            <img class="schliessen" src="SVG/closecircle.svg" onclick="popupOffS()">
+            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffS()">
             <div id="schrittefenster">
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
-                    <img id="Bild1" src="Bilder/Ofenkartoffeln.jpg">
+                    <img id="Bild1" src="../../static/Bilder/Ofenkartoffeln.jpg">
                     <p>Schritt 1</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
-                    <img id="Bild2" src="Bilder/GeschnitteneGurkeKnoblauch.jpeg">
+                    <img id="Bild2" src="../../static/Bilder/GeschnitteneGurkeKnoblauch.jpeg">
                     <p>Schritt 2</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
-                    <img id="Bild3" src="Bilder/Zaziki.jpeg">
+                    <img id="Bild3" src="../../static/Bilder/Zaziki.jpeg">
                     <p>Schritt 3</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen4.html'">
@@ -51,11 +50,11 @@
                     <p>Schritt 4</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen5.html'">
-                    <img id="Bild5" src="Bilder/FischPfanne.jpeg">
+                    <img id="Bild5" src="../../static/Bilder/FischPfanne.jpeg">
                     <p>Schritt 5</p>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
-                    <img id="Bild6" src="Bilder/Seehecht_angeordnet.jpg">
+                    <img id="Bild6" src="../../static/Bilder/Seehecht_angeordnet.jpg">
                     <p>Schritt 6</p>
                 </div>
             </div>
@@ -79,14 +78,16 @@
     <!-- Buttons -->
     <div class="navresbuttons"> 
         <button id="ueberblick">
-            <img id="sizeicon" src="SVG/Overview.svg" onclick="popupOnS()">
+            <img id="sizeicon" src="../../static/Bilder/Overview.svg" onclick="popupOnS()">
         </button>
         <button id="rueckmelder">
-            <img id="fragezeichen" src="Bilder/Fragezeichen.png" onclick="popupOnS()">
+            <img id="fragezeichen" src="../../static/Bilder/Fragezeichen.png" onclick="popupOnS()">
         </button>
     </div>
 
-    {{ anleitungstitel }}
+    <div id="anleitungstitel">
+        <h1>{{ anleitungstitel }}</h1>
+    </div>
 
     <div id="linkeZelle">
     <div id="schritt-details">
@@ -99,7 +100,14 @@
                     </div>
                     <div class="komponenten-container">
                         {% for komponente in komponenten.komponenten %}
-                            <div class="komponente">{{ komponente }}</div>
+                            <div class="komponente">
+
+                                <p>Komponente: {{ komponente }}</p>
+                            </div>
+                            <div class="kompbild">
+                                <p>Komponentenbild:</p>
+                                {{ komponenten.kompbild }}
+                            </div>  
                         {% endfor %}
                     </div>
                 </li>

@@ -149,6 +149,14 @@ html {
     background-color: white;
 }
 
+.aErstellen:hover{
+    cursor: pointer;
+}
+
+.profil:hover{
+    cursor: pointer;
+}
+
 .logocontainer {
     display: flex;
     justify-content: left;
