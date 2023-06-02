@@ -449,14 +449,19 @@ html {
     }
     
     .eingabenspeichernbutton{
+        background-image: url('../../static/Bilder/weiter.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
         display:flex;
         justify-content: center;
         align-items: center;
-        width: 160px;
-        height: auto;
+        width: 40px;
+        height: 40px;
         background-color: #fff;
         border-color: #4680A7;
         border-radius: 20px;
+        
     }
 
     .eingabenspeichernbutton:hover{
