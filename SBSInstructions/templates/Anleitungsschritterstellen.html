@@ -115,11 +115,13 @@
                                     <button class="komp1">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
                                 </div>
+                                <input type="hidden" name="Komponente-anleitungsschritt" value="{{ form.forms.Anleitungsschritt.id.value }}">
                                 {{ form.forms.Komponente.anleitungsschritt }}
                                 <div class ="area2">
                                     <button class="komp2">{{ form.forms.Komponente.kompbild }}</button>
                                     <div id="kompbeschreibungFormInput">{{ form.forms.Komponente.kompbeschreibung }}</div>
                                 </div>
+                                <input type="hidden" name="Komponente-anleitungsschritt" value="{{ form.forms.Anleitungsschritt.id.value }}">
                             </div>
                     </div> 
                 </div>
@@ -175,34 +177,3 @@
 </script>
 
 
-
-
-<!-- <body>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        Zuteilung zu Anleitung
-        {{ form.forms.Anleitungsschritt.anleitung }}
-        
-        schrittbenennung
-        {{ form.forms.Anleitungsschritt.schrittbenennung }}
-
-        Beschreibung
-        {{ form.forms.Anleitungsschritt.beschreibung }}
-
-        schrittbild
-        {{ form.forms.Anleitungsschritt.schrittbild }}
-
-        Zuteilung zu Anleitungsschritt
-        {{ form.forms.Komponente.anleitungsschritt }}
-
-        Komponentenbeschreibung
-        {{ form.forms.Komponente.kompbeschreibung }}
-
-        KomponentenBild
-        {{ form.forms.Komponente.kompbild }}
-
-
-        
-        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-        <input type="submit" value="Speichern">
-</body> -->
