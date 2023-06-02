@@ -95,7 +95,7 @@
             {% for einzelschritt in einzelschritte %}
                 <li data-index="{{ forloop.counter0 }}">
                     <div class="einzelschritt">
-                        <h1>{{ einzelschritt.schrittbenennung }}</h1>
+                        {{ einzelschritt.schrittbenennung }}
                         <p>{{ einzelschritt.beschreibung }}</p>
                     </div>
                     <div class="komponenten-container">

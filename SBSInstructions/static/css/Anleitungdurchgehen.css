@@ -20,7 +20,6 @@ p {
 
 h1{
     font-family: 'Poppins', sans-serif;
-    margin-left: 3vh;
     font-size: 3.5vh;
     font-weight: 400;
     margin: none;
@@ -303,7 +302,6 @@ h4{
 }
 
 .rechteZelle {
-    text-align: center;
     width: 42vw;
     height: 75vh;
     border-radius: 2%;
@@ -316,7 +314,7 @@ h4{
 
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
     #linkeZelle {
         border: 1px solid black;
         border-radius: 10px;
@@ -336,18 +334,16 @@ h4{
         position: relative;
         margin-top: 10px;
     }
-}
+} */
 
-.hover-effect:hover{
-    cursor: pointer;
-    transform: translate(0, -0.3rem);
+.schrittbenennung{
+    position: relative;
 }
 
   .beschreibung {
     background-color: #4680a72e;
     padding: 10px;
     width: auto;
-    margin-left: 15%;
     margin-right: 15%;
     text-align: left;
     border: 1px;
@@ -372,11 +368,11 @@ h4{
     background-color: #d7dcf890;
   }
   
-  #anleitungstitel{
+#anleitungstitel{
     position: absolute;
     left: 5vw;
     top: 7vw;
-  }
+}
 
 #schritt {
     display: flex;
@@ -397,7 +393,7 @@ h4{
     cursor: pointer;
 }
 
-
+/* --------------------------Schritte-Bilder-------------------- */
 #BildSchritt1 {
     background-image: url(../../static/Bilder/Ofenkartoffeln.jpg);
     background-size: cover;
@@ -433,6 +429,8 @@ h4{
     background-size: cover;
     background-position:center;
 }
+
+/* -------------------Progress-Bar---------------- */
 
 .vorzurueck {
     margin-top: 8px;
@@ -490,7 +488,6 @@ h4{
 }
 
 #polygonhell {
-    
     width: 30vw;
     height: 30vh;
     fill: #D9B4B4;
@@ -501,5 +498,4 @@ h4{
     margin: none;
     position: relative;
     bottom: 2vh;
-    
 }

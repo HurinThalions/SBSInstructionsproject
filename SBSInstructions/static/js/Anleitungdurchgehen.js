@@ -44,6 +44,7 @@ function loadAnleitungData1() {
     let schrittbenennungElement = document.createElement("h1");
     let benennungText = document.createTextNode(data.schrittbenennung);
     schrittbenennungElement.appendChild(benennungText);
+    schrittbenennungElement.classList.add("schrittbenennung");
 
     let beschreibungElement = document.createElement("p");
     let beschreibungText = document.createTextNode(data.beschreibung);
@@ -52,7 +53,7 @@ function loadAnleitungData1() {
 
     let schrittBildElement = document.createElement("img");
     schrittBildElement.setAttribute("src", "/media/" + data.schrittbild);
-    schrittBildElement.classList.add("rechteZelle", "hover-effect");
+    schrittBildElement.classList.add("rechteZelle");
     console.log(data.schrittbild);
 
     einzelschrittElement.appendChild(schrittbenennungElement);
