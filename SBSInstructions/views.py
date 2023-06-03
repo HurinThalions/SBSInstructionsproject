@@ -22,6 +22,18 @@ def index(request):
     return render(request, 'Startseite.html')
 
 
+# Anleitung wurde durchgegangen
+def anleitungfertig(request):
+    return render(request, 'Anleitungfertig.html')
+
+# Anleitung wurde teilweise erstellt
+def entwurffertig(request):
+    return render(request, 'Entwurfgespeichert.html')
+
+# Anleitung wurde erstellt
+def anleitunggespeichert(request):
+    return render(request, 'Anleitunggespeichert.html')
+
 
 # erste Seite von Anleitungen wird hiermit erstellt
 class AnleitungerstellenCreateView(CreateView):
@@ -101,12 +113,6 @@ class AnleitungdurchgehenDetailView(DetailView):
                     'komponenten': list(Komponente.objects.values())}
 
         return context
-
-
-
-class AnleitungfertigDetailView(DetailView):
-
-    template_name = 'Anleitungfertig.html'
 
 
 

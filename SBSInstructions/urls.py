@@ -13,12 +13,15 @@ urlpatterns = [
     path('komponentenerstellen', views.KomponentenerstellenCreateView.as_view(), name='komponentenerstellen_createview'),
 
     path('anleitungdurchgehen/<int:pk>', views.AnleitungdurchgehenDetailView.as_view(), name='anleitungdurchgehen_detail_view'),
-    path('anleitungfertig', views.AnleitungfertigDetailView.as_view(), name='anleitungfertig_detail_view'),
     
     path('profilerstellen', views.ProfilerstellenCreateView.as_view(), name='profilerstellen_create_view'),
     path('login', views.ProfileinloggenLoginView.as_view(), name='Profileinloggen_login_view'),
     path('profileigeneanleitungen/<int:pk>', views.ProfileigeneAnleitungenDetailView.as_view(), name='profileigeneanleitungen'),
 
+    path('anleitungfertig', views.anleitungfertig, name='anleitungfertig'),
+    path('entwurffertig', views.entwurffertig, name='entwurffertig'),
+    path('anleitunggespeichert', views.anleitunggespeichert, name='anleitunggespeichert'),
+    
 ]
 urlpatterns += staticfiles_urlpatterns()
 

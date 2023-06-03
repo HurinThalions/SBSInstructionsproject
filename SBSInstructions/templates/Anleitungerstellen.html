@@ -146,7 +146,6 @@
                         <div class="iconposition">
                             <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
                         </div>{{ form.anleittitel }}
-                        <!-- <input class="texteingabe" type="text" name="Name" size="70%" placeholder="Hier Titel einfügen" placeholder='{{ form.anleittitel }}'> -->
                     </div>
 
                     <!-- Kategorie -->
@@ -154,7 +153,6 @@
                         <div class="iconposition">
                             <p>Kategorie:</p><p hidden class="fehlermeldungtext">Bitte geben Sie mindestens eine Kategorie an!</p>
                         </div>{{ form.kategorie }}
-                        <!-- <input class="texteingabe" type="text" placeholder='{{ form.kategorie }}'> -->
                     </div>
 
                     <!-- Dauer -->
@@ -178,9 +176,7 @@
 
         <!-- Weiter Block -->
         <div class="weiter">
-            <button class="weitericon" type="button" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungsschritteerstellen'"> 
-                <img id="weiterklein" src="../../static/Bilder/weiter.svg" >
-            </button> <!-- Schritt hinzufuegen hier verlinken -->
+            <input class="eingabenspeichernbutton" type="submit" value="Eingaben speichern">
         </div>
 
     </div>
@@ -201,7 +197,7 @@
             <div class="buttonschriftprimaer">Anleitung speichern</div>
             </button> 
         </div>
-        <input class="eingabenspeichernbutton" type="submit" value="Eingaben speichern">
+        
     </div>
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
     </form>

@@ -53,16 +53,15 @@ body{
 }
 
 .profil {
-    background-image: url("../static/Profil_Logo.svg");
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
     background-size: cover;
     background-color: white;
 }
 
 .aErstellen {
-    background-image: url("../static/Anleitunghinzufuegen.svg");
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
     background-size: cover;
     background-color: white;
-    
 }
 
 .logocontainer {
