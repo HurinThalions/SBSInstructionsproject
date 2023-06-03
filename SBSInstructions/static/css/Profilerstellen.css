@@ -3,6 +3,11 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .block {
@@ -18,7 +23,7 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 form {
@@ -27,6 +32,12 @@ form {
 
 h1 {
     text-align: center;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vh;
+    font-weight: 250;
 }
 
 label {
