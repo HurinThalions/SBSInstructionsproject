@@ -394,7 +394,7 @@ margin-right: 15%;
 .eingabeformular {
     font-size: 30px;
     background-color: #abb5ba;
-    width: 90%;
+    max-width: 90%;
     background-color: #ffffff; 
     color: rgb(0, 0, 0); border: 10px; 
     margin-left: 5%;
@@ -514,7 +514,7 @@ border-radius: 50%;
 .platzhalterBild {
     align-items: left;
     margin-right: 5%;
-    width: 100%;
+    max-width: 80%;
     height: 78%;
     border-radius: 10px;
     border-color: #000;
@@ -528,7 +528,7 @@ border-radius: 50%;
 
 .titelkategoriedauerthumbnail {
     display: flex;
-    align-items: stretch;
+    /* align-items: stretch; */
     margin-bottom: 30px;
     padding-left: 30px;
 }
@@ -537,7 +537,7 @@ border-radius: 50%;
     justify-content: right;
     width: 100%;
     margin-right: 2vw;
-    margin-left: 35%;
+    margin-left: auto;
     max-width: 600px;
 }
 

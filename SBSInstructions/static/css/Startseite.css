@@ -156,6 +156,7 @@ body {
     grid-gap: 20px;
     padding: 10px;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .anleitungsBlock {
@@ -189,7 +190,7 @@ body {
 }
 
 .anleitungsBlockText p {
-    margin: 5px 0;
+    margin: 5px;
 }
 
 .anleitungsBlockSave {

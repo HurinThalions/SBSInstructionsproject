@@ -193,18 +193,26 @@ h4{
 /* -----------------------------Schritte Overlay----------------------------- */
 
 #overlaySchritte {
-    position: fixed;
+    /* position: fixed;
     display: none;
     width: 90vw; 
     height: 80vh;
     margin-left: 5vw;
     margin-top: 10vh;
     backdrop-filter: blur(2px);
-    z-index: 2;
+    z-index: 2; */
+    position: fixed;
+    display: none;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Hintergrund dunkler machen */
+    backdrop-filter: blur(5px); /* Hintergrund verschwommen machen */
+    z-index: 3;
+
 }
 
 .schritte {
-    background-color: #fff;
+    background-color: #c3d9e8c2;
     position: absolute;
     align-items: center;
     top: 50%;
@@ -212,6 +220,7 @@ h4{
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     border: 2px solid #000;
+    border-radius: 10px;
     width: 80vw;
     height: 70vh;
     overflow-y: scroll;
@@ -236,7 +245,7 @@ h4{
 
 #Bild1, #Bild2, #Bild3, #Bild4, #Bild5, #Bild6, #Bild7 {
     object-fit: cover;
-    border: 1px solid #000;
+    border: 1px solid #ffffff94;
     border-radius: 3%;
     width: 10vw;
     height: 20vh;
@@ -312,7 +321,7 @@ h4{
 
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
     #linkeZelle {
         border: 1px solid black;
         border-radius: 10px;
@@ -332,7 +341,7 @@ h4{
         position: relative;
         margin-top: 10px;
     }
-}
+} */
 
 .schrittbenennung{
     position: relative;

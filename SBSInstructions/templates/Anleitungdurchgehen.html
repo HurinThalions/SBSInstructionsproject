@@ -21,10 +21,9 @@
 </head>
 
 <body>
-    <!-- Divider für Vollbild-Popup -->
     <div id="overlayVollbild">
         <div class="vollbild">
-            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">           
+            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">
         </div>
     </div>
     
@@ -35,27 +34,27 @@
             <div id="schrittefenster">
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
                     <img id="Bild1" src="../../static/Bilder/Ofenkartoffeln.jpg">
-                    <p>Schritt 1</p>
+                    <h2>Schritt 1</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
                     <img id="Bild2" src="../../static/Bilder/GeschnitteneGurkeKnoblauch.jpeg">
-                    <p>Schritt 2</p>
+                    <h2>Schritt 2</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
                     <img id="Bild3" src="../../static/Bilder/Zaziki.jpeg">
-                    <p>Schritt 3</p>
+                    <h2>Schritt 3</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen4.html'">
                     <img id="Bild4">
-                    <p>Schritt 4</p>
+                    <h2>Schritt 4</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen5.html'">
                     <img id="Bild5" src="../../static/Bilder/FischPfanne.jpeg">
-                    <p>Schritt 5</p>
+                    <h2>Schritt 5</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
                     <img id="Bild6" src="../../static/Bilder/Seehecht_angeordnet.jpg">
-                    <p>Schritt 6</p>
+                    <h2>Schritt 6</h2>
                 </div>
             </div>
         </div>
@@ -117,10 +116,8 @@
     </div>
 
     <div class="rechteZelle" onclick="popupOnV()">
-         <img src="{{ einzelschritt.bild }}" id="schrittbildrechtezelle" onclick="popupOnV()">
+         <img src="{{ einzelschritt.bild }}" class="schrittbildrechtezelle" onclick="popupOnV()">
     </div>
-
-</div>
     
     <div class="vorzurueck">
         <div class="anzeige">

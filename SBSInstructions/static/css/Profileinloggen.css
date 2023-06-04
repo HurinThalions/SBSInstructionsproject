@@ -32,6 +32,7 @@ body {
     cursor: pointer;
 }
 
+/* Anmeldungsblock */
 .block {
     display: flex;
     justify-content: center;
