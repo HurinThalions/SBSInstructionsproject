@@ -23,9 +23,9 @@
             <h3 class="mittigeSchriftUeberschrift">Auswahl</h3>
             <button class="buttonAuswahl" onclick="popupOffS()"> <!-- Abbrech-Popup hier verlinkt -->
                 <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Entwurf.svg"></div>
-                <div class="buttonschriftprimaer" onclick="location.href='./Entwurf_gespeichert.html'">Als Entwurf speichern</div>
+                <div class="buttonschriftprimaer" onclick="window.location.pathname = '/SBSInstructionsproject/entwurffertig'">Als Entwurf speichern</div>
             </button> 
-            <button class="buttonAuswahl" onclick="location.href='./Anleitung_gespeichert_und_hochgeladen.html'"> <!-- Speichern-Seite hier verlinken -->
+            <button class="buttonAuswahl" onclick="window.location.pathname = '/SBSInstructionsproject/anleitunggespeichert'"> <!-- Speichern-Seite hier verlinken -->
                 <div class="buttoninnenprimaer"><img src=" ../../static/Bilder/Speichern.svg"></div>
                 <div class="buttonschriftprimaer">Speichern und hochladen</div>  <!-- Beispielhafte Verlinkung -->
             </button> 
@@ -76,7 +76,7 @@
             <div class="boxumAErstellen">
                 <input class="aErstellen" type="button" onclick="NavigateToSite()"/>
             </div>
-            <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/profil'">
+            <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/login'">
                 <input class="profil" type="button">
             </div>       
         </div>

@@ -50,6 +50,12 @@ class KomponenteForm(forms.ModelForm):
         fields = ['anleitungsschritt', 'kompbeschreibung', 'kompbild']
         exclude = ('anleitungsschritt',)
 
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['kompbeschreibung'].required = False
+    #     self.fields['kompbild'].required = False
+
+
     def save_with_anleitungsschritt_id(self, anleitungsschritt):
         form = super().save(commit=False)
         form.anleitungsschritt = anleitungsschritt
