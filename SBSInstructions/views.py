@@ -36,6 +36,7 @@ def anleitunggespeichert(request):
     return render(request, 'Anleitunggespeichert.html')
 
 
+
 # erste Seite von Anleitungen wird hiermit erstellt
 class AnleitungerstellenCreateView(CreateView):
 
