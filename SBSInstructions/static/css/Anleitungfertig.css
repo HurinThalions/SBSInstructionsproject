@@ -22,9 +22,7 @@ body {
     min-width: 110px;
 }
 
-.boxumAErstellen {
-    background-image: linear-gradient(#d6e1e875, #1d415967);
-}
+
 
 .profil, .aErstellen{
     /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
