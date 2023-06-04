@@ -120,8 +120,6 @@
                 <!-- Automatisches Datum -->
                 <div class="datum">
                     <p class="text">Datum:</p>
-                    <!-- <div class="autoText" id="heutigesDatum"></div>
-                    <script>getDate();</script> -->
                     {{ form.datum }}
                 </div>
 
@@ -176,11 +174,12 @@
 
         <!-- Weiter Block -->
         <div class="weiter">
-            <input class="eingabenspeichernbutton" type="submit" value="Eingaben speichern">
+            <input class="eingabenspeichernbutton" type="submit" value="">
         </div>
 
     </div>
-
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    </form>
     <!-- Abbrechen und Speichern Buttons -->
     <div class="abbruchspeichern">
 
@@ -199,8 +198,7 @@
         </div>
         
     </div>
-    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-    </form>
+    
 </div>
 </body>
 
