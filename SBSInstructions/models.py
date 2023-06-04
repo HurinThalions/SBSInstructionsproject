@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 
 # Create your models here.
 
+
 class Profil(models.Model):
     benutzername = models.CharField(max_length=100, unique=True)
     email = models.EmailField(max_length=100, unique=True)

@@ -5,6 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
+# Formular zum Erstellen ein Accounts
+# Nur valide e-mail adreesen werden akzeptiert und individuelle benutzernamen
 class SignupForm(forms.ModelForm):
     email = forms.EmailField(max_length=100, help_text='Required. Enter a valid email address.')
     password = forms.CharField(widget=forms.PasswordInput)
@@ -13,25 +15,34 @@ class SignupForm(forms.ModelForm):
         model = Profil
         fields = ('benutzername', 'email', 'password')
 
+
+# Formular zu einloggen
+# Benutzername kann auch verwendet werden
 class EmailAuthenticationForm(AuthenticationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
 
     class Meta:
         fields = ('email', 'password')
 
+
+# Formular um Anleitungen zu erstellen
 class AnleitungForm(forms.ModelForm):
+
+    # Dauer wird in Minute aufgenommen
     dauer = forms.IntegerField(label='Dauer (in Minuten)')
 
     class Meta:
         model = Anleitung
         fields = ('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img')
 
+    # Einstellung das Dauer in Minuten aufgenommen werden kann
     def clean_dauer(self):
         dauer = self.cleaned_data['dauer']
         dauer_in_minuten = timedelta(minutes=dauer)
         return dauer_in_minuten
     
 
+# Formular um Anleitungsschritte zu erstellen
 class AnleitungsschrittForm(forms.ModelForm):
     class Meta:
         model = Anleitungsschritt
