@@ -22,6 +22,7 @@ def index(request):
     return render(request, 'Startseite.html')
 
 
+
 # Anleitung wurde durchgegangen
 def anleitungfertig(request):
     return render(request, 'Anleitungfertig.html')
@@ -109,7 +110,7 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         # Kontextdaten setzen
         context = { 'anleitungstitel': anleitung,
-                    'einzelschritte': list(Anleitungsschritt.objects.values('id','schrittbenennung', 'beschreibung', 'schrittbild')),
+                    'einzelschritte': list(Anleitungsschritt.objects.filter(anleitung = anleitung).values('id','schrittbenennung', 'beschreibung', 'schrittbild')),
                     'komponenten': list(Komponente.objects.values())}
 
         return context
@@ -134,7 +135,7 @@ class ProfilerstellenCreateView(CreateView):
 class ProfileinloggenLoginView(LoginView):
     template_name = 'Profileinloggen.html'
     authentication_form = EmailAuthenticationForm
-    success_url = '/profileigeneanleitungen'
+    success_url = ''
     
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
@@ -144,6 +145,27 @@ class ProfileigeneAnleitungenDetailView(DetailView):
 
 
 
+# Startseite
+# Anleitungen werden aus der Datenbank geholt und ueber js in den Katalog geladen
+# class KatalogDetailView(DetailView):
+
+#     #  Definierung des Models das verwendet wird
+#     model = Anleitung
+
+#     # Template die verwendet wird, um die Seite zu rendern
+#     template_name = 'Startseite.html'
+    
+#     # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
+#     def get_context_data(self, **kwargs):
+
+#         # Holt die Anleitung
+#         context = super().get_context_data(**kwargs)
+#         anleitung = self.get_object()
+
+#         # Kontextdaten setzen
+#         context = { 'anleitung': list(Anleitung.objects.values('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
+
+#         return context
 
 # Anleitungsschritt und Komponenten werden in einem Schritt aufgenommen. Funktioniert noch nicht
 # Anleitungsschritte werden erstellt

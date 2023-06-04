@@ -21,6 +21,8 @@ urlpatterns = [
     path('anleitungfertig', views.anleitungfertig, name='anleitungfertig'),
     path('entwurffertig', views.entwurffertig, name='entwurffertig'),
     path('anleitunggespeichert', views.anleitunggespeichert, name='anleitunggespeichert'),
+
+    # path('', views.KatalogDetailView.as_view(), name='katalog_detail_view'),
     
 ]
 urlpatterns += staticfiles_urlpatterns()
