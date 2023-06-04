@@ -20,29 +20,6 @@
 
 <!----------------------------------------------------BODY----------------------------------------------------->
 <body>    
-<!-- Divider für Abbrechen-Popup -->
-<div id="overlayAbbrechen">
-    <div class="abbrechenDialog">
-        <h3 class="mittigeSchriftUeberschrift">Abbrechen</h3>
-
-        <p class="mittigeSchrift">Sind Sie sicher, dass Sie den Kreationsprozess abbrechen wollen?</p>
-
-        <div class="jaNein">
-
-            <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
-                <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
-                <div class="buttonschriftsekundaer">Nein</div>
-            </button> 
-
-            <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'">      
-                <div class="buttoninnenprimaer"><img src="../../static/Bilder/Ja.svg"></div>
-                <div class="buttonschriftprimaer">Ja</div>
-            </button> 
-
-        </div>
-    </div>
-</div> 
-
 <!-- Divider für Speichern-Popup -->
 <div id="overlaySpeichern">
     <div class="speichernDialog">
@@ -74,6 +51,29 @@
         <input class="profil" type="button"/>
     </div>       
 </div>
+
+<!-- Divider für Abbrechen-Popup -->
+<div id="overlayAbbrechen">
+    <div class="abbrechenDialog">
+        <h3 class="mittigeSchriftUeberschrift">Abbrechen</h3>
+
+        <p class="mittigeSchrift">Sind Sie sicher, dass Sie den Kreationsprozess abbrechen wollen?</p>
+
+        <div class="jaNein">
+
+            <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
+                <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
+                <div class="buttonschriftsekundaer">Nein</div>
+            </button> 
+
+            <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'">      
+                <div class="buttoninnenprimaer"><img src="../../static/Bilder/Ja.svg"></div>
+                <div class="buttonschriftprimaer">Ja</div>
+            </button> 
+
+        </div>
+    </div>
+</div> 
 
 <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
     <img class="logo" src="../../static/Bilder/Logo.svg">
