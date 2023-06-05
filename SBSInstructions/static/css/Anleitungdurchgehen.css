@@ -193,14 +193,6 @@ h4{
 /* -----------------------------Schritte Overlay----------------------------- */
 
 #overlaySchritte {
-    /* position: fixed;
-    display: none;
-    width: 90vw; 
-    height: 80vh;
-    margin-left: 5vw;
-    margin-top: 10vh;
-    backdrop-filter: blur(2px);
-    z-index: 2; */
     position: fixed;
     display: none;
     width: 100vw; 
@@ -291,6 +283,31 @@ h4{
     width: 35px;
     height: 35px;
     margin-left: 2vw;
+}
+
+#overlayFragezeichen {
+    position: fixed;
+    display: none;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Hintergrund dunkler machen */
+    backdrop-filter: blur(5px); /* Hintergrund verschwommen machen */
+    z-index: 3;
+}
+
+.FragezeichenPopup{
+    background-color: #c3d9e8c2;
+    position: absolute;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: 20vw;
+    height: 20vh;
+    padding: 1%;
 }
 
 /* --------------------------Anzeigen Schritt X----------------------------- */

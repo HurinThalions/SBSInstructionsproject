@@ -28,6 +28,14 @@ function popupOffS()
     document.getElementById("overlaySchritte").style.display = "none";
 }
 
+function popupOnF() {
+    document.getElementById("overlayFragezeichen").style.display = "block";
+}
+
+function popupOffF() {
+    document.getElementById("overlayFragezeichen").style.display = "none";
+}
+
 
 /* Fortschrittsanzeige berechnen */
 

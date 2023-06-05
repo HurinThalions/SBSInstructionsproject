@@ -26,6 +26,16 @@
             <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">
         </div>
     </div>
+
+    <!-- Popup Fragezeichen -->
+    <div id="overlayFragezeichen" style="display: none;">
+        <div class="FragezeichenPopup">
+            <h2>Wichtige Informationen:</h2>
+            <p>Hier können wichtige Informationen angezeigt werden.</p>
+            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffF()">
+        </div>
+    </div>
+
     
     <!-- Divider für Schritte-Popup -->
     <div id="overlaySchritte">
@@ -80,8 +90,9 @@
             <img id="sizeicon" src="../../static/Bilder/Overview.svg" onclick="popupOnS()">
         </button>
         <button id="rueckmelder">
-            <img id="fragezeichen" src="../../static/Bilder/Fragezeichen.png" onclick="popupOnS()">
+            <img id="fragezeichen" src="../../static/Bilder/Fragezeichen.png" onclick="popupOnF()">
         </button>
+        
     </div>
 
     <div id="anleitungstitel">
