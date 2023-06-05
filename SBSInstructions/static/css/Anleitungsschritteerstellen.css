@@ -304,7 +304,7 @@ html {
     margin-top: 0.5%;
     margin-left: 5%;
     margin-right: 10%;
-    
+    padding: 50px;
 }
 
  /*Bildcolum*/
@@ -651,4 +651,13 @@ html {
         cursor: pointer;
     }
 
-    
+    .Komponenten{
+        border-bottom: solid black 1px;
+    }
+
+    .weitereKomponente{
+        position: relative;
+        margin-top: 2%;
+        border-radius: 10px;
+        padding: 20px;
+    }
