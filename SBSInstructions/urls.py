@@ -9,7 +9,7 @@ urlpatterns = [
 
     # Startseite
     # Ein Klassenbasierter View soll noch erstellt werden
-    path('', views.index, name='index'),
+    # path('', views.index, name='index'),
 
     # Anleitung, Anleitungsschritte und Komponenten werden erstellt
     path('anleitungerstellen', views.AnleitungerstellenCreateView.as_view(), name='anleitungerstellen_add_page_create_view'),
@@ -31,7 +31,7 @@ urlpatterns = [
     path('anleitunggespeichert', views.anleitunggespeichert, name='anleitunggespeichert'),
 
     # Url fuer Klassenbasierter StartseitenView
-    # path('', views.KatalogDetailView.as_view(), name='katalog_detail_view'),
+    path('', views.StartseiteListView.as_view(), name='katalog_detail_view'),
     
 ]
 urlpatterns += staticfiles_urlpatterns()

@@ -35,7 +35,21 @@
             <div class="kataloguberschrift">
                 <h2>Katalog</h2>
             </div>
-            <div class="katalog">
+            <div class="katalog" id="katalog">
+
+                <div id="anleitung-details">
+                    {% for einzelneanleitung in anleitung %}
+                    <ul data-index="{{ forloop.counter0 }}">
+                        <div class="einzelneanleitung">
+                            {{ einzelneanleitung.anleitungstitel }}
+                            {{ einzelneanleitung.profil }}
+                            {{ einzelneanleitung.kategorie }}
+                            {{ einzelneanleitung.dauer }}
+                            {{ einzelneanleitung.img }}
+                        </div>
+                    </ul>
+                    {% endfor %}
+                <!-- </div>
                 <div class="anleitungsBlock" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungdurchgehen/3'">
                     <div class="anleitungsBlockImg">
                         <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
@@ -94,8 +108,10 @@
                             <img src="../../static/Bilder/Anleitungsichern.svg">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
     </div>
+
+    {{ anleitung|json_script:"anleitung-json" }}
 </body>
 </html>
