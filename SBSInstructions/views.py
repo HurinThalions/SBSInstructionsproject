@@ -4,7 +4,7 @@ from django import views
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.views.generic.edit import FormView
@@ -17,10 +17,34 @@ from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Kompone
 # Create your views here.
 
 # Startseite
-def index(request):
+# def index(request):
 
-    return render(request, 'Startseite.html')
+#     return render(request, 'Startseite.html')
 
+# Startseite
+# Anleitungen werden aus der Datenbank geholt und ueber js in den Katalog geladen
+class StartseiteListView(ListView):
+
+    #  Definierung des Models das verwendet wird
+    model = Anleitung
+
+    # Template die verwendet wird, um die Seite zu rendern
+    template_name = 'Startseite.html'
+    
+    def get_object(self):
+        return Anleitung.objects.all()
+
+    # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
+    def get_context_data(self, **kwargs):
+
+        # Holt die Anleitung
+        context = super().get_context_data(**kwargs)
+        anleitung = self.get_object()
+
+        # Kontextdaten setzen
+        context = { 'anleitung': list(Anleitung.objects.values('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
+
+        return context
 
 
 # Anleitung wurde durchgegangen
@@ -146,27 +170,6 @@ class ProfileigeneAnleitungenDetailView(DetailView):
 
 
 
-# Startseite
-# Anleitungen werden aus der Datenbank geholt und ueber js in den Katalog geladen
-# class KatalogDetailView(DetailView):
-
-#     #  Definierung des Models das verwendet wird
-#     model = Anleitung
-
-#     # Template die verwendet wird, um die Seite zu rendern
-#     template_name = 'Startseite.html'
-    
-#     # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
-#     def get_context_data(self, **kwargs):
-
-#         # Holt die Anleitung
-#         context = super().get_context_data(**kwargs)
-#         anleitung = self.get_object()
-
-#         # Kontextdaten setzen
-#         context = { 'anleitung': list(Anleitung.objects.values('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
-
-#         return context
 
 # Anleitungsschritt und Komponenten werden in einem Schritt aufgenommen. Funktioniert noch nicht
 # Anleitungsschritte werden erstellt
