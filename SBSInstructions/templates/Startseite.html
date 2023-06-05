@@ -42,7 +42,7 @@
                     <ul data-index="{{ forloop.counter0 }}">
                         <div class="anleitungsBlock">
                             <div class="anleitungsBlockImg">
-                                <img src="{{ einzelneanleitung.img }}">
+                                <img src=" /media/{{ einzelneanleitung.img }}">
                             </div>
                             <div class="anleitungsBlockText">
                                 {{ einzelneanleitung.anleitungstitel }}
@@ -55,67 +55,10 @@
                         </div>
                     </ul>
                     {% endfor %}
-                <!-- </div>
-                <div class="anleitungsBlock" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungdurchgehen/3'">
-                    
-                    <div class="anleitungsBlockText">
-                        <p>Gebratener Seehecht mit Kartoffelstreifen</p>
-                        <p>Von: BolliTV</p>
-                        <p>Kategorie: Essen</p>
-                        <p>Dauer: 50 min</p>
-                        <div class="anleitungsBlockSave">
-                            <img src="../../static/Bilder/Anleitungsichern.svg">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="anleitungsBlock">
-                    <div class="anleitungsBlockImg">
-                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
-                    </div>
-                    <div class="anleitungsBlockText">
-                        <p>MMK Anleitungen erstellen</p>
-                        <p>Von: RotY</p>
-                        <p>Kategorie: How To's</p>
-                        <p>Dauer: 15 min</p>
-                        <div class="anleitungsBlockSave">
-                            <img src="../../static/Bilder/Anleitungsichern.svg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="anleitungsBlock">
-                    <div class="anleitungsBlockImg">
-                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
-                    </div>
-                    <div class="anleitungsBlockText">
-                        <p>MMK Anleitungen erstellen</p>
-                        <p>Von: RotY</p>
-                        <p>Kategorie: How To's</p>
-                        <p>Dauer: 15 min</p>
-                        <div class="anleitungsBlockSave">
-                            <img src="../../static/Bilder/Anleitungsichern.svg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="anleitungsBlock">
-                    <div class="anleitungsBlockImg">
-                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
-                    </div>
-                    <div class="anleitungsBlockText">
-                        <p>MMK Anleitungen erstellen</p>
-                        <p>Von: RotY</p>
-                        <p>Kategorie: How To's</p>
-                        <p>Dauer: 15 min</p>
-                        <div class="anleitungsBlockSave">
-                            <img src="../../static/Bilder/Anleitungsichern.svg">
-                        </div>
-                    </div>
-                </div> -->
             </div>
     </div>
 
-    {{ anleitung|json_script:"anleitung-json" }}
+   
 </body>
 </html>
