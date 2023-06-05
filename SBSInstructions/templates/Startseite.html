@@ -40,20 +40,24 @@
                 <div id="anleitung-details">
                     {% for einzelneanleitung in anleitung %}
                     <ul data-index="{{ forloop.counter0 }}">
-                        <div class="einzelneanleitung">
-                            {{ einzelneanleitung.anleitungstitel }}
-                            {{ einzelneanleitung.profil }}
-                            {{ einzelneanleitung.kategorie }}
-                            {{ einzelneanleitung.dauer }}
-                            {{ einzelneanleitung.img }}
+                        <div class="anleitungsBlock">
+                            <div class="anleitungsBlockImg">
+                                <img src="{{ einzelneanleitung.img }}">
+                            </div>
+                            <div class="anleitungsBlockText">
+                                {{ einzelneanleitung.anleitungstitel }}
+                                {{ einzelneanleitung.profil }}
+                                {{ einzelneanleitung.kategorie }}
+                                {{ einzelneanleitung.dauer }}
+                            </div>
+                            
+                            
                         </div>
                     </ul>
                     {% endfor %}
                 <!-- </div>
                 <div class="anleitungsBlock" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungdurchgehen/3'">
-                    <div class="anleitungsBlockImg">
-                        <img src="../../static/Bilder/Seehecht_angeordnet.jpg">
-                    </div>
+                    
                     <div class="anleitungsBlockText">
                         <p>Gebratener Seehecht mit Kartoffelstreifen</p>
                         <p>Von: BolliTV</p>

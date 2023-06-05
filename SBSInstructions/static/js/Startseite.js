@@ -53,7 +53,7 @@ function addAnleitung(container, data) {
     dauerElement.classList.add("dauer");
 
     let anleitungBildElement = document.createElement("img");
-    anleitungBildElement.setAttribute("src", "/media/" + data.anleitungbild);
+    anleitungBildElement.setAttribute("src", "/media/images/" + data.img);
     anleitungBildElement.classList.add("anleitungbild");
     console.log(data.anleitungbild);
 
