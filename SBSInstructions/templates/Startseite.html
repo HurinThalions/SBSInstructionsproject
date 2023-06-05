@@ -40,8 +40,8 @@
                 <div id="anleitung-details">
                     {% for einzelneanleitung in anleitung %}
                     <ul data-index="{{ forloop.counter0 }}">
-                        <div class="anleitungsBlock">
-                            <div class="anleitungsBlockImg">
+                        <div class="anleitungsBlock" onclick="window.location.pathname = 'SBSInstructionsproject/anleitungdurchgehen/{{ einzelneanleitung.profil }}'">
+                            <div class = "anleitungsBlockImg">
                                 <img src=" /media/{{ einzelneanleitung.img }}">
                             </div>
                             <div class="anleitungsBlockText">
@@ -51,7 +51,7 @@
                                 {{ einzelneanleitung.dauer }}
                             </div>
                             
-                            
+                        </div>
                         </div>
                     </ul>
                     {% endfor %}
