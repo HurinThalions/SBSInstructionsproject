@@ -4,6 +4,7 @@ from django import views
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -115,6 +116,11 @@ class KomponentenerstellenCreateView(CreateView):
         form.save_with_anleitungsschritt_id(anleitungsschritt)
         return super().form_valid(form)
 
+    def get_success_url(self):
+        if 'neueKomponente' in self.request.POST:
+            return 'komponentenerstellen'
+        elif 'neuerSchritt' in self.request.POST:    
+            return 'anleitungsschritteerstellen'
 
 
 # Anleitungen koennen hier durchgegangen werden
