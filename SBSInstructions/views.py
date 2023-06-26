@@ -17,13 +17,6 @@ from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Kompone
 
 # Create your views here.
 
-# Startseite
-# def index(request):
-
-#     return render(request, 'Startseite.html')
-
-# Startseite
-# Anleitungen werden aus der Datenbank geholt und ueber js in den Katalog geladen
 class StartseiteListView(ListView):
 
     #  Definierung des Models das verwendet wird
