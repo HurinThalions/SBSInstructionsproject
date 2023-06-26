@@ -21,7 +21,6 @@ p {
 
 h1{
     font-family: 'Poppins', sans-serif;
-    font-size: 3.5vh;
     font-weight: 400;
     margin: none;
 }
@@ -312,19 +311,19 @@ h4{
 }
 
 /* --------------------------Anzeigen Schritt X----------------------------- */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1200px) {
  
 #linkeZelle {
-    position: absolute;
     border: 1px solid black;
+    border-radius: 10px; 
+    width: 42vw;
+    height: 60vh;
     border-radius: 10px;
-    display: flex;
-    max-width: 35vw;
-    height: auto;
-    left: 5vw;
-    margin-top: 3%;
-    padding: 20px;
-    top: 12vw;
+    position: fixed;
+    right: 50vw;
+    bottom: 15vh;
+    margin-right: 2vw;
+
 }
 
 .rechteZelle {
@@ -337,29 +336,16 @@ h4{
     margin-left: 2vw;
 }
 
+#anleitungstitel{
+    position: absolute;
+    left: 5vw;
+    font-size: 100%;
+    font-weight: 400;
+    width: auto;
+    padding: 10px;
 }
 
-/* @media screen and (max-width: 700px) {
-    #linkeZelle {
-        border: 1px solid black;
-        border-radius: 10px;
-        display: table-cell;
-        width: 70vw;
-        height: auto;
-        margin-top: 1.5vw;
-    }
-    
-    .rechteZelle {
-        background-color: #FFFFFF;
-        text-align: center;
-        width: 42vw;
-        height: 75vh;
-        border-radius: 2%;
-        margin-left: 2vw;
-        position: relative;
-        margin-top: 10px;
-    }
-} */
+}
 
 .schrittbenennung{
     position: relative;
@@ -398,13 +384,6 @@ h4{
   .kompbeschreibung{
     padding: 20px;
   }
-  
-#anleitungstitel{
-    position: absolute;
-    left: 5vw;
-    top: 7vw;
-    max-width: 38vw;
-}
 
 #schritt {
     display: flex;
@@ -493,18 +472,18 @@ h4{
 }
 
 .buttonkleinlinks {
-    width: 3vw;
-    height: 3vh;
+    width: 5vw;
+    height: 5vh;
 }
 
 .buttonkleinrechts {
-    width: 3vw;
-    height: 3vh;
+    width: 5vw;
+    height: 5vh;
 }
 
 .buttonkleinlinks:hover, .buttonkleinrechts:hover {
-    width: 3vw;
-    height: 3vh;
+    width: 5vw;
+    height: 5vh;
     cursor: pointer;
 }
 
@@ -530,4 +509,160 @@ h4{
     margin: none;
     position: relative;
     bottom: 2vh;
+}
+
+
+@media screen and (max-width: 1200px) {
+ 
+    #linkeZelle {
+        border: 1px solid black;
+        border-radius: 10px; 
+        width: 42vw;
+        height: 60vh;
+        border-radius: 10px;
+        position: fixed;
+        right: 50vw;
+        bottom: 15vh;
+        margin-right: 2vw;
+    
+    }
+    
+    .rechteZelle {
+        width: 42vw;
+        height: 60vh;
+        border-radius: 10px;
+        position: fixed;
+        left: 50vw;
+        bottom: 15vh;
+        margin-left: 2vw;
+    }
+    
+    #anleitungstitel{
+        position: absolute;
+        left: 5vw;
+        font-size: 80%;
+        font-weight: 400;
+        width: auto;
+        padding: 10px;
+    }
+    
+    }
+
+@media screen and (max-width: 700px) {
+
+    .header {
+        display: flex;
+        justify-content: right;
+        height: 80px;
+        background-color: #BCBCBC;
+        background-image: linear-gradient(#FFFFFF, #A8A8A8);
+        box-shadow: 0px 2px 5px #c3c3c3;
+    }
+    
+    .boxumProfil, .boxumAErstellen {
+        /* Positionierung der Box */
+        position: relative;
+    
+        /* Einbetten der Box in den Header */
+        height: inherit;
+        min-width: 80px;
+    }
+    
+    .boxumProfil:hover, .boxumAErstellen:hover {
+        cursor: pointer;
+        background-image: linear-gradient(#d6e1e875, #1d415967);
+    }
+    
+    
+    .profil, .aErstellen{
+        /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    
+        /* Groeße des Buttons */
+        height: 50%;
+        width: 50%;
+        max-height: 40px;
+        max-width: 40px;
+    
+        /* Runder Button */
+        border-radius: 50%;
+        border: 0px;
+    }
+
+    
+    .logocontainer {
+        display: flex;
+        justify-content: left;
+        height: 60px;
+        position: absolute;
+        top: 10px;
+    }
+
+    #linkeZelle {
+        border: 1px solid black;
+        border-radius: 10px;
+        display: table-cell;
+        width: 55%;
+        left: 22.5%;
+        height: auto;
+        font-size: 75%;
+    }
+    
+    .rechteZelle {
+        width: 50vw;
+        height: 30vh;
+        border-radius: 10px;
+        left: 25vw;
+        top: 20vh;
+    }
+
+    #anleitungstitel{
+        display: flex;
+        justify-content: center;
+        font-size: 60%;
+        font-weight: 400;
+        width: auto;
+    }
+
+    .fortschrittszahl{
+        left: 1000vw;
+    }
+
+    #fortschrittsanzeige{
+        position: absolute;
+        left: 10000vw;
+    }
+
+    .buttonkleinlinks{
+        position: absolute;
+        right: 80vw;
+        bottom: 35vh;
+        width: 5vw;
+        height: 5vh;
+    }
+
+    .buttonkleinrechts{
+        position: absolute;
+        bottom: 35vh;
+        left: 35vw;
+        width: 5vw;
+        height: 5vh;
+    }
+    
+    .beschreibung{
+        font-size: 90%;
+    }
+
+    .navresbuttons{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        left: 85vw;
+        top: 17vh;
+    }
 }
