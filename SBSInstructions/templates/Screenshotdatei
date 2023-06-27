@@ -1,0 +1,10 @@
+<form method="post" enctype="multipart/form-data">
+    {{ form.profil }}
+    {{ form.datum }}
+    {{ form.anleittitel }}
+    {{ form.kategorie }}
+    {{ form.dauer }}
+    {{ form.img }}
+    <input class="eingabenspeichernbutton" type="submit" value="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+</form>

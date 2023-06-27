@@ -33,7 +33,6 @@ class StartseiteListView(ListView):
 
         # Holt die Anleitung
         context = super().get_context_data(**kwargs)
-        anleitung = self.get_object()
 
         # Kontextdaten setzen
         context = { 'anleitung': list(Anleitung.objects.values('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
