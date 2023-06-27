@@ -6,6 +6,9 @@ from . import views
 
 urlpatterns = [
 
+    # Url fuer Klassenbasierter StartseitenView
+    path('', views.StartseiteListView.as_view(), name='katalog_detail_view'),
+
     # Anleitung, Anleitungsschritte und Komponenten werden erstellt
     path('anleitungerstellen', views.AnleitungerstellenCreateView.as_view(), name='anleitungerstellen_add_page_create_view'),
     path('anleitungsschritteerstellen', views.AnleitungsschritterstellenCreateView.as_view(), name='anleitungsschritteerstellen_add_page_create_view'),
@@ -25,8 +28,7 @@ urlpatterns = [
     path('entwurffertig', views.entwurffertig, name='entwurffertig'),
     path('anleitunggespeichert', views.anleitunggespeichert, name='anleitunggespeichert'),
 
-    # Url fuer Klassenbasierter StartseitenView
-    path('', views.StartseiteListView.as_view(), name='katalog_detail_view'),
+
     
 ]
 urlpatterns += staticfiles_urlpatterns()
