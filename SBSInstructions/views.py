@@ -41,6 +41,11 @@ class StartseiteListView(ListView):
         return context
 
 
+
+# Anleitung wurde erstellt
+def anleitunggespeichert(request):
+    return render(request, 'Anleitunggespeichert.html')
+
 # Anleitung wurde durchgegangen
 def anleitungfertig(request):
     return render(request, 'Anleitungfertig.html')
@@ -48,10 +53,6 @@ def anleitungfertig(request):
 # Anleitung wurde teilweise erstellt
 def entwurffertig(request):
     return render(request, 'Entwurfgespeichert.html')
-
-# Anleitung wurde erstellt
-def anleitunggespeichert(request):
-    return render(request, 'Anleitunggespeichert.html')
 
 
 
