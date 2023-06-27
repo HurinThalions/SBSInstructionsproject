@@ -1,15 +1,10 @@
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf import settings
 from django.urls import path
 
 
 from . import views
 
 urlpatterns = [
-
-    # Startseite
-    # Ein Klassenbasierter View soll noch erstellt werden
-    # path('', views.index, name='index'),
 
     # Anleitung, Anleitungsschritte und Komponenten werden erstellt
     path('anleitungerstellen', views.AnleitungerstellenCreateView.as_view(), name='anleitungerstellen_add_page_create_view'),
