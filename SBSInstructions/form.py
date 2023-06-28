@@ -20,6 +20,7 @@ class SignupForm(forms.ModelForm):
 # Benutzername kann auch verwendet werden
 class EmailAuthenticationForm(AuthenticationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+    password = forms.CharField(label=("Password"), strip=False, widget=forms.PasswordInput)
 
     class Meta:
         fields = ('email', 'password')

@@ -1,15 +1,8 @@
-from dataclasses import field
 import datetime
-from django import views
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
-from django.views.generic.edit import FormView
-from SBSInstructions import form
 
 from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, AnleitungsschrittForm, KomponenteForm, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
@@ -25,10 +18,10 @@ class StartseiteListView(ListView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Startseite.html'
     
+    # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
     def get_object(self):
         return Anleitung.objects.all()
 
-    # Holen der Daten aus der Datenbank und werden in den Kontext, der zur HTML und Javascript geschickt wird, gepackt
     def get_context_data(self, **kwargs):
 
         # Holt die Anleitung
@@ -81,8 +74,7 @@ class AnleitungerstellenCreateView(CreateView):
 
     
     # Daten werden im Formular gespeichert und zur datenbank geschickt
-    def form_valid(self, form):
-        
+    def form_valid(self, form):        
         form.instance.datum = datetime.date.today()
         return super().form_valid(form)
 
@@ -134,7 +126,8 @@ class AnleitungdurchgehenDetailView(DetailView):
 
         # Kontextdaten setzen
         context = { 'anleitungstitel': anleitung,
-                    'einzelschritte': list(Anleitungsschritt.objects.filter(anleitung = anleitung).values('id','schrittbenennung', 'beschreibung', 'schrittbild')),
+                    'einzelschritte': list(Anleitungsschritt.objects.filter
+                                           (anleitung = anleitung).values('id','schrittbenennung', 'beschreibung', 'schrittbild')),
                     'komponenten': list(Komponente.objects.values())}
 
         return context
