@@ -14,8 +14,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    {% load static %}
 </head>
 
 <!----------------------------------------------------BODY----------------------------------------------------->
@@ -24,17 +24,17 @@
 <div id="overlaySpeichern">
     <div class="speichernDialog">
 
-        <button class="schliessen" onclick="popupOffS()"><img src="../../static/Bilder/closecircle.svg"></button>
+        <button class="schliessen" onclick="popupOffS()"><img src="{% static 'Bilder/closecircle.svg' %}"></button>
 
         <h3 class="mittigeSchriftUeberschrift">Auswahl</h3>
 
         <button class="buttonAuswahl" onclick="popupOffS()"> <!-- Abbrech-Popup hier verlinkt -->
-            <div class="buttoninnenprimaer"><img src="../../static/Bilder/Entwurf.svg"></div>
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Entwurf.svg' %}"></div>
             <div class="buttonschriftprimaer" onclick="window.location.pathname = '/SBSInstructionsproject/entwurffertig'">Als Entwurf speichern</div>
         </button> 
 
         <button class="buttonAuswahl" onclick=""> <!-- Speichern-Seite hier verlinken -->
-            <div class="buttoninnenprimaer"><img src="../../static/Bilder/Speichern.svg"></div>
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Speichern.svg' %}"></div>
             <div class="buttonschriftprimaer" onclick="window.location.pathname = '/SBSInstructionsproject/anleitunggespeichert'">Speichern und hochladen</div>
         </button> 
 
@@ -62,12 +62,12 @@
         <div class="jaNein">
 
             <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
-                <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
+                <div class="buttoninnensekundaer"><img src="{% static 'Bilder/AbbrechenX.svg' %}"></div>
                 <div class="buttonschriftsekundaer">Nein</div>
             </button> 
 
             <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'">      
-                <div class="buttoninnenprimaer"><img src="../../static/Bilder/Ja.svg"></div>
+                <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Ja.svg' %}"></div>
                 <div class="buttonschriftprimaer">Ja</div>
             </button> 
 
@@ -76,7 +76,7 @@
 </div> 
 
 <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
-    <img class="logo" src="../../static/Bilder/Logo.svg">
+    <img class="logo" src="{% static 'Bilder/Logo.svg' %}">
 </div>
 
 <!-- Hintergrund -->
@@ -131,7 +131,7 @@
                         <span class="slider round"></span>
                     </label>
                     <p class="text">Privat</p>
-                    <img class="privaticon" src="../../static/Bilder/PrivatIcon.svg">
+                    <img class="privaticon" src="{% static 'Bilder/PrivatIcon.svg' %}">
                 </div>
             </div>
 
@@ -185,14 +185,14 @@
 
         <div class="abbrechen">
             <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
-            <div class="buttoninnensekundaer"><img src="../../static/Bilder/AbbrechenX.svg"></div>
+            <div class="buttoninnensekundaer"><img src="{% static 'Bilder/AbbrechenX.svg' %}"></div>
             <div class="buttonschriftsekundaer">Anleitung abbrechen</div>
             </button> 
         </div>
 
         <div class="speichern">
             <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
-            <div class="buttoninnenprimaer"><img src="../../static/Bilder/SpeichernX.svg"></div>
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/SpeichernX.svg' %}"></div>
             <div class="buttonschriftprimaer">Anleitung speichern</div>
             </button> 
         </div>
