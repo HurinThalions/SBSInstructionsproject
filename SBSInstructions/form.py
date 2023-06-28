@@ -1,7 +1,7 @@
 from datetime import timedelta
 from django import forms
-from betterforms.multiform import MultiModelForm
 from django.contrib.auth.forms import AuthenticationForm
+from betterforms.multiform import MultiModelForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
