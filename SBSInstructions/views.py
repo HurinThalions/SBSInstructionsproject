@@ -17,13 +17,6 @@ from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Kompone
 
 # Create your views here.
 
-# Startseite
-# def index(request):
-
-#     return render(request, 'Startseite.html')
-
-# Startseite
-# Anleitungen werden aus der Datenbank geholt und ueber js in den Katalog geladen
 class StartseiteListView(ListView):
 
     #  Definierung des Models das verwendet wird
@@ -40,13 +33,17 @@ class StartseiteListView(ListView):
 
         # Holt die Anleitung
         context = super().get_context_data(**kwargs)
-        anleitung = self.get_object()
 
         # Kontextdaten setzen
         context = { 'anleitung': list(Anleitung.objects.values('profil', 'anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
 
         return context
 
+
+
+# Anleitung wurde erstellt
+def anleitunggespeichert(request):
+    return render(request, 'Anleitunggespeichert.html')
 
 # Anleitung wurde durchgegangen
 def anleitungfertig(request):
@@ -55,10 +52,6 @@ def anleitungfertig(request):
 # Anleitung wurde teilweise erstellt
 def entwurffertig(request):
     return render(request, 'Entwurfgespeichert.html')
-
-# Anleitung wurde erstellt
-def anleitunggespeichert(request):
-    return render(request, 'Anleitunggespeichert.html')
 
 
 

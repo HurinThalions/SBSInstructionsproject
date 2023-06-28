@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link zu .js und static -->
-    <link rel="stylesheet" type="text/css" href="../../static/css/Anleitungdurchgehen.css">
-    <script src="../../static/js/Anleitungdurchgehen.js" defer></script>
-    <script src="../../static/js/AD.js" defer></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Anleitungdurchgehen.css' %}">
+    <script src="{% static 'js/Anleitungdurchgehen.js' %}" defer></script>
+    <script src="{% static 'js/AD.js' %}" defer></script>
 
     <!-- Schriftart -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,7 @@
 <body>
     <div id="overlayVollbild">
         <div class="vollbild">
-            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffV()">
+            <img class="schliessen" src="{% static 'Bilder/closecircle.svg' %}" onclick="popupOffV()">
         </div>
     </div>
 
@@ -32,7 +33,7 @@
         <div class="FragezeichenPopup">
             <h2>Wichtige Informationen:</h2>
             <p>Hier können wichtige Informationen angezeigt werden.</p>
-            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffF()">
+            <img class="schliessen" src="{% static 'Bilder/closecircle.svg' %}" onclick="popupOffF()">
         </div>
     </div>
 
@@ -40,18 +41,18 @@
     <!-- Divider für Schritte-Popup -->
     <div id="overlaySchritte">
         <div class="schritte">
-            <img class="schliessen" src="../../static/Bilder/closecircle.svg" onclick="popupOffS()">
+            <img class="schliessen" src="{% static 'Bilder/closecircle.svg' %}" onclick="popupOffS()">
             <div id="schrittefenster">
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen.html'">
-                    <img id="Bild1" src="../../static/Bilder/Ofenkartoffeln.jpg">
+                    <img id="Bild1" src="{% static 'Bilder/Ofenkartoffeln.jpg' %}">
                     <h2>Schritt 1</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen2.html'">
-                    <img id="Bild2" src="../../static/Bilder/GeschnitteneGurkeKnoblauch.jpeg">
+                    <img id="Bild2" src="{% static 'Bilder/GeschnitteneGurkeKnoblauch.jpeg' %}">
                     <h2>Schritt 2</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen3.html'">
-                    <img id="Bild3" src="../../static/Bilder/Zaziki.jpeg">
+                    <img id="Bild3" src="{% static 'Bilder/Zaziki.jpeg' %}">
                     <h2>Schritt 3</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen4.html'">
@@ -59,11 +60,11 @@
                     <h2>Schritt 4</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen5.html'">
-                    <img id="Bild5" src="../../static/Bilder/FischPfanne.jpeg">
+                    <img id="Bild5" src="{% static 'Bilder/FischPfanne.jpeg' %}">
                     <h2>Schritt 5</h2>
                 </div>
                 <div class="auflistungSchritt" onclick="location.href='Anleitung_durchgehen6.html'">
-                    <img id="Bild6" src="../../static/Bilder/Seehecht_angeordnet.jpg">
+                    <img id="Bild6" src="{% static 'Bilder/Seehecht_angeordnet.jpg' %}">
                     <h2>Schritt 6</h2>
                 </div>
             </div>
@@ -81,16 +82,16 @@
         </div>       
     </div>
     <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
-        <img class="logo" src="../../static/Bilder/Logo.svg">
+        <img class="logo" src="{% static 'Bilder/Logo.svg' %}">
     </div>
 
     <!-- Buttons -->
     <div class="navresbuttons"> 
         <button id="ueberblick">
-            <img id="sizeicon" src="../../static/Bilder/Overview.svg" onclick="popupOnS()">
+            <img id="sizeicon" src="{% static 'Bilder/Overview.svg' %}" onclick="popupOnS()">
         </button>
         <button id="rueckmelder">
-            <img id="fragezeichen" src="../../static/Bilder/Fragezeichen.png" onclick="popupOnF()">
+            <img id="fragezeichen" src="{% static 'Bilder/Fragezeichen.png' %}" onclick="popupOnF()">
         </button>
         
     </div>
@@ -132,9 +133,9 @@
     
     <div class="vorzurueck">
         <div class="anzeige">
-            <img src="../../static/Bilder/Back button.svg" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
+            <img src="{% static 'Bilder/Back button.svg' %}" class="buttonkleinlinks" id="buttonkleinlinks" onclick="loadAnleitungData1()">
             <svg id="fortschrittsanzeige" onload="fortschritt(1,6)"></svg>
-            <img src="../../static/Bilder/weiter.svg" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">
+            <img src="{% static 'Bilder/weiter.svg' %}" class="buttonkleinrechts" id="buttonkleinrechts" onclick="loadAnleitungData1()">
         </div>
         <div class="fortschrittszahl">
             <h4>1/6</h4>
