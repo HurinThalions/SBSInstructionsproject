@@ -159,7 +159,7 @@ class ProfilerstellenCreateView(CreateView):
 class ProfileinloggenLoginView(LoginView):
     template_name = 'Profileinloggen.html'
     authentication_form = EmailAuthenticationForm
-    success_url = ''
+    success_url = '/SBSInstructions'
     
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
