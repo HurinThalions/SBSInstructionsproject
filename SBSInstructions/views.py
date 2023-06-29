@@ -1,4 +1,6 @@
 import datetime
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView
@@ -120,7 +122,6 @@ class AnleitungdurchgehenDetailView(DetailView):
     def get_context_data(self, **kwargs):
 
         # Holt die Anleitung
-        context = super().get_context_data(**kwargs)
         anleitung = self.get_object()
 
         # Kontextdaten setzen
@@ -136,29 +137,51 @@ class AnleitungdurchgehenDetailView(DetailView):
 # Erstellung des Profils
 class ProfilerstellenCreateView(CreateView):
 
-    form_class = SignupForm 
+    model = Profil
+    
+    form_class = SignupForm
+    
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profilerstellen.html'
 
-    success_url = 'login'
+    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id+1))
+    
 
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
         return super().form_valid(form)
 
+
 # Einloggen
 class ProfileinloggenLoginView(LoginView):
+
     template_name = 'Profileinloggen.html'
     authentication_form = EmailAuthenticationForm
-    success_url = '/SBSInstructions'
-    
+
+    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
+
+    def form_invalid(self, form):
+        print(form.errors)
+        return super().form_invalid(form)
+
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
 
     model = Profil
-    template_name = 'Profileigeneanleitungen.html'
+    template_name = 'ProfileigeneAnleitungen.html'
 
+    def get_context_data(self, **kwargs):
+
+        # Holt die Anleitung
+        profil = self.get_object()
+
+        # Kontextdaten setzen
+        context = { 'profil': list(Profil.objects.values('id', 'benutzername')),
+                    'anleitungen': list(Anleitung.objects.filter
+                                           (profil = profil).values('id','anleittitel', 'kategorie', 'dauer', 'datum', 'img'))}
+
+        return context
 
 
 

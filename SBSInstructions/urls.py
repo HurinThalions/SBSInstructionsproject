@@ -27,8 +27,6 @@ urlpatterns = [
     path('anleitungfertig', views.anleitungfertig, name='anleitungfertig'),
     path('entwurffertig', views.entwurffertig, name='entwurffertig'),
     path('anleitunggespeichert', views.anleitunggespeichert, name='anleitunggespeichert'),
-
-
     
 ]
 urlpatterns += staticfiles_urlpatterns()
