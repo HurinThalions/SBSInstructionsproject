@@ -14,5 +14,3 @@ def save_with_anleitung_id(self, anleitung):
     form.save()
     return form
 
-
-

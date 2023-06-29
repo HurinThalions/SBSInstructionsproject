@@ -160,8 +160,8 @@ h4{
     display: none;
     width: 100vw; 
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Hintergrund dunkler machen */
-    backdrop-filter: blur(5px); /* Hintergrund verschwommen machen */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); 
     z-index: 3;
 }
 
@@ -323,6 +323,7 @@ h4{
     right: 50vw;
     top: 25vh;
     margin-right: 2vw;
+    padding: 10px;
 
 }
 
@@ -332,7 +333,7 @@ h4{
     border-radius: 10px;
     position: fixed;
     left: 50vw;
-    bottom: 15vh;
+    top: 25vh;
     margin-left: 2vw;
 }
 
@@ -518,34 +519,62 @@ h4{
         border: 1px solid black;
         border-radius: 10px; 
         width: 42vw;
-        height: 60vh;
+        height: auto;
         border-radius: 10px;
         position: absolute;
-        right: 50vw;
-        bottom: 15vh;
-        margin-right: 2vw;
-    
+        margin-left: 2vw;
+        padding: 10px;
+        top: 30vh;
     }
     
     .rechteZelle {
-        width: 42vw;
-        height: 50vh;
-        border-radius: 10px;
         position: fixed;
-        left: 50vw;
-        bottom: 15vh;
+        max-width: 40vw;
+        max-height: 45vh;
+        border-radius: 10px;
+        left: 50%;
+        top: 40vh;
         margin-left: 2vw;
+    }
+
+    .anzeige{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        right: 40vw;
+        height: 40vh;
+        width: 35vw;
+        bottom: 3vh;
+        left: 2vw;
+    }
+
+    .fortschrittszahl{
+        bottom: 6vh;
+        left: 3vw;
     }
     
     #anleitungstitel{
-        position: absolute;
+        position: relative;
         left: 5vw;
         font-size: 80%;
         font-weight: 400;
         width: auto;
         padding: 10px;
     }
+
+   
+    .navresbuttons{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        left: 80vw;
+        top: 20vh;
+    }
     
+
     }
 
 @media screen and (max-width: 700px) {
@@ -602,6 +631,16 @@ h4{
         top: 10px;
     }
 
+    .rechteZelle {
+        position: absolute;
+        left: 2vh;
+        width: 70%;
+        height: 15vh;
+        border-radius: 10px;
+        top: -23vh;
+        margin-top: 40px;
+    }
+
     #linkeZelle {
         position: absolute;
         border: 1px solid black;
@@ -609,49 +648,43 @@ h4{
         display: table-cell;
         width: 55%;
         left: 22.5%;
-        height: auto;
+        max-height: auto;
         font-size: 75%;
-        top: 30vh;
+        top: 40vh;
+        margin-top: 12;
+        padding: 10px;
     }
     
-    .rechteZelle {
-        position: absolute;
-        left: 100px;
-        width: 100px;
-        height: 100px;
-        border-radius: 10px;
-        bottom: 500px;
-    }
 
     #anleitungstitel{
         display: flex;
         justify-content: center;
         font-size: 60%;
         font-weight: 400;
-        width: auto;
+        width: 90%;
+        margin-bottom: 10px;
     }
 
     .fortschrittszahl{
-        left: 1000vw;
+        display: none;
     }
 
     #fortschrittsanzeige{
-        position: absolute;
-        left: 10000vw;
+        display: none;
     }
 
     .buttonkleinlinks{
-        position: absolute;
-        right: 80vw;
-        bottom: 35vh;
+        position: fixed;
+        left: 5%;
+        top: 50%;
         width: 5vw;
         height: 5vh;
     }
 
     .buttonkleinrechts{
-        position: absolute;
-        bottom: 35vh;
-        left: 35vw;
+        position: fixed;
+        top: 50%;
+        right: 5vw;
         width: 5vw;
         height: 5vh;
     }
@@ -661,11 +694,45 @@ h4{
     }
 
     .navresbuttons{
-        position: fixed;
+        position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: right;
-        left: 85vw;
-        top: 17vh;
+        right: 5vw;
+        top: 20vh;
+    }
+
+    .kompbild{
+        max-width: 50px;
+        max-height: 50px;
+        border: solid white 0.5px;
+        border-radius: 10px;
+        margin-left: auto;
+        padding: none;
+      }
+    
+      .komponente{
+        max-width: auto;
+        border: solid black 1px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        padding: none;
+        background-color: #d7dcf890;
+      }
+
+      .kompbeschreibung{
+        padding: 20px;
+      }
+
+      .anzeige{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        height: 40vh;
+        width: 35vw;
     }
 }
