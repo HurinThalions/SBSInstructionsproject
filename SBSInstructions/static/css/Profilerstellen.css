@@ -74,7 +74,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 button{
-    width: 17vw;
+    width: 18vw;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -89,4 +89,21 @@ button {
 button:hover {
     background-color: #4680a797;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .block{
+        width: 50vw;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    button{
+        width: 45vw;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+}
 }
