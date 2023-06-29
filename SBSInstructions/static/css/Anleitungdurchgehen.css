@@ -317,11 +317,11 @@ h4{
     border: 1px solid black;
     border-radius: 10px; 
     width: 42vw;
-    height: 60vh;
+    height: auto;
     border-radius: 10px;
-    position: fixed;
+    position: absolute;
     right: 50vw;
-    bottom: 15vh;
+    top: 25vh;
     margin-right: 2vw;
 
 }
@@ -520,7 +520,7 @@ h4{
         width: 42vw;
         height: 60vh;
         border-radius: 10px;
-        position: fixed;
+        position: absolute;
         right: 50vw;
         bottom: 15vh;
         margin-right: 2vw;
@@ -529,7 +529,7 @@ h4{
     
     .rechteZelle {
         width: 42vw;
-        height: 60vh;
+        height: 50vh;
         border-radius: 10px;
         position: fixed;
         left: 50vw;
@@ -603,6 +603,7 @@ h4{
     }
 
     #linkeZelle {
+        position: absolute;
         border: 1px solid black;
         border-radius: 10px;
         display: table-cell;
@@ -610,14 +611,16 @@ h4{
         left: 22.5%;
         height: auto;
         font-size: 75%;
+        top: 30vh;
     }
     
     .rechteZelle {
-        width: 50vw;
-        height: 30vh;
+        position: absolute;
+        left: 100px;
+        width: 100px;
+        height: 100px;
         border-radius: 10px;
-        left: 25vw;
-        top: 20vh;
+        bottom: 500px;
     }
 
     #anleitungstitel{

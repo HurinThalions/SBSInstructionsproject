@@ -9,10 +9,6 @@ function popupOnA() {
     document.getElementById("overlayAbbrechen").style.display = "block";
 }
 
-function popupOnA(){
-    document.getElementById("overlayAbbrechen").style.display = "block";
-}
-
 function popupOffA(){
     document.getElementById("overlayAbbrechen").style.display = "none";
 }
