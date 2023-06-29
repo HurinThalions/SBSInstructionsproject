@@ -103,28 +103,20 @@
     <!-- Eingabeblock -->
 
     <div class="eingabeundweiter">
-
         <div class="eingabeformular">
-
             <!-- Ersteller und Datum Eingabe -->
             <div class="erstellerdatum">
-
                 <!-- Ersteller eingeben -->
                 <div class="ersteller">
-
                     <p class="text">Ersteller:
-                        
                         {{ form.profil }}                        
                     </p>
-                    
                 </div>
-
                 <!-- Automatisches Datum -->
                 <div class="datum">
                     <p class="text">Datum:</p>
                     {{ form.datum }}
                 </div>
-
                 <!-- Schalter Privat/Oeffentlich -->
                 <div class="privat">
                     <p class="text">Öffentlich</p>
@@ -136,7 +128,6 @@
                     <img class="privaticon" src="{% static 'Bilder/PrivatIcon.svg' %}">
                 </div>
             </div>
-
             <!-- Anleitungsinfos wie Titel, Dauer usw. eingeben -->
             <div class="titelkategoriedauerthumbnail">               
                 <div class="anleitungsinfos">
@@ -147,14 +138,12 @@
                             <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
                         </div>{{ form.anleittitel }}
                     </div>
-
                     <!-- Kategorie -->
                     <div class="textbox">
                         <div class="iconposition">
                             <p>Kategorie:</p><p hidden class="fehlermeldungtext">Bitte geben Sie mindestens eine Kategorie an!</p>
                         </div>{{ form.kategorie }}
                     </div>
-
                     <!-- Dauer -->
                     <div class="textbox">
                         <div class="iconposition">
@@ -162,7 +151,6 @@
                         </div>{{ form.dauer }}
                     </div>
                 </div>
-
                 <!-- Thumbnail -->
                 <div class="thumbnail">
                     <p>Thumbnail:</p>
