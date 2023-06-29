@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beispiel</title>
-    {% load static %}
-</head>
-<body>
-    <img src="{% static 'Bilder/Logo.svg' %}">
-    
-</body>
-</html>
+
+<!-- Funktion des Views AnleitungsschritterstellenCreateView -->
+
+def form_valid(self, form):
+    anleitung = Anleitung.objects.latest('id')
+    form.save_with_anleitung_id(anleitung)
+    return super().form_valid(form)
+
+
+<!-- Funktion der Formklasse AnleitungsschrittForm -->
+def save_with_anleitung_id(self, anleitung):
+    form = super().save(commit=False)
+    form.anleitung = anleitung
+    form.save()
+    return form
+
+
+

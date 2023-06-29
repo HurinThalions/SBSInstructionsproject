@@ -1,7 +1,7 @@
 from datetime import timedelta
 from django import forms
-from betterforms.multiform import MultiModelForm
 from django.contrib.auth.forms import AuthenticationForm
+from betterforms.multiform import MultiModelForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
@@ -20,6 +20,7 @@ class SignupForm(forms.ModelForm):
 # Benutzername kann auch verwendet werden
 class EmailAuthenticationForm(AuthenticationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+    password = forms.CharField(label=("Password"), strip=False, widget=forms.PasswordInput)
 
     class Meta:
         fields = ('email', 'password')

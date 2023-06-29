@@ -41,8 +41,9 @@
             <div class="katalog" id="katalog">
                 <div id="anleitung-details">
                   <ul class="anleitungsBlockList">
+
                     {% for einzelneanleitung in anleitung %}
-                    <li class="anleitungsBlock" onclick="window.location.pathname = 'SBSInstructionsproject/anleitungdurchgehen/{{ einzelneanleitung.profil }}'">
+                    <li class="anleitungsBlock" onclick="window.location.pathname='SBSInstructionsproject/anleitungdurchgehen/{{ einzelneanleitung.profil }}'">
                       <div class="anleitungsBlockImg">
                         <img src="/media/{{ einzelneanleitung.img }}">
                       </div>
@@ -54,6 +55,7 @@
                       </div>
                     </li>
                     {% endfor %}
+
                   </ul>
                 </div>
             </div>
