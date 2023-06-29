@@ -1,4 +1,6 @@
 import datetime
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView
@@ -142,7 +144,7 @@ class ProfilerstellenCreateView(CreateView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profilerstellen.html'
 
-    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
+    # success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
     
 
     def form_valid(self, form):
@@ -157,8 +159,11 @@ class ProfileinloggenLoginView(LoginView):
     template_name = 'Profileinloggen.html'
     authentication_form = EmailAuthenticationForm
 
-    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
+    # success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
 
+    def form_invalid(self, form):
+        print(form.errors)
+        return super().form_invalid(form)
 
 # Eigeloggt und nur die selbst erstellten Entwuerfe und Anleitungen werden angezeigt
 class ProfileigeneAnleitungenDetailView(DetailView):
