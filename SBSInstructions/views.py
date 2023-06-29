@@ -144,7 +144,7 @@ class ProfilerstellenCreateView(CreateView):
     # Template die verwendet wird, um die Seite zu rendern
     template_name = 'Profilerstellen.html'
 
-    # success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
+    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id+1))
     
 
     def form_valid(self, form):
@@ -159,7 +159,7 @@ class ProfileinloggenLoginView(LoginView):
     template_name = 'Profileinloggen.html'
     authentication_form = EmailAuthenticationForm
 
-    # success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
+    success_url = ('profileigeneanleitungen/' + str(Profil.objects.latest('id').id + 1))
 
     def form_invalid(self, form):
         print(form.errors)
