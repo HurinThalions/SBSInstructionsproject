@@ -52,7 +52,6 @@ def entwurffertig(request):
 class AnleitungerstellenCreateView(CreateView):
 
     # Formular um die Daten aufzunehmen und Abzuspeichern
-    # siehe form.py
     form_class = AnleitungForm
 
     # Template die verwendet wird, um die Seite zu rendern

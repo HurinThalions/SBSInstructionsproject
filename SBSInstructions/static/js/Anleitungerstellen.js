@@ -36,7 +36,3 @@ function popupOffS(){
 function deleteDataAndClose(){
 
 }
-
-function reload() {
-    window.location.reload();
-}
