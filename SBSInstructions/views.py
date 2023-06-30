@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, CreateView, ListView
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, FormView
 from django.contrib.auth import login
 
 from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, AnleitungsschrittForm, KomponenteForm, SchrittundKomponentenMultiForm
